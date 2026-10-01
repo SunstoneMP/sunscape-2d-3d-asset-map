@@ -23,7 +23,7 @@ Cabinet Islands,Component Cabinets,SCC25SPE-W,SCC25SPE-W,,,,/assets/cabinet-isla
 Cabinet Islands,Component Cabinets,SCC27EP,SCC27EP_SCC25KP_LEFT,SCC25KP,L,,/assets/cabinet-islands/component-cabinets/SCC27EP/3d/SCC27EP_SCC25KP_LEFT.glb,real,,NEEDS 2D IMAGE
 Cabinet Islands,Component Cabinets,SCC27EP,SCC27EP_SCC25KP_RIGHT,SCC25KP,R,,/assets/cabinet-islands/component-cabinets/SCC27EP/3d/SCC27EP_SCC25KP_RIGHT.glb,real,,NEEDS 2D IMAGE
 Cabinet Islands,Component Cabinets,SCC31BP90,SCC31BP90,,,,/assets/cabinet-islands/component-cabinets/SCC31BP90/3d/SCC31BP90.glb,real,,NEEDS 2D IMAGE
-Cabinet Islands,Component Cabinets,SCC31BP90,SCC31BP90_ASS17,ASS17,,,/assets/cabinet-islands/component-cabinets/SCC31BP90/3d/SCC31BP90_ASS17.glb,placeholder,,NEEDS 2D + 3D
+Cabinet Islands,Component Cabinets,SCC31BP90,SCC31BP90_ASS17,ASS17,,,/assets/cabinet-islands/component-cabinets/SCC31BP90/3d/SCC31BP90_ASS17.glb,real,,NEEDS 2D IMAGE
 Cabinet Islands,Component Cabinets,SCC31BP90,SCC31BP90_ASS17_LEFT,ASS17,L,/assets/cabinet-islands/component-cabinets/SCC31BP90/2d/SCC31BP90_ASS17_LEFT.webp,,none,,NEEDS 3D MODEL
 Cabinet Islands,Component Cabinets,SCC31BP90,SCC31BP90_ASS17_RIGHT,ASS17,R,/assets/cabinet-islands/component-cabinets/SCC31BP90/2d/SCC31BP90_ASS17_RIGHT.webp,,none,,NEEDS 3D MODEL
 Cabinet Islands,Component Cabinets,SCC31BP90,SCC31BP90_LEFT,,L,/assets/cabinet-islands/component-cabinets/SCC31BP90/2d/SCC31BP90_LEFT.webp,,none,,NEEDS 3D MODEL
@@ -115,8 +115,8 @@ Cabinet Islands,Sink Base Cabinets,SBC36CDD,SBC36CDD_AIC,AIC,,/assets/cabinet-is
 Cabinet Islands,Sink Base Cabinets,SBC36CDD,SBC36CDD_BPS21,BPS21,,/assets/cabinet-islands/sink-base-cabinets/SBC36CDD/2d/SBC36CDD_BPS21.webp,/assets/cabinet-islands/sink-base-cabinets/SBC36CDD/3d/SBC36CDD_BPS21.glb,real,,COMPLETE
 Cabinet Islands,Sink Base Cabinets,SBC36CDD,SBC36CDD_SK34,SK34,,,/assets/cabinet-islands/sink-base-cabinets/SBC36CDD/3d/SBC36CDD_SK34.glb,real,,NEEDS 2D IMAGE
 Cabinet Islands,Sink Base Cabinets,SBC36FDD,SBC36FDD,,,/assets/cabinet-islands/sink-base-cabinets/SBC36FDD/2d/SBC36FDD.webp,/assets/cabinet-islands/sink-base-cabinets/SBC36FDD/3d/SBC36FDD.glb,real,,COMPLETE
-Cabinet Islands,Sink Base Cabinets,SBC36FDD,SBC36FDD_BPS21,BPS21,,,/assets/cabinet-islands/sink-base-cabinets/SBC36FDD/3d/SBC36FDD_BPS21.glb,placeholder,,NEEDS 2D + 3D
-Cabinet Islands,Sink Base Cabinets,SBC36FDD,SBC36FDD_SK34,SK34,,,/assets/cabinet-islands/sink-base-cabinets/SBC36FDD/3d/SBC36FDD_SK34.glb,placeholder,,NEEDS 2D + 3D
+Cabinet Islands,Sink Base Cabinets,SBC36FDD,SBC36FDD_BPS21,BPS21,,,/assets/cabinet-islands/sink-base-cabinets/SBC36FDD/3d/SBC36FDD_BPS21.glb,real,,NEEDS 2D IMAGE
+Cabinet Islands,Sink Base Cabinets,SBC36FDD,SBC36FDD_SK34,SK34,,,/assets/cabinet-islands/sink-base-cabinets/SBC36FDD/3d/SBC36FDD_SK34.glb,real,,NEEDS 2D IMAGE
 Cabinet Islands,Storage Cabinets,SBC12SLS,SBC12SLS,,,,/assets/cabinet-islands/storage-cabinets/SBC12SLS/3d/SBC12SLS.glb,real,,NEEDS 2D IMAGE
 Cabinet Islands,Storage Cabinets,SBC12SLS,SBC12SLS_RIGHT,,R,/assets/cabinet-islands/storage-cabinets/SBC12SLS/2d/SBC12SLS_RIGHT.webp,,none,,NEEDS 3D MODEL
 Cabinet Islands,Storage Cabinets,SBC12SMD,SBC12SMD,,,,/assets/cabinet-islands/storage-cabinets/SBC12SMD/3d/SBC12SMD.glb,real,,NEEDS 2D IMAGE
