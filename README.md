@@ -9,10 +9,13 @@
 
 ## Status values
 
+`3D_Model` is `real` for Sunstone's delivered models and `placeholder` for the stand-in boxes, which the 3D configurator replaces with procedural cabinets.
+
 | Status | Meaning |
 |---|---|
-| COMPLETE | Has both a 2D elevation and a 3D model |
-| MISSING 2D IMAGE | Model exists; needs a front-elevation `.webp` |
-| MISSING 3D MODEL | Elevation exists; needs a `.glb` |
+| COMPLETE | Real 3D model and a 2D elevation |
+| NEEDS 2D IMAGE | Real model; needs a front-elevation `.webp` |
+| NEEDS 3D MODEL | Elevation exists; model is still a placeholder |
+| NEEDS 2D + 3D | Neither yet |
 
-The `.glb` files currently in `sunscape-ai` are placeholders. The 3D configurator renders those products procedurally until real models are dropped into the same paths.
+To add models, run `node scripts/assets/import-models.mjs <zip-or-folder> [category|auto] --optimize` in `sunscape-ai`, then `node scripts/assets/build-manifest.mjs`.
