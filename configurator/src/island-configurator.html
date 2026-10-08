@@ -16,10 +16,13 @@
   --floor:#d9dde3; --shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px -12px rgba(16,24,40,.18);
   --radius:10px; --font:'Montserrat',system-ui,-apple-system,"Segoe UI",sans-serif;
   --bar-h:60px;
+  --top-gap:0px; --fs-gap:0px;
 }
+/* Embedded on a Hubbase page: its "Full screen" button sits 10px from the box's top-right corner. */
+html.embedded{--fs-gap:196px}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;overflow:hidden}
-body{font-family:var(--font);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+body{padding-top:var(--top-gap);font-family:var(--font);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
 button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
 input{font-family:inherit;font-size:inherit;color:inherit}
 a{color:var(--accent)}
@@ -41,7 +44,7 @@ a{color:var(--accent)}
 .ibtn:disabled{opacity:.35;cursor:default;background:transparent;border-color:transparent}
 
 /* ---------- top bar ---------- */
-.bar{height:var(--bar-h);display:flex;align-items:center;gap:16px;padding:0 16px;background:var(--surface);border-bottom:1px solid var(--line);position:relative;z-index:30}
+.bar{height:var(--bar-h);display:flex;align-items:center;gap:16px;padding:0 calc(16px + var(--fs-gap)) 0 16px;background:var(--surface);border-bottom:1px solid var(--line);position:relative;z-index:30}
 .brand{display:flex;align-items:center;gap:10px;min-width:0}
 .brand-mark{width:34px;height:34px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
 .brand-mark svg{width:20px;height:20px}
@@ -65,7 +68,7 @@ a{color:var(--accent)}
 .menu .danger svg{color:var(--err)}
 
 /* ---------- layout ---------- */
-.app{display:grid;grid-template-columns:340px minmax(0,1fr) 340px;height:calc(100% - var(--bar-h))}
+.app{display:grid;grid-template-columns:340px minmax(0,1fr) 340px;height:calc(100% - var(--bar-h) - var(--top-gap))}
 .panel{background:var(--surface);overflow-y:auto;min-width:0}
 .catalog{border-right:1px solid var(--line);display:flex;flex-direction:column;overflow-x:hidden}
 .quote{border-left:1px solid var(--line);padding:20px 18px 28px}
@@ -273,9 +276,12 @@ a{color:var(--accent)}
   html,body{overflow:hidden}
   .brand span{display:none}
   .shapes{margin:0;overflow-x:auto}
-  .bar{gap:8px;padding:0 10px}
+  .bar{gap:8px;padding:0 calc(10px + var(--fs-gap)) 0 10px}
   .bar .brand b{font-size:13.5px}
-  .app{display:block;height:calc(100% - var(--bar-h) - 62px);overflow:hidden}
+  .app{display:block;height:calc(100% - var(--bar-h) - var(--top-gap) - 62px);overflow:hidden}
+  /* Too narrow to share the bar with the Full screen button: give it a strip above the bar instead. */
+  html.embedded{--fs-gap:0px;--top-gap:64px}
+  .bar-actions{margin-left:auto}
   .app > .panel,.app > .stage{height:100%;display:none}
   .app[data-view="catalog"] > .catalog{display:flex}
   .app[data-view="layout"] > .stage{display:block}
@@ -470,6 +476,8 @@ let CART_ID_MAP = /*@@CART_ID_MAP@@*/{};
    this script in two and blanks the whole configurator.
    ============================================================ */
 
+document.documentElement.classList.toggle("embedded", window.parent !== window);
+
 const CATEGORY_ORDER = ["Grill Cabinets", "Sink Base Cabinets", "Storage Cabinets", "Component Cabinets", "Wall Cabinets", "Cabinet Accessories"];
 
 const SHAPES = {
@@ -480,9 +488,10 @@ const SHAPES = {
   l:        { label: "L-Shape", short: "L-Shape", runs: ["A", "B"], angles: [0, 90],
     desc: "Two runs meeting at a 90° corner. Finish the joining ends with 90° corner pieces." },
   u:        { label: "U-Shape", short: "U-Shape", runs: ["A", "B", "C"], angles: [0, 90, 180],
-    desc: "Two return legs (A and C) framing a back run (B). Corner pieces join A to B and B to C." },
-  v:        { label: "V-Shape / Angled", short: "V-Shape", runs: ["A", "B"], angles: [0, 135],
-    desc: "Two runs meeting at an open angle, often used for a bar or peninsula. Use 45° corner pieces." }
+    desc: "Two full returns (A and C, the same length) framing a back run (B). Corner pieces join A to B and B to C." },
+  // A 45° corner package turns the run by 45°, leaving a wide-open 135° inside angle.
+  v:        { label: "V-Shape / Angled", short: "V-Shape", runs: ["A", "B"], angles: [0, 45],
+    desc: "Two runs joined by a 45° corner package. The run turns 45°, so the inside of the angle stays open (135°) instead of closing in." }
 };
 
 // Starting layouts. Every id is a real catalog module; prices are computed live.
@@ -677,7 +686,7 @@ const SHAPE_ICONS = {
   double:   `<svg viewBox="0 0 34 22"><path d="M3 8 H31 M3 16 H31"/></svg>`,
   l:        `<svg viewBox="0 0 34 22"><path d="M6 4 V17 H31"/></svg>`,
   u:        `<svg viewBox="0 0 34 22"><path d="M5 4 V17 H29 V4"/></svg>`,
-  v:        `<svg viewBox="0 0 34 22"><path d="M3 6 L17 17 L31 6"/></svg>`
+  v:        `<svg viewBox="0 0 34 22"><path d="M3 17 H16 L29 5"/></svg>`
 };
 function renderShapePicker(){
   const el = $("#shapePicker");
@@ -721,8 +730,15 @@ function renderCatTabs(){
   });
 }
 
+// The space a run should fill: what the shopper typed, or, for the C return of a U-shape, Run A's length
+// (a U has two equal returns).
+function targetOf(ri){
+  if (state.targets[ri]) return state.targets[ri];
+  if (state.shape === "u" && ri === 2){ const a = runWidth(state.runs[0]); return a > 0 ? a : null; }
+  return null;
+}
 function remainingSpace(ri){
-  const t = state.targets[ri];
+  const t = targetOf(ri);
   return t ? t - runWidth(state.runs[ri]) : null;
 }
 
@@ -847,7 +863,8 @@ function renderRuns(){
   $("#shapeDesc").textContent = SHAPES[state.shape].desc;
 
   state.runs.forEach((run, ri) => {
-    const totalIn = runWidth(run), target = state.targets[ri];
+    const totalIn = runWidth(run), target = targetOf(ri);
+    const matchA = !state.targets[ri] && target && state.shape === "u" && ri === 2;
     const el = document.createElement("section");
     el.className = "run" + (state.activeRun === ri ? " active" : "");
     el.setAttribute("aria-label", "Run " + run.id);
@@ -859,7 +876,7 @@ function renderRuns(){
       const over = totalIn - target;
       const cls = over > 0.01 ? "over" : (Math.abs(over) < 0.01 ? "fits" : "");
       const stateTxt = over > 0.01 ? `${inches(over)} too long` : (cls === "fits" ? "Exact fit" : `${inches(-over)} left`);
-      meter = `<div class="meter ${cls}"><div class="m-top"><span><b>${inches(totalIn)}</b> of ${inches(target)}</span><span class="state">${stateTxt}</span></div><div class="track"><div class="fill" style="width:${Math.min(100, totalIn / target * 100)}%"></div></div></div>`;
+      meter = `<div class="meter ${cls}"><div class="m-top"><span><b>${inches(totalIn)}</b> of ${inches(target)}${matchA ? " \u2014 matches Run A" : ""}</span><span class="state">${stateTxt}</span></div><div class="track"><div class="fill" style="width:${Math.min(100, totalIn / target * 100)}%"></div></div></div>`;
     } else {
       meter = `<div class="meter"><div class="m-top"><span><b>${inches(totalIn)}</b> · ${feet(totalIn)}</span><span class="state"></span></div></div>`;
     }
@@ -867,7 +884,7 @@ function renderRuns(){
       <div class="tag">${run.id}</div>
       <div><div class="title">Run ${run.id}</div><div class="hint">${run.items.length ? run.items.length + " module" + (run.items.length > 1 ? "s" : "") : (state.activeRun === ri ? "Active — add cabinets here" : "Click to make active")}</div></div>
       ${meter}
-      <label class="space" title="Enter the space you have for this run to see how much is left">Space <input type="number" min="0" max="600" step="0.5" placeholder="—" value="${target ?? ""}" aria-label="Space available for Run ${run.id}, inches">"</label>
+      <label class="space" title="Enter the space you have for this run to see how much is left">Space <input type="number" min="0" max="600" step="0.5" placeholder="${matchA ? Math.round(target * 10) / 10 : "\u2014"}" value="${state.targets[ri] ?? ""}" aria-label="Space available for Run ${run.id}, inches">"</label>
       <span class="run-price">${money(runPrice(run))}</span>
       <div class="run-actions">
         <button class="ibtn run-preview-btn" title="Preview this run">${svgIcon(ICON.eye, 18)}</button>
@@ -939,7 +956,9 @@ function renderRuns(){
       const nextId = state.runs[ri + 1].id;
       connector.innerHTML = svgIcon(ICON.turn) + " " + (state.shape === "double"
         ? `Run ${nextId} is the other side of the island`
-        : `Corner: Run ${run.id} turns into Run ${nextId} — add a ${state.shape === "v" ? "45°" : "90°"} corner piece at each joining end`);
+        : state.shape === "v"
+          ? `Corner: Run ${run.id} turns 45° into Run ${nextId} — join them with a 45° corner package (the inside stays open)`
+          : `Corner: Run ${run.id} turns into Run ${nextId} — add a 90° corner piece at each joining end`);
       wrap.appendChild(connector);
     }
   });
@@ -1083,6 +1102,8 @@ function renderSchematic(){
   const def = SHAPES[state.shape];
   // Each run is a segment; lengths follow the real run widths (min 24") so the plan reads like the layout.
   const lens = state.runs.map(r => Math.max(runWidth(r), 24));
+  // A U-shape has two full returns: draw leg C the same length as leg A (and A as C), whichever is longer.
+  if (state.shape === "u") lens[0] = lens[2] = Math.max(lens[0], lens[2]);
   const segs = [];
   if (state.shape === "double"){
     const L = Math.max(...lens);
@@ -1474,7 +1495,7 @@ function captureRunImages(){
     ctx.strokeStyle = "#CFD4DB"; ctx.beginPath(); ctx.moveTo(0, y + ITEM_HEIGHT - 1); ctx.lineTo(totalW, y + ITEM_HEIGHT - 1); ctx.stroke();
     y += ITEM_HEIGHT + RUN_PAD;
     if (i < runData.length - 1){
-      const text = state.shape === "double" ? "PARALLEL RUN — other side of the island" : state.shape === "v" ? "ANGLED CORNER (V-Shape)" : "90° CORNER TURN";
+      const text = state.shape === "double" ? "PARALLEL RUN — other side of the island" : state.shape === "v" ? "45\u00b0 CORNER PACKAGE \u2014 Run B turns 45\u00b0, inside angle open (135\u00b0)" : "90° CORNER TURN";
       ctx.fillStyle = "#E7F1FC"; ctx.fillRect(0, y, maxW, ANGLE_BANNER_H);
       ctx.fillStyle = "#256AC0"; ctx.font = "bold 10px Montserrat, sans-serif";
       ctx.fillText(text, 14, y + ANGLE_BANNER_H / 2);
