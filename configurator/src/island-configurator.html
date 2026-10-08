@@ -534,6 +534,9 @@ CATALOG.forEach(it => { if (it.inStore) STORE.available.add(it.id); if (it.slug)
 function isBuyable(catId){ return STORE.available.has(catId) && !!CART_ID_MAP[catId]; }
 
 function hubbaseInfo(){
+  // Hubbase's /apps/ route puts the site's id and base path here (works sandboxed and on custom domains).
+  const hs = window.HB_SITE;
+  if (hs && hs.siteId) return { siteId: hs.siteId, base: hs.base || "", api: "" };
   try {
     const hb = window.parent && window.parent !== window && window.parent.HB;
     if (hb && hb.siteId) return { siteId: hb.siteId, base: hb.base || "", api: hb.api || "" };
