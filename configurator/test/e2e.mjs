@@ -1,0 +1,97 @@
+// End-to-end check of the built configurator inside a mock Hubbase page.
+//   node configurator/test/mock-hubbase.mjs &   then   node configurator/test/e2e.mjs
+// Needs the playwright package; set CHROMIUM_PATH to use an existing Chromium.
+import { chromium } from 'playwright';
+const base = 'http://127.0.0.1:8765';
+const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true, permissions: ['clipboard-read','clipboard-write'] });
+const p = await ctx.newPage();
+p.on('dialog', d => d.accept());
+const errs = [];
+p.on('pageerror', e => errs.push('pageerror: ' + e.message));
+p.on('console', m => { if (m.type() === 'error') errs.push('console: ' + m.text()); });
+let fails = 0;
+const ok = (c, msg) => { if (!c) fails++; console.log((c ? 'PASS ' : 'FAIL ') + msg); };
+await p.goto(base + '/s/austin/configurator');
+const f = await (await p.waitForSelector('#f')).contentFrame();
+await f.waitForSelector('.cab-card');
+await p.waitForTimeout(800);
+const cards = await f.$$eval('.cab-card', els => els.length);
+ok(cards === 85, 'catalog renders 85 cards: ' + cards);
+const tabs = await f.$$eval('.cat-tab', els => els.map(e => e.textContent.trim()));
+ok(!tabs.some(t => t.startsWith('Wall')), 'empty Wall Cabinets tab hidden: ' + tabs.join(' | '));
+// price from store/injection: SAC20CSDL should be $1,574
+const price = await f.$eval('.cab-card[data-cat-id="SAC20CSDL"] .price', e => e.textContent);
+ok(price === '$1,574', 'SAC20CSDL price matches store: ' + price);
+const kam = await f.$eval('.cab-card[data-cat-id="SAC30KBDC_KAMADO_RAIL"] .w', e => e.textContent);
+ok(kam === '30"', 'Kamado width fixed: ' + kam);
+const call = await f.$$eval('.badge-call', els => els.map(e => e.closest('.cab-card').dataset.catId));
+ok(call.length === 1 && call[0] === 'SAC46GLPCD_RUBY5BIR', 'call-to-order badge only on unsellable module: ' + call);
+// click to add 3 modules
+for (const id of ['SAC34GLPCD', 'SBC18STD', 'SBC18STD']) await f.click(`.cab-card[data-cat-id="${id}"]`);
+let placed = await f.$$eval('.placed', els => els.length);
+ok(placed === 3, 'click adds modules: ' + placed);
+const total = await f.$eval('[data-t="subtotal"]', e => e.textContent);
+ok(total === '$6,396', 'subtotal 2774+1811*2: ' + total);
+// drag & drop a catalog card into the lane at the start
+await f.dragAndDrop('.cab-card[data-cat-id="SBC12SSRD"]', '.lane', { targetPosition: { x: 5, y: 100 } });
+const first = await f.$eval('.placed img', e => e.alt);
+ok(/Spice Rack/.test(first), 'drag-drop inserts at start: ' + first);
+// undo / redo
+await f.click('#btnUndo'); placed = await f.$$eval('.placed', els => els.length); ok(placed === 3, 'undo: ' + placed);
+await f.click('#btnRedo'); placed = await f.$$eval('.placed', els => els.length); ok(placed === 4, 'redo: ' + placed);
+// install toggle persists and tax field keeps focus
+await f.check('#installToggle'); await f.click('.cab-card[data-cat-id="SBC6SPEL"]');
+ok(await f.$eval('#installToggle', e => e.checked), 'install toggle stays checked after re-render');
+await f.fill('#taxRateInput', ''); await f.type('#taxRateInput', '6.25');
+ok(await f.$eval('#taxRateInput', e => e.value === '6.25' && document.activeElement === e), 'tax input keeps focus while typing');
+// add the unsellable module, then add to cart
+await f.click('.cab-card[data-cat-id="SAC46GLPCD_RUBY5BIR"]');
+const btnTxt = await f.$eval('#btnCart', e => e.textContent); ok(btnTxt === 'Add 6 modules to Cart', 'cart button count: ' + btnTxt);
+await f.click('#btnCart'); await p.waitForTimeout(600);
+const cart = await p.evaluate(() => window.CART);
+ok(cart.length === 4 && cart.find(c => c.sku === 'SBC18STD').qty === 2, 'parent cart got items: ' + JSON.stringify(cart));
+const status = await f.$eval('#cartStatus', e => e.textContent); ok(/5 modules sent.*SAC46GLPCD_RUBY5BIR/.test(status), 'cart status honest: ' + status);
+const link = await f.$eval('.qline-name a', e => e.getAttribute('href')); ok(link.startsWith('/s/austin/products/'), 'store link: ' + link);
+// schematic shapes
+for (const shape of ['L', 'U', 'Double', 'V', 'Straight']) {
+  await f.click(`.shape-btn:has-text("${shape}")`).catch(()=>{});
+  if (await f.$('.modal-bg.show')) {}
+}
+for (const [label, n] of [['L-Shape', 2], ['U-Shape', 3], ['V-Shape', 2], ['Double', 2]]) {
+  await f.click(`.shape-btn:has(span:text-is("${label.split(' ')[0]}"))`);
+  const info = await f.$eval('#schematicSvg svg', s => { const r = s.getBBox(); return { b: [r.x, r.y, r.width, r.height].map(Math.round), runs: document.querySelectorAll('.run').length, title: document.querySelector('#shapeTitle').textContent }; });
+  const [x, y, w, h] = info.b;
+  ok(info.runs === n && x >= 0 && y >= 0 && x + w <= 190 && y + h <= 110, `${info.title}: ${n} runs, schematic fits view ${info.b}`);
+}
+await f.click('.schem-run[data-run="1"]');
+ok(await f.$eval('.run.active .tag', e => e.textContent) === 'B', 'clicking schematic badge activates Run B');
+// CSV
+const [dl] = await Promise.all([p.waitForEvent('download'), (async () => { await f.click('#btnExport'); await f.click('#exportCSVBtn'); })()]);
+const csv = await (await import('node:fs')).promises.readFile(await dl.path(), 'utf8');
+const rows = csv.trim().split('\r\n').map(r => r.match(/"([^"]|"")*"/g).length);
+ok(rows.every(n => n === 8), 'CSV rows all 8 columns: ' + csv.split('\r\n')[1]);
+// share link round trip via parent URL + autosave on reload
+await f.click('#btnShare'); await p.waitForTimeout(300);
+const shareUrl = await p.evaluate(() => navigator.clipboard.readText());
+ok(shareUrl.startsWith(base + '/s/austin/configurator#design='), 'share link points at store page: ' + shareUrl.slice(0, 70));
+await p.reload(); const f2 = await (await p.waitForSelector('#f')).contentFrame(); await f2.waitForSelector('.placed');
+ok((await f2.$$eval('.placed', e => e.length)) === 6, 'autosave restored design after reload');
+await f2.click('#btnClear'); 
+const p2 = await ctx.newPage(); await p2.goto(shareUrl);
+const f3 = await (await p2.waitForSelector('#f')).contentFrame(); await f3.waitForSelector('.placed');
+ok((await f3.$$eval('.placed', e => e.length)) === 6, 'shared link loads the design into the iframe');
+// bad design file
+await f3.setInputFiles('#loadFile', { name: 'x.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify({ shape: 'l', runs: [{ items: [{ catId: 'NOPE' }, { catId: 'SBC18STD' }] }] })) });
+await p2.waitForTimeout(300);
+ok((await f3.$$eval('.placed', e => e.length)) === 1, 'unknown module ids dropped from loaded file without crashing');
+// mobile
+const m = await b.newPage({ viewport: { width: 390, height: 844 } });
+m.on('pageerror', e => errs.push('mobile pageerror: ' + e.message));
+await m.goto(base + '/s/austin/apps/island-configurator'); await m.waitForSelector('.cab-card');
+await m.click('.cab-card[data-cat-id="SBC24STD"]');
+const ov = await m.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+ok(ov <= 0, 'mobile: no horizontal page overflow: ' + ov);
+console.log(errs.length ? errs.join('\n') : 'no page errors');
+await b.close();
+process.exit(fails || errs.some(x => x.includes('pageerror')) ? 1 : 0);

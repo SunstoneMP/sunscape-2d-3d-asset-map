@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunstone Outdoor Kitchen Configurator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Backgrounds */
+  --bg-primary:        #F2EFE9;
+  --bg-card:           #FFFFFF;
+  --section-bg-alt:    #E5E0D6;
+  --section-bg-deep:   #D8D2C6;
+  --bg-darker:         #1C1F26;
+  --bg-darkest:        #13161C;
+  --product-img-bg:    #F5F5F5;
+
+  /* Brand Gold */
+  --gold:              #C8A84A;
+  --gold-light:        #D4B85A;
+  --gold-dark:         #A88930;
+  --gold-muted:        rgba(200, 168, 74, 0.15);
+  --gold-border:       rgba(200, 168, 74, 0.32);
+
+  /* Text — light backgrounds */
+  --text-primary:      #111111;
+  --text-muted:        rgba(17, 17, 17, 0.85);
+  --text-subtle:       rgba(17, 17, 17, 0.65);
+
+  /* Text — dark backgrounds */
+  --text-on-dark:         rgba(255, 255, 255, 0.92);
+  --text-on-dark-muted:   rgba(255, 255, 255, 0.55);
+  --text-on-dark-subtle:  rgba(255, 255, 255, 0.35);
+
+  /* Borders */
+  --border-subtle:     rgba(17, 17, 17, 0.10);
+
+  /* States */
+  --error:             #C0392B;
+
+  --serif: 'Playfair Display', serif;
+  --sans: 'Montserrat', sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;height:100%;overflow:hidden;}
+body{
+  font-family:var(--sans);
+  background-color:var(--bg-primary);
+  color:var(--text-primary);
+  -webkit-font-smoothing:antialiased;
+  height:100%;overflow:hidden;
+}
+h1,h2,h3,h4,h5,h6{font-family:var(--serif);color:var(--text-primary);letter-spacing:-0.01em;}
+a{color:var(--gold);text-decoration:none;}
+a:hover{opacity:.8;}
+*{ }
+::selection{background:rgba(200,168,74,.15);color:var(--gold);}
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:#E8E5E0;}
+::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:var(--gold);}
+button{font-family:inherit;}
+
+/* ---------- eyebrow / section heading pattern ---------- */
+.eyebrow{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.20em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 6px;
+}
+.gold-underline{width:40px;height:2px;background:linear-gradient(90deg,var(--gold-light),var(--gold-dark));margin:10px 0 0;}
+
+/* ---------- buttons ---------- */
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  color:#1A1A1A;font-weight:700;font-family:var(--sans);letter-spacing:.08em;
+  text-transform:uppercase;font-size:.78rem;padding:.7rem 1.5rem;border-radius:2px;
+  border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  transition:background .2s var(--ease-out), transform .2s var(--ease-out), box-shadow .2s var(--ease-out);
+}
+.btn-gold:hover{
+  background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 100%);
+  transform:translateY(-2px) scale(1.01);
+  box-shadow:0 8px 28px rgba(200,168,74,.45), 0 2px 8px rgba(200,168,74,.25);
+  letter-spacing:.10em;
+}
+.btn-gold:active{transform:scale(.97) translateY(0);box-shadow:0 2px 8px rgba(200,168,74,.25);}
+.btn-gold:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none;}
+
+.btn-gold-outline{
+  background:transparent;color:#1A1A1A;font-weight:700;font-family:var(--sans);
+  letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;padding:.7rem 1.5rem;
+  border-radius:2px;border:1px solid rgba(200,168,74,.6);cursor:pointer;
+  transition:all .2s var(--ease-out);display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+}
+.btn-gold-outline:hover{background:rgba(200,168,74,.12);border-color:var(--gold);box-shadow:0 6px 20px rgba(200,168,74,.22);transform:translateY(-2px);}
+.btn-gold-outline.on{background:rgba(200,168,74,.14);border-color:var(--gold);}
+
+.btn-plain{
+  background:var(--bg-card);color:var(--text-primary);font-weight:600;font-family:var(--sans);
+  font-size:.78rem;letter-spacing:.04em;padding:.7rem 1.2rem;border-radius:2px;
+  border:1px solid var(--border-subtle);cursor:pointer;transition:all .2s var(--ease-out);
+}
+.btn-plain:hover{border-color:var(--gold-border);color:var(--text-primary);box-shadow:0 4px 14px rgba(0,0,0,.06);}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOP TOOLBAR  — single unified bar, grouped by function
+   ═══════════════════════════════════════════════════════════════ */
+.topbar{
+  display:flex;align-items:center;gap:0;
+  padding:0 16px;height:52px;
+  background:var(--bg-primary);
+  border-bottom:1px solid var(--border-subtle);
+  position:sticky;top:0;z-index:50;
+  overflow-x:auto;overflow-y:hidden;
+}
+.topbar::-webkit-scrollbar{display:none;}
+.brand{display:none;}
+.topbar .spacer{flex:1;min-width:8px;}
+
+/* Divider between groups */
+.tb-sep{
+  width:1px;height:28px;background:var(--border-subtle);
+  margin:0 10px;flex-shrink:0;
+}
+
+/* ── Title block (left anchor) ── */
+.tb-title{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-right:14px;flex-shrink:0;
+}
+.tb-title-main{
+  font-family:var(--serif);font-size:13px;font-weight:800;
+  color:var(--text-primary);letter-spacing:.02em;white-space:nowrap;
+}
+.tb-title-sub{
+  font-family:var(--sans);font-size:9px;color:var(--text-subtle);
+  letter-spacing:.06em;text-transform:uppercase;margin-top:1px;
+}
+
+/* ── Shape picker ── */
+.shape-picker{
+  display:flex;gap:2px;
+  background:var(--section-bg-alt,rgba(0,0,0,.04));
+  padding:3px;border-radius:4px;
+  border:1px solid var(--border-subtle);
+  flex-shrink:0;
+}
+.shape-btn{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:5px 10px;border-radius:3px;
+  border:1px solid transparent;background:transparent;
+  color:var(--text-muted);cursor:pointer;transition:.13s;
+}
+.shape-btn svg{width:24px;height:16px;display:block;}
+.shape-btn span{
+  font-family:var(--sans);font-size:8.5px;letter-spacing:.07em;
+  text-transform:uppercase;font-weight:700;
+}
+.shape-btn:hover{color:var(--text-primary);background:rgba(0,0,0,.05);}
+.shape-btn.active{
+  background:var(--gold-muted,rgba(200,168,74,.13));
+  border-color:var(--gold-border);color:var(--gold-dark);
+}
+.shape-btn.active svg *{stroke:var(--gold-dark);}
+.shape-btn svg *{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ── Button groups ── */
+.tb-group{display:flex;align-items:center;gap:4px;flex-shrink:0;}
+
+/* Base icon button */
+.icon-btn{
+  display:flex;align-items:center;gap:5px;
+  background:transparent;border:1px solid var(--border-subtle);
+  color:var(--text-muted);padding:6px 10px;border-radius:3px;
+  cursor:pointer;font-size:10.5px;font-weight:700;
+  font-family:var(--sans);letter-spacing:.04em;
+  transition:.13s;white-space:nowrap;flex-shrink:0;
+}
+.icon-btn:hover{
+  color:var(--text-primary);border-color:var(--gold-border);
+  background:var(--gold-muted,rgba(200,168,74,.08));
+}
+.icon-btn.on{
+  color:var(--gold-dark);border-color:var(--gold-border);
+  background:var(--gold-muted,rgba(200,168,74,.12));
+}
+
+/* Sidebar / quote toggle — gold accent, always visible */
+.sidebar-toggle,.pricing-toggle{
+  display:flex;align-items:center;gap:5px;
+  background:var(--gold-muted,rgba(200,168,74,.1));
+  border:1px solid var(--gold-border);color:var(--gold-dark);
+  padding:6px 11px;border-radius:3px;cursor:pointer;
+  font-size:10.5px;font-weight:700;font-family:var(--sans);
+  letter-spacing:.04em;transition:.13s;white-space:nowrap;flex-shrink:0;
+}
+.sidebar-toggle:hover,.pricing-toggle:hover{
+  background:var(--gold,#c8a84a);color:#1a1405;
+}
+
+/* Inline variants (inside panels — kept for compatibility) */
+.sidebar-toggle-inline,.pricing-toggle-inline{
+  display:block;width:100%;margin-bottom:10px;text-align:left;
+  border-radius:3px;font-size:10.5px;padding:6px 10px;
+}
+
+/* Specific button colours */
+.icon-btn-reset{color:var(--text-subtle);}
+.icon-btn-reset:hover{color:#c0392b;border-color:#c0392b;background:rgba(192,57,43,.06);}
+
+.icon-btn-ai{
+  border-color:rgba(200,168,74,.6);color:var(--gold-dark);
+  background:var(--gold-muted,rgba(200,168,74,.1));
+  font-size:11px;padding:6px 13px;
+}
+.icon-btn-ai:hover{
+  background:var(--gold,#c8a84a);border-color:var(--gold,#c8a84a);color:#1a1405;
+}
+
+.icon-btn-export{
+  border-color:rgba(42,127,181,.4);color:rgba(42,127,181,.85);
+  background:rgba(42,127,181,.05);
+}
+.icon-btn-export:hover{
+  background:rgba(42,127,181,.14);border-color:rgba(42,127,181,.7);color:#5ab8e8;
+}
+
+.topbar-actions{display:flex;gap:4px;}
+/* Run description (click to activate hint) */
+.run-desc{
+  font-family:var(--sans);font-size:11px;color:var(--text-subtle);
+  padding:5px 14px 0;margin:0;line-height:1.4;
+  display:flex;align-items:center;gap:5px;
+}
+.run-desc svg{flex:none;opacity:.5;width:12px;height:12px;}
+.run.active .run-desc{color:var(--gold-dark);}
+/* Preview lightbox */
+.run-preview-btn{
+  position:absolute;top:8px;right:8px;
+  background:var(--bg-primary);border:1px solid var(--border-subtle);
+  color:var(--text-subtle);border-radius:3px;padding:4px 8px;
+  font-size:10px;font-family:var(--sans);font-weight:700;letter-spacing:.04em;
+  cursor:pointer;transition:.15s;z-index:2;display:flex;align-items:center;gap:4px;
+}
+.run-preview-btn:hover{border-color:var(--gold-border);color:var(--gold-dark);background:var(--gold-muted,rgba(200,168,74,.08));}
+.run{position:relative;}
+/* Lightbox overlay */
+.lightbox-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  backdrop-filter:blur(3px);
+}
+.lightbox-inner{
+  background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;
+  max-width:min(96vw,1100px);width:100%;max-height:90vh;overflow:auto;
+  box-shadow:0 32px 80px rgba(0,0,0,.4);position:relative;
+}
+.lightbox-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;border-bottom:1px solid var(--border-subtle);
+}
+.lightbox-header h3{font-family:var(--serif);font-size:1.1rem;font-weight:800;margin:0;color:var(--text-primary);}
+.lightbox-close{
+  background:transparent;border:1px solid var(--border-subtle);color:var(--text-subtle);
+  border-radius:3px;padding:5px 10px;cursor:pointer;font-size:12px;font-weight:700;
+  font-family:var(--sans);transition:.15s;
+}
+.lightbox-close:hover{border-color:var(--gold-border);color:var(--gold-dark);}
+.lightbox-body{padding:20px 18px 24px;overflow-x:auto;}
+.lightbox-lane{
+  display:flex;align-items:flex-end;gap:0;min-height:220px;padding:0 0 0 0;
+  background:linear-gradient(180deg,transparent 0%,transparent 85%,var(--gold-muted,rgba(200,168,74,.12)) 100%);
+  border:1px solid var(--border-subtle);border-radius:4px;position:relative;
+  overflow-x:auto;
+}
+.lightbox-floor{position:absolute;left:0;right:0;bottom:34px;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 8%,var(--gold) 92%,transparent);opacity:.4;}
+.lightbox-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 4px;}
+.lightbox-item img{height:160px;width:auto;filter:drop-shadow(0 4px 4px rgba(0,0,0,.18));}
+.lightbox-item .lbl{font-family:var(--sans);font-size:10px;color:var(--text-subtle);text-align:center;max-width:80px;line-height:1.3;}
+.lightbox-item .lbl b{display:block;color:var(--text-primary);font-weight:700;}
+.lightbox-empty{padding:40px;text-align:center;color:var(--text-subtle);font-family:var(--sans);font-size:13px;}
+
+/* ---------- layout (grid: sidebar | canvas | pricing) ---------- */
+.app{
+  display:grid;
+  grid-template-columns:var(--sidebar-w,290px) 1fr var(--pricing-w,310px);
+  grid-template-rows:auto 1fr;
+  gap:0;
+  height:calc(100% - 52px);
+  overflow:hidden;
+  background:var(--bg-primary);
+  transition:grid-template-columns .25s cubic-bezier(.23,1,.32,1);
+}
+.app.catalog-collapsed{--sidebar-w:0px;}
+.app.pricing-collapsed{--pricing-w:0px;}
+/* Pricing toggle header row — sits above the pricing aside, always visible */
+.pricing-col-header{
+  grid-column:3;grid-row:1;
+  display:flex;align-items:center;justify-content:flex-start;
+  padding:6px 10px 0;
+  background:var(--bg-primary);
+  border-left:1px solid var(--border-subtle);
+  overflow:hidden;
+  min-width:0;
+}
+.sidebar-col-header{
+  grid-column:1;grid-row:1;
+  display:flex;align-items:center;justify-content:flex-start;
+  padding:6px 10px 0;
+  background:var(--bg-primary);
+  border-right:1px solid var(--border-subtle);
+  overflow:hidden;
+  min-width:0;
+}
+.canvas-col-header{
+  grid-column:2;grid-row:1;
+  background:var(--bg-primary);
+}
+/* Sidebars span row 2 only */
+.sidebar{grid-row:2;}
+.pricing{grid-row:2;}
+.canvas{grid-row:2;}
+/* Persistent quote toggle tab — always visible at top of pricing column */
+.pricing-tab{
+  position:absolute;right:0;top:0;
+  width:var(--pricing-w,310px);
+  display:flex;justify-content:flex-start;
+  padding:0 14px;
+  pointer-events:none;
+  z-index:10;
+}
+.pricing-tab-btn{
+  pointer-events:auto;
+  display:flex;align-items:center;gap:6px;
+  background:var(--gold-muted,rgba(200,168,74,.12));
+  border:1px solid var(--gold-border);border-top:none;
+  color:var(--gold-dark);padding:6px 12px;border-radius:0 0 4px 4px;
+  cursor:pointer;font-size:11px;font-weight:700;font-family:var(--sans);
+  letter-spacing:.04em;transition:.15s;white-space:nowrap;
+}
+.pricing-tab-btn:hover{background:var(--gold);color:#1a1405;}
+/* When collapsed, show a vertical tab on the right edge */
+.app.pricing-collapsed .pricing-tab{
+  width:0;right:0;
+}
+.app.pricing-collapsed .pricing-tab-btn{
+  position:absolute;right:0;top:50%;
+  transform:translateY(-50%) rotate(90deg);
+  transform-origin:right center;
+  border-radius:0 0 4px 4px;
+}
+@media (max-width:900px){
+  html,body{height:auto;overflow:auto;}
+  .app{display:block;height:auto;overflow:visible;}
+  .sidebar{max-height:52vh;border-right:none;border-bottom:1px solid var(--border-subtle);}
+  .pricing{border-left:none;border-top:1px solid var(--border-subtle);}
+  .app.catalog-collapsed .sidebar,.app.pricing-collapsed .pricing{display:none;}
+  .canvas{padding:14px 12px 28px;}
+  .canvas-head h2{font-size:1.5rem;}
+  .schematic-wrap{padding:12px;gap:14px;}
+  .placed img{height:140px;}
+  .lane{min-height:180px;padding:18px 12px 0;}
+  .placed .tools{opacity:1;}
+  .run-head{flex-wrap:wrap;gap:6px;}
+}
+
+/* ---------- catalog sidebar (grid column, collapsible) ---------- */
+.sidebar{
+  background:var(--bg-card);border-right:1px solid var(--border-subtle);
+  padding:14px 12px 40px;overflow-y:auto;overflow-x:hidden;
+  min-width:0;
+}
+.search{
+  display:flex;align-items:center;gap:8px;background:var(--bg-primary);
+  border:1px solid var(--border-subtle);border-radius:4px;padding:9px 11px;margin-bottom:14px;
+}
+.search input{background:transparent;border:none;outline:none;color:var(--text-primary);font-size:13px;width:100%;font-family:var(--sans);}
+.search svg{flex:none;opacity:.45;width:15px;height:15px;}
+
+.cat-tabs{display:flex;flex-direction:column;gap:3px;margin-bottom:16px;}
+.cat-tab{
+  display:flex;align-items:center;justify-content:space-between;padding:9px 11px;border-radius:3px;
+  cursor:pointer;color:var(--text-subtle);font-size:12px;font-weight:600;border:1px solid transparent;
+  font-family:var(--sans);
+}
+.cat-tab:hover{background:var(--bg-primary);color:var(--text-primary);}
+.cat-tab.active{background:var(--gold-muted);border-color:var(--gold-border);color:var(--gold-dark);}
+.cat-tab .count{
+  font-family:var(--sans);font-size:10px;color:var(--text-subtle);background:var(--bg-primary);
+  padding:2px 6px;border-radius:20px;border:1px solid var(--border-subtle);
+}
+.cat-tab.active .count{color:var(--gold-dark);border-color:var(--gold-border);background:#fff;}
+
+.catalog-grid{display:flex;flex-direction:column;gap:8px;}
+.cab-card{
+  display:flex;gap:10px;align-items:center;background:var(--bg-card);
+  border:1px solid var(--border-subtle);border-radius:4px;padding:8px;cursor:grab;
+  transition:all .25s var(--ease-out);position:relative;
+}
+.cab-card:hover{border-color:var(--gold-border);box-shadow:0 8px 24px rgba(200,168,74,.12);transform:translateY(-2px);}
+.cab-card:active{cursor:grabbing;}
+.cab-card .thumb{
+  width:64px;height:64px;flex:none;border-radius:4px 4px 0 0;background:var(--product-img-bg);
+  display:flex;align-items:flex-end;justify-content:center;overflow:hidden;
+  border:1px solid var(--border-subtle);position:relative;
+}
+.cab-card .thumb::after{content:"";position:absolute;left:8%;right:8%;bottom:4px;height:5px;background:radial-gradient(ellipse at center, rgba(0,0,0,.22), transparent 75%);}
+.cab-card .thumb img{height:78px;width:auto;max-width:none;position:relative;z-index:1;filter:drop-shadow(0 3px 3px rgba(0,0,0,.18));transform:translateY(9px);}
+.cab-card .meta{flex:1;min-width:0;}
+.cab-card .meta .nm{font-family:var(--sans);font-size:11.5px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--text-primary);}
+.cab-card .meta .row{display:flex;gap:8px;align-items:center;margin-top:5px;font-family:var(--sans);font-size:11px;}
+.cab-card .meta .w{color:var(--text-subtle);}
+.cab-card .meta .price{color:var(--gold-dark);font-weight:700;font-family:var(--serif);font-size:12.5px;}
+.cab-card .badge{
+  font-family:var(--sans);font-size:8.5px;font-weight:800;letter-spacing:.08em;padding:2px 6px;border-radius:2px;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:#1A1A1A;
+}
+.price-edit{
+  width:60px;background:var(--bg-primary);border:1px solid var(--gold-border);color:var(--gold-dark);
+  font-family:var(--sans);font-weight:700;font-size:11px;border-radius:3px;padding:2px 5px;
+}
+.cab-card .badge-call{background:transparent;border:1px solid rgba(192,57,43,.45);color:var(--error);margin-left:2px;}
+.cab-card .sku{font-size:9.5px;letter-spacing:.06em;color:var(--text-subtle);margin-top:3px;font-family:var(--sans);}
+.cab-card .add-hint{
+  position:absolute;right:8px;top:8px;width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;line-height:1;
+  color:var(--gold-dark);border:1px solid var(--gold-border);background:var(--gold-muted);opacity:0;transition:.15s;
+}
+.cab-card:hover .add-hint,.cab-card:focus-visible .add-hint{opacity:1;}
+.run-connector{display:flex;align-items:center;gap:10px;padding:0 6px;color:var(--text-subtle);font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.qline-name a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold-border);}
+.qline-name a:hover{color:var(--gold-dark);}
+.qline-call{color:var(--error);font-weight:700;}
+.schem-run{cursor:pointer;}
+.schem-run:focus{outline:none;}
+.schem-run:focus-visible circle{stroke-width:3;}
+.empty-note{color:var(--text-subtle);font-size:12px;padding:20px 8px;text-align:center;font-family:var(--sans);}
+
+/* ---------- canvas ---------- */
+.canvas{padding:16px 20px 60px;overflow-x:auto;min-width:0;}
+.canvas-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px;flex-wrap:wrap;}
+.canvas-head h2{font-family:var(--serif);font-weight:800;font-size:1.9rem;letter-spacing:-.01em;margin:0 0 4px;}
+.canvas-head p{margin:0;color:var(--text-subtle);font-size:12.5px;max-width:540px;font-family:var(--sans);}
+
+.schematic-wrap{
+  background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;
+  padding:16px 18px;margin-bottom:22px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;
+}
+.schematic-svg{flex:none;}
+.schematic-legend{display:flex;gap:18px;flex-wrap:wrap;flex:1;}
+.leg-item{display:flex;flex-direction:column;gap:2px;min-width:90px;}
+.leg-item .lbl{font-family:var(--sans);font-size:9.5px;color:var(--text-subtle);letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+.leg-item .val{font-family:var(--serif);font-size:16px;color:var(--gold-dark);font-weight:700;}
+.leg-item .val small{color:var(--text-subtle);font-weight:400;font-size:11px;font-family:var(--sans);}
+
+.runs{display:flex;flex-direction:column;gap:20px;}
+.run{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;overflow:hidden;transition:.15s;}
+.run.active{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold), 0 8px 32px rgba(200,168,74,.1);}
+.run-head{display:flex;align-items:center;justify-content:space-between;padding:11px 104px 11px 16px;border-bottom:1px solid var(--border-subtle);background:var(--bg-primary);cursor:pointer;}
+.run-head .left{display:flex;align-items:center;gap:10px;}
+.run-head .tag{
+  font-family:var(--serif);font-weight:800;font-size:16px;color:var(--gold-dark);width:26px;height:26px;
+  border-radius:2px;background:var(--gold-muted);display:flex;align-items:center;justify-content:center;border:1px solid var(--gold-border);
+}
+.run-head .title{font-family:var(--sans);font-size:12.5px;font-weight:700;}
+.run-head .hint{font-family:var(--sans);font-size:10.5px;color:var(--text-subtle);}
+.run-head .stats{display:flex;gap:16px;font-family:var(--sans);font-size:11.5px;color:var(--text-subtle);}
+.run-head .stats b{color:var(--text-primary);font-family:var(--serif);}
+
+.lane{position:relative;min-height:230px;padding:22px 22px 0;display:flex;align-items:flex-end;gap:0;overflow-x:auto;background:linear-gradient(180deg,transparent 0%,transparent 85%,var(--gold-muted) 100%);}
+.lane.dragover{background:linear-gradient(180deg,rgba(200,168,74,.06) 0%,rgba(200,168,74,.06) 85%,rgba(200,168,74,.18) 100%);}
+.floor{position:absolute;left:0;right:0;bottom:34px;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 8%,var(--gold) 92%,transparent);opacity:.5;}
+/* Dimension ruler */
+.dim-ruler{position:relative;display:flex;align-items:center;padding:0 22px;height:38px;background:var(--bg-primary);border-top:1px solid var(--border-subtle);overflow:hidden;}
+.dim-arrow-left,.dim-arrow-right{font-size:8px;color:var(--gold);flex-shrink:0;opacity:0.8;line-height:1;}
+.dim-segments{flex:1;display:flex;align-items:stretch;height:100%;position:relative;}
+.dim-segments::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));transform:translateY(-50%);opacity:0.45;}
+.dim-seg{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;min-width:0;}
+.dim-seg:not(:last-child)::after{content:'';position:absolute;right:0;top:25%;bottom:25%;width:1px;background:var(--border-subtle);}
+.dim-seg-label{visibility:hidden;font-family:var(--sans);font-size:9px;color:var(--text-subtle);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;padding:0 2px;position:relative;z-index:1;background:var(--bg-primary);}
+.dim-total-label{position:absolute;left:50%;transform:translateX(-50%);background:var(--bg-primary);padding:0 10px;font-family:var(--sans);font-size:11.5px;font-weight:800;color:var(--gold-dark);white-space:nowrap;pointer-events:none;letter-spacing:.02em;}
+.lane-empty{color:var(--text-subtle);font-size:12px;font-family:var(--sans);padding:0 0 56px 2px;align-self:center;}
+.placed{position:relative;flex:none;display:flex;flex-direction:column;align-items:center;padding-bottom:34px;cursor:grab;}
+.placed:active{cursor:grabbing;}
+.placed img{height:190px;width:auto;filter:drop-shadow(0 6px 5px rgba(0,0,0,.22));pointer-events:none;user-select:none;}
+.placed .tools{position:absolute;top:-10px;left:50%;transform:translateX(-50%);display:flex;gap:3px;opacity:0;transition:.12s;}
+.placed:hover .tools{opacity:1;}
+.placed .tools button{width:22px;height:22px;border-radius:3px;border:1px solid var(--border-subtle);background:var(--bg-card);color:var(--text-subtle);cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.placed .tools button:hover{color:var(--text-primary);border-color:var(--gold-border);}
+.placed .tools button.del:hover{color:#fff;background:var(--error);border-color:var(--error);}
+.placed .tag-strip{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-family:var(--sans);font-size:9.5px;color:var(--text-subtle);white-space:nowrap;opacity:0;transition:.12s;}
+.placed:hover .tag-strip{opacity:1;}
+.placed .w-tick{position:absolute;bottom:0;left:0;right:0;height:34px;border-left:1px dashed var(--border-subtle);border-right:1px dashed var(--border-subtle);display:flex;align-items:center;justify-content:center;}
+.placed .w-tick span{font-family:var(--sans);font-size:10px;color:var(--text-subtle);}
+.placed.drag-ghost{opacity:.35;}
+
+/* ---------- pricing panel (grid column, collapsible) ---------- */
+.pricing{
+  background:var(--bg-card);border-left:1px solid var(--border-subtle);
+  padding:16px 14px 40px;overflow-y:auto;overflow-x:hidden;
+  min-width:0;
+}
+.pricing h3{font-family:var(--serif);font-weight:800;font-size:1.35rem;margin:0 0 14px;}
+.quote-runs{display:flex;flex-direction:column;gap:14px;margin-bottom:16px;}
+.qrun{border:1px solid var(--border-subtle);border-radius:4px;overflow:hidden;}
+.qrun-head{display:flex;justify-content:space-between;padding:9px 12px;background:var(--bg-primary);font-family:var(--sans);font-size:11.5px;font-weight:700;}
+.qrun-head span{color:var(--text-subtle);font-weight:400;font-family:var(--sans);font-size:10.5px;}
+.qline{display:flex;justify-content:space-between;gap:8px;padding:7px 12px;font-family:var(--sans);font-size:11px;border-top:1px solid var(--border-subtle);color:var(--text-subtle);}
+.qline b{color:var(--text-primary);font-weight:600;}
+.qline .p{font-family:var(--serif);color:var(--gold-dark);font-weight:700;white-space:nowrap;}
+/* Rich quote line items with images */
+.qline-rich{display:flex;align-items:center;gap:8px;padding:6px 10px;border-top:1px solid var(--border-subtle);}
+.qline-img{width:40px;height:40px;object-fit:contain;border-radius:3px;background:var(--bg-primary);flex-shrink:0;filter:drop-shadow(0 1px 2px rgba(0,0,0,.15));}
+.qline-info{flex:1;min-width:0;}
+.qline-name{font-family:var(--sans);font-size:10.5px;font-weight:600;color:var(--text-primary);line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.qline-meta{font-family:var(--sans);font-size:10px;color:var(--text-subtle);margin-top:1px;}
+.qline-rich .p{font-family:var(--serif);color:var(--gold-dark);font-weight:700;white-space:nowrap;font-size:11px;flex-shrink:0;}
+.qempty{padding:14px 12px;color:var(--text-subtle);font-size:11.5px;font-family:var(--sans);}
+
+.totals{border-top:1px dashed var(--border-subtle);padding-top:14px;margin-top:6px;}
+.trow{display:flex;justify-content:space-between;font-family:var(--sans);font-size:12px;color:var(--text-subtle);padding:4px 0;}
+.trow b{color:var(--text-primary);}
+.trow.grand{font-family:var(--serif);font-size:19px;margin-top:8px;padding-top:10px;border-top:1px solid var(--border-subtle);color:var(--gold-dark);font-weight:800;}
+.trow input[type=number]{width:54px;background:var(--bg-primary);border:1px solid var(--border-subtle);color:var(--text-primary);font-family:var(--sans);font-size:11px;border-radius:3px;padding:2px 6px;}
+.toggle-row{display:flex;align-items:center;gap:8px;font-family:var(--sans);font-size:11.5px;color:var(--text-subtle);margin:6px 0;}
+.toggle-row input{accent-color:var(--gold);}
+
+.cta{display:flex;flex-direction:column;gap:8px;margin-top:18px;}
+.cta button{width:100%;}
+.cart-status{
+  font-family:var(--sans);font-size:10.5px;color:var(--text-subtle);text-align:center;
+  min-height:14px;margin-top:2px;
+}
+.cart-status.err{color:var(--error);}
+.cart-status.ok{color:var(--gold-dark);font-weight:700;}
+.disclaimer{margin-top:16px;font-family:var(--sans);font-size:10.5px;line-height:1.6;color:var(--text-subtle);background:var(--bg-primary);border:1px solid var(--border-subtle);border-radius:4px;padding:10px 11px;}
+
+/* ---------- modal ---------- */
+.modal-bg{position:fixed;inset:0;background:rgba(19,22,28,.72);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;}
+.modal-bg.show{display:flex;}
+.modal{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;width:100%;max-width:560px;max-height:86vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.3);}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border-subtle);}
+.modal-head h3{font-family:var(--serif);font-size:1.4rem;font-weight:800;margin:0;}
+.modal-head button{background:none;border:none;color:var(--text-subtle);font-size:20px;cursor:pointer;}
+.modal-body{padding:18px 20px;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-family:var(--sans);font-size:11px;color:var(--text-subtle);margin-bottom:5px;font-weight:600;letter-spacing:.02em;}
+.field input,.field textarea{
+  width:100%;background:var(--bg-card);border:1px solid rgba(26,26,26,.15);color:var(--text-primary);
+  padding:.75rem 1rem;border-radius:4px;font-family:var(--sans);font-size:13px;transition:border-color .2s ease;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold-border);box-shadow:0 0 0 3px rgba(200,168,74,.1);}
+.field textarea{min-height:64px;resize:vertical;}
+.quote-pre{background:var(--bg-primary);border:1px solid var(--border-subtle);border-radius:4px;padding:12px;font-family:'Courier New',monospace;font-size:11px;white-space:pre-wrap;color:var(--text-subtle);max-height:280px;overflow-y:auto;}
+.modal-actions{display:flex;gap:8px;margin-top:14px;}
+.modal-actions button{flex:1;}
+
+.toast{
+  position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(10px);
+  background:var(--bg-darker);border:1px solid var(--gold-border);color:var(--gold-light);
+  padding:11px 18px;border-radius:3px;font-family:var(--sans);font-size:12.5px;font-weight:600;
+  box-shadow:0 12px 30px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:.2s;z-index:200;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.toast.err{border-color:rgba(192,57,43,.5);color:#e07a6d;}
+
+@media print{
+  .topbar,.sidebar,.pricing,.schematic-wrap,.canvas-head p{display:none!important;}
+  body{background:#fff;color:#000;}
+  .app{grid-template-columns:1fr;display:block;}
+  .run{border:1px solid #999;break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <!-- ① Panel toggles — always visible, anchored at edges -->
+  <button class="sidebar-toggle" id="btnToggleCatalog" title="Toggle modules panel">&#9776; Modules</button>
+  <div class="tb-sep"></div>
+
+  <!-- ③ Shape picker -->
+  <div class="shape-picker" id="shapePicker"></div>
+  <div class="tb-sep"></div>
+
+  <!-- ④ Design actions -->
+  <div class="tb-group">
+    <button class="icon-btn" id="btnSave" title="Save design to file">&#128190; Save</button>
+    <button class="icon-btn" id="btnLoad" title="Load design from file">&#128193; Load</button>
+    <button class="icon-btn" id="btnShare" title="Copy shareable link">&#128279; Share</button>
+  </div>
+  <div class="tb-sep"></div>
+
+  <!-- ⑤ Layout tools -->
+  <div class="tb-group">
+    <button class="icon-btn" id="btnPrint" title="Print layout">&#128438; Print</button>
+    <button class="icon-btn" id="btnClear" title="Clear all modules">&#10006; Clear</button>
+    <button class="icon-btn" id="btnUndo" title="Undo (Ctrl+Z)">&#8630; Undo</button>
+    <button class="icon-btn" id="btnRedo" title="Redo (Ctrl+Y)">&#8631; Redo</button>
+  </div>
+  <div class="tb-sep"></div>
+
+  <!-- ⑥ AI &amp; Export — primary actions, visually distinct -->
+  <div class="tb-group">
+    <button class="icon-btn icon-btn-ai" id="btnAIRender" title="Generate AI render">&#10024; AI Render</button>
+    <button class="icon-btn icon-btn-export" id="btnExport" title="Export parts list">&#128196; Export</button>
+  </div>
+  <input type="file" id="loadFile" accept="application/json" style="display:none;">
+
+  <div class="spacer"></div>
+
+  <!-- ⑦ Quote toggle -->
+  <div class="tb-sep"></div>
+  <button class="pricing-toggle" id="btnTogglePricing" title="Toggle quote panel">&#128176; Quote</button>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="searchInput" placeholder="Search modules (e.g. drawer, kamado, corner)">
+    </div>
+    <div class="cat-tabs" id="catTabs"></div>
+    <div id="catalogGrid" class="catalog-grid"></div>
+  </aside>
+
+  <main class="canvas">
+    <div class="canvas-head">
+      <div>
+        <p class="eyebrow">Configure Your Layout</p>
+        <h2 id="shapeTitle">Straight Run</h2>
+        <p id="shapeDesc">Drag modules from the catalog into the run below, or click a card to drop it into the active run. Click a run's header to make it active.</p>
+      </div>
+    </div>
+
+    <div class="schematic-wrap">
+      <div class="schematic-svg" id="schematicSvg"></div>
+      <div class="schematic-legend" id="schematicLegend"></div>
+    </div>
+
+    <div class="runs" id="runsWrap"></div>
+  </main>
+
+  <aside class="pricing">
+    <p class="eyebrow">Your Configuration</p>
+    <h3>Live Quote</h3>
+    <div class="quote-runs" id="quoteRuns"></div>
+    <div class="totals" id="totalsWrap"></div>
+    <div class="cta">
+      <button class="btn-gold" id="btnCart">Add to Cart</button>
+      <div class="cart-status" id="cartStatus"></div>
+      <button class="btn-gold-outline" id="btnQuote2">Email / Save Quote</button>
+
+    </div>
+    <div class="disclaimer">
+      Prices shown reflect current Sunstone catalog pricing. Package prices include both the cabinet and the listed appliance or insert. All prices are subject to change without notice.
+    </div>
+  </aside>
+</div>
+
+<div class="modal-bg" id="quoteModalBg">
+  <div class="modal">
+    <div class="modal-head"><h3>Quote Summary</h3><button id="quoteClose">×</button></div>
+    <div class="modal-body">
+      <div class="field"><label>Customer name</label><input id="custName" placeholder="Jane Homeowner"></div>
+      <div class="field"><label>Email</label><input id="custEmail" placeholder="jane@email.com"></div>
+      <div class="field"><label>Phone</label><input id="custPhone" placeholder="(512) 555-0100"></div>
+      <div class="field"><label>Notes</label><textarea id="custNotes" placeholder="Install location, timeline, questions..."></textarea></div>
+      <div class="quote-pre" id="quotePre"></div>
+      <div class="modal-actions">
+        <button class="btn-plain" id="quoteCopy">Copy Text</button>
+        <button class="btn-plain" id="quoteDownload">Download .txt</button>
+        <button class="btn-gold" id="quoteEmail">Email Quote</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+const IMAGES = /*@@IMAGES@@*/{};
+const CATALOG = /*@@CATALOG@@*/[];
+const CONFIG = {
+  salesEmail: "sales@sunstonemetalproducts.com",
+  taxRate: 8.25,
+  installPct: 10,
+
+  // ---- Sunstone cart integration ----
+  siteBaseUrl: "*",
+  // "postMessage"  = configurator is embedded as a same-controlled iframe on the Sunstone
+  //                   site; requires the parent page to add the listener documented in
+  //                   README.md (section: Cart Integration).
+  // "directApi"    = configurator calls /api/trpc/cart.* directly (same tab or cross-origin
+  //                   fetch with credentials); requires this configurator's domain to be
+  //                   added to the site CORS allowlist if hosted elsewhere.
+  cartIntegrationMode: "postMessage",
+  redirectToCartOnAdd: false,
+
+  // ---- Hubbase store sync ----
+  // On load the configurator asks the store for live prices, product links and which
+  // modules can be bought online, so the quote always matches what the cart charges.
+  // siteId/base are read from the parent page (window.parent.HB) when embedded on Hubbase;
+  // these are the fallbacks for the Austin site.
+  hubbaseSiteId: "site_affv5holph",
+  hubbaseBase: "/s/austin",
+  storeApi: "/api/public/products"
+};
+
+// Maps each catalog module id (e.g. "SAC20CSDL") to the real numeric Sunstone product ID.
+// These modules are not yet in the SKU list the site team provided, so this starts empty —
+// fill it in (or load CART_ID_MAP from cart-id-map.json) once the cabinet products exist in
+// the Sunstone database. Items with no mapped ID are skipped on Add to Cart with a warning.
+let CART_ID_MAP = /*@@CART_ID_MAP@@*/{};
+</script>
+<script>
+/* ============================================================
+   Sunstone Outdoor Kitchen Configurator
+   Vanilla JS. Built into one file by configurator/tools/build.py.
+   The working design is autosaved in localStorage (when the browser
+   allows it); Save/Load still export a portable JSON file.
+
+   Never write a literal closing body/html/head/script tag inside this
+   script (use "<\/body>"): Hubbase injects its price map before the
+   first closing body tag it finds, and one inside a JS string splits
+   this script in two and blanks the whole configurator.
+   ============================================================ */
+
+const CATEGORY_ORDER = ["Grill Cabinets", "Sink Base Cabinets", "Storage Cabinets", "Component Cabinets", "Wall Cabinets", "Cabinet Accessories"];
+const CATEGORY_NOTES = {
+  "Wall Cabinets": "No wall-mounted units were included in the source image set yet \u2014 add renders and matching catalog entries and they'll appear here automatically."
+};
+
+const SHAPES = {
+  straight: { label: "Straight Run", runs: ["A"], angles: [0],
+    desc: "A single continuous run. Drag cabinets left to right to build the line." },
+  double:   { label: "Double Straight", runs: ["A", "B"], angles: [0, 0],
+    desc: "Two parallel straight runs — front and back of a freestanding island. Design both sides independently." },
+  l:        { label: "L-Shape", runs: ["A", "B"], angles: [0, 90],
+    desc: "Two runs meeting at a 90° corner. Place a 90° corner return module at the joining end of each run." },
+  u:        { label: "U-Shape", runs: ["A", "B", "C"], angles: [0, 90, 180],
+    desc: "Three runs — two return legs (A, C) framing a back run (B). Corner modules join A↔B and B↔C." },
+  v:        { label: "V-Shape / Angled", runs: ["A", "B"], angles: [0, 135],
+    desc: "Two runs meeting at an open, angled corner — typical of a peninsula or bar-style layout." }
+};
+
+let state = {
+  shape: "straight",
+  runs: [],
+  activeRun: 0,
+  category: "ALL",
+  search: "",
+  admin: false, // price editing disabled
+  prices: {},
+  uidCounter: 1,
+  includeInstall: false,
+  taxRate: CONFIG.taxRate
+};
+
+function initRuns(shapeKey, preserve) {
+  const def = SHAPES[shapeKey];
+  const oldRuns = preserve ? state.runs : [];
+  state.runs = def.runs.map((id, i) => ({
+    id, items: (oldRuns[i] && oldRuns[i].items) ? oldRuns[i].items : []
+  }));
+  if (state.activeRun >= state.runs.length) state.activeRun = 0;
+}
+initRuns(state.shape, false);
+
+CATALOG.forEach(it => state.prices[it.id] = it.price);
+
+const $ = sel => document.querySelector(sel);
+
+const CATALOG_BY_ID = new Map(CATALOG.map(c => [c.id, c]));
+function byId(catId){ return CATALOG_BY_ID.get(catId); }
+function priceOf(catId){ return state.prices[catId] ?? byId(catId).price; }
+function money(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+function esc(s){
+  return String(s ?? "").replace(/[&<>"']/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[ch]));
+}
+function runWidth(run){ return run.items.reduce((s, it) => s + byId(it.catId).widthIn, 0); }
+function runPrice(run){ return run.items.reduce((s, it) => s + priceOf(it.catId), 0); }
+function hasModules(){ return state.runs.some(r => r.items.length); }
+
+// Store sync results (filled in by syncWithStore): which modules can be bought online
+// and the store slug for each product page link.
+const STORE = { loaded: false, available: new Set(), slugs: {} };
+CATALOG.forEach(it => { if (it.inStore) STORE.available.add(it.id); if (it.slug) STORE.slugs[it.id] = it.slug; });
+function isBuyable(catId){ return STORE.available.has(catId) && !!CART_ID_MAP[catId]; }
+
+function hubbaseInfo(){
+  try {
+    const hb = window.parent && window.parent !== window && window.parent.HB;
+    if (hb && hb.siteId) return { siteId: hb.siteId, base: hb.base || "", api: hb.api || "" };
+  } catch(err){ /* cross-origin parent */ }
+  return { siteId: CONFIG.hubbaseSiteId, base: CONFIG.hubbaseBase, api: "" };
+}
+function productUrl(catId){
+  const slug = STORE.slugs[catId];
+  return slug ? hubbaseInfo().base + "/products/" + encodeURIComponent(slug) : null;
+}
+
+/* ---------- design snapshots: undo/redo, autosave, load ---------- */
+const AUTOSAVE_KEY = "smp_island_design_v2";
+const undoStack = { past: [], future: [] };
+
+function snapshot(){
+  return { shape: state.shape, runs: state.runs.map(r => ({ id: r.id, items: r.items.map(i => ({ uid: i.uid, catId: i.catId })) })) };
+}
+// Call before every change to the layout so it can be undone.
+function checkpoint(){
+  undoStack.past.push(JSON.stringify(snapshot()));
+  if (undoStack.past.length > 100) undoStack.past.shift();
+  undoStack.future = [];
+}
+function restore(json){
+  const snap = JSON.parse(json);
+  state.shape = snap.shape;
+  state.runs = snap.runs;
+  if (state.activeRun >= state.runs.length) state.activeRun = 0;
+}
+function undo(){
+  if (!undoStack.past.length) return showToast("Nothing to undo");
+  undoStack.future.push(JSON.stringify(snapshot()));
+  restore(undoStack.past.pop());
+  renderAll();
+}
+function redo(){
+  if (!undoStack.future.length) return showToast("Nothing to redo");
+  undoStack.past.push(JSON.stringify(snapshot()));
+  restore(undoStack.future.pop());
+  renderAll();
+}
+
+function autosave(){
+  try { localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(Object.assign({ savedAt: Date.now() }, snapshot()))); }
+  catch(err){ /* storage blocked — Save/Load still works */ }
+}
+function loadAutosave(){
+  try {
+    const raw = localStorage.getItem(AUTOSAVE_KEY);
+    return raw ? applyDesign(JSON.parse(raw), { quiet: true }) : false;
+  } catch(err){ return false; }
+}
+
+// Validate a design from a file, share link, autosave or the gallery and load it.
+// Unknown module ids (e.g. discontinued cabinets) are dropped instead of crashing the page.
+function applyDesign(data, opts){
+  opts = opts || {};
+  if (!data || !SHAPES[data.shape] || !Array.isArray(data.runs)) return false;
+  let dropped = 0;
+  const runs = SHAPES[data.shape].runs.map((id, ri) => {
+    const src = data.runs[ri] || {};
+    const items = (Array.isArray(src.items) ? src.items : []).filter(it => {
+      const ok = it && byId(it.catId);
+      if (!ok) dropped++;
+      return ok;
+    }).map(it => ({ uid: state.uidCounter++, catId: it.catId }));
+    return { id, items };
+  });
+  if (!opts.quiet && hasModules()) checkpoint();
+  state.shape = data.shape;
+  state.runs = runs;
+  state.activeRun = 0;
+  renderAll();
+  if (dropped) showToast(dropped + " module" + (dropped > 1 ? "s are" : " is") + " no longer in the catalog and " + (dropped > 1 ? "were" : "was") + " left out.", "err");
+  return true;
+}
+
+const SHAPE_ICONS = {
+  straight: `<svg viewBox="0 0 34 22"><path d="M3 17 H31"/></svg>`,
+  double:   `<svg viewBox="0 0 34 22"><path d="M3 9 H31 M3 17 H31"/></svg>`,
+  l:        `<svg viewBox="0 0 34 22"><path d="M5 5 V17 H31"/></svg>`,
+  u:        `<svg viewBox="0 0 34 22"><path d="M6 5 V17 H28 V5"/></svg>`,
+  v:        `<svg viewBox="0 0 34 22"><path d="M4 8 L17 17 L30 6"/></svg>`
+};
+function renderShapePicker(){
+  const el = $("#shapePicker");
+  el.innerHTML = "";
+  Object.keys(SHAPES).forEach(key => {
+    const btn = document.createElement("button");
+    btn.className = "shape-btn" + (state.shape === key ? " active" : "");
+    btn.innerHTML = SHAPE_ICONS[key] + `<span>${SHAPES[key].label.split(" ")[0]}</span>`;
+    btn.onclick = () => setShape(key);
+    el.appendChild(btn);
+  });
+}
+function setShape(key){
+  if (key === state.shape) return;
+  const hasItems = state.runs.some(r => r.items.length) && SHAPES[key].runs.length < state.runs.length;
+  if (hasItems) {
+    const ok = confirm("Switching to a layout with fewer runs will remove modules placed on the extra run(s). Continue?");
+    if (!ok) return;
+  }
+  checkpoint();
+  state.shape = key;
+  initRuns(key, true);
+  renderAll();
+}
+
+function renderCatTabs(){
+  const el = $("#catTabs");
+  el.innerHTML = "";
+  const allTab = document.createElement("div");
+  allTab.className = "cat-tab" + (state.category === "ALL" ? " active" : "");
+  allTab.innerHTML = `<span>All Modules</span><span class="count">${CATALOG.length}</span>`;
+  allTab.onclick = () => { state.category = "ALL"; renderCatalog(); renderCatTabs(); };
+  el.appendChild(allTab);
+  CATEGORY_ORDER.forEach(cat => {
+    const count = CATALOG.filter(c => c.category === cat).length;
+    if (!count) return;
+    const tab = document.createElement("div");
+    tab.className = "cat-tab" + (state.category === cat ? " active" : "");
+    tab.innerHTML = `<span>${cat}</span><span class="count">${count}</span>`;
+    tab.onclick = () => { state.category = cat; renderCatalog(); renderCatTabs(); };
+    el.appendChild(tab);
+  });
+}
+
+function filteredCatalog(){
+  const q = state.search.trim().toLowerCase();
+  return CATALOG.filter(it => {
+    if (state.category !== "ALL" && it.category !== state.category) return false;
+    if (!q) return true;
+    return it.name.toLowerCase().includes(q) || it.code.toLowerCase().includes(q) || it.id.toLowerCase().includes(q);
+  });
+}
+
+function renderCatalog(){
+  const el = $("#catalogGrid");
+  const items = filteredCatalog();
+  el.innerHTML = "";
+  if (!items.length){
+    const note = (!state.search.trim() && CATEGORY_NOTES[state.category])
+      ? CATEGORY_NOTES[state.category]
+      : "No modules match your search.";
+    el.innerHTML = `<div class="empty-note">${note}</div>`;
+    return;
+  }
+  items.forEach(it => el.appendChild(makeCabCard(it)));
+}
+
+function makeCabCard(it){
+  const card = document.createElement("div");
+  card.className = "cab-card";
+  card.draggable = true;
+  card.dataset.catId = it.id;
+
+  const badge = it.handed ? `<span class="badge ${it.handed}">${it.handed === "L" ? "LEFT" : "RIGHT"}</span>` : (it.corner ? `<span class="badge">CORNER</span>` : "");
+  const callBadge = isBuyable(it.id) ? "" : `<span class="badge badge-call" title="Not sold online yet — call 888-934-9449 to order">CALL</span>`;
+  card.title = it.name + " — click to add to Run " + state.runs[state.activeRun].id + ", or drag into any run";
+
+  card.innerHTML = `
+    <div class="thumb"><img src="${IMAGES[it.file]}" alt="${esc(it.name)}" loading="lazy"></div>
+    <div class="meta">
+      <div class="nm">${esc(it.name)}</div>
+      <div class="row">
+        <span class="w">${it.widthIn}"</span>
+        <span class="price">${money(priceOf(it.id))}</span>
+        ${badge}${callBadge}
+      </div>
+      <div class="sku">${esc(it.id)}</div>
+    </div>
+    <span class="add-hint" aria-hidden="true">+</span>`;
+
+  card.addEventListener("dragstart", e => {
+    e.dataTransfer.setData("text/plain", JSON.stringify({ from: "catalog", catId: it.id }));
+    e.dataTransfer.effectAllowed = "copy";
+  });
+  card.addEventListener("click", () => addToRun(state.activeRun, it.id));
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); addToRun(state.activeRun, it.id); } });
+
+  return card;
+}
+
+function renderRuns(){
+  const wrap = $("#runsWrap");
+  wrap.innerHTML = "";
+  $("#shapeTitle").textContent = SHAPES[state.shape].label;
+  $("#shapeDesc").textContent = SHAPES[state.shape].desc;
+
+  state.runs.forEach((run, ri) => {
+    const totalIn = runWidth(run);
+    const totalPrice = runPrice(run);
+
+    const el = document.createElement("div");
+    el.className = "run" + (state.activeRun === ri ? " active" : "");
+
+    const head = document.createElement("div");
+    head.className = "run-head";
+    head.innerHTML = `
+      <div class="left">
+        <div class="tag">${run.id}</div>
+        <div>
+          <div class="title">Run ${run.id}</div>
+          <div class="hint">${run.items.length ? run.items.length + " module" + (run.items.length>1?"s":"") : "Click to make this the active run"}</div>
+        </div>
+      </div>
+      <div class="stats"><span><b>${totalIn.toFixed(1)}"</b> / ${(totalIn/12).toFixed(1)} ft</span><span><b>${money(totalPrice)}</b></span></div>
+    `;
+    head.onclick = () => { state.activeRun = ri; renderRuns(); renderSchematic(); renderCatalog(); };
+    // Description hint below run header
+    const desc = document.createElement("p");
+    desc.className = "run-desc";
+    const isActive = state.activeRun === ri;
+    desc.innerHTML = isActive
+      ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Active run — drag modules from the catalog or click a module card to place it here`
+      : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg> Click this window to activate it, then drag modules here`;
+    // Preview button
+    const previewBtn = document.createElement("button");
+    previewBtn.className = "run-preview-btn";
+    previewBtn.title = "Preview this run in full view";
+    previewBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg> Preview`;
+    previewBtn.onclick = (e) => { e.stopPropagation(); showRunPreview(ri); };
+        el.appendChild(head);
+    el.appendChild(desc);
+    el.appendChild(previewBtn);
+    const lane = document.createElement("div");
+    lane.className = "lane";
+    lane.dataset.runIndex = ri;
+
+    const floor = document.createElement("div");
+    floor.className = "floor";
+    lane.appendChild(floor);
+
+    if (!run.items.length){
+      const empty = document.createElement("div");
+      empty.className = "lane-empty";
+      empty.textContent = "Drop cabinet modules here \u2014 they'll snap left to right along the floor line.";
+      lane.appendChild(empty);
+    }
+
+    run.items.forEach((placedItem, idx) => {
+      lane.appendChild(makePlacedEl(ri, idx, placedItem));
+    });
+
+    lane.addEventListener("dragover", e => {
+      e.preventDefault();
+      lane.classList.add("dragover");
+    });
+    lane.addEventListener("dragleave", () => lane.classList.remove("dragover"));
+    lane.addEventListener("drop", e => {
+      e.preventDefault();
+      lane.classList.remove("dragover");
+      let data;
+      try { data = JSON.parse(e.dataTransfer.getData("text/plain")); } catch(err){ return; }
+      const insertIdx = computeInsertIndex(lane, e.clientX);
+      if (data.from === "catalog"){
+        if (!byId(data.catId)) return;
+        checkpoint();
+        insertAt(ri, insertIdx, data.catId);
+      } else if (data.from === "placed"){
+        moveItem(data.runIndex, data.itemIndex, ri, insertIdx);
+      }
+      state.activeRun = ri;
+      renderAll();
+    });
+
+    el.appendChild(lane);
+
+    // ── Dimension ruler ──────────────────────────────────────────────────
+    if (run.items.length > 0) {
+      const ruler = document.createElement('div');
+      ruler.className = 'dim-ruler';
+      // Build tick segments for each module
+      const segments = run.items.map(pi => {
+        const it = byId(pi.catId);
+        return `<div class="dim-seg" style="flex:${it.widthIn}">
+          <div class="dim-tick-line"></div>
+          <span class="dim-seg-label">${it.widthIn}"</span>
+        </div>`;
+      }).join('');
+      ruler.innerHTML = `
+        <div class="dim-arrow-left">&#9664;</div>
+        <div class="dim-segments">${segments}</div>
+        <div class="dim-arrow-right">&#9654;</div>
+        <div class="dim-total-label">${totalIn.toFixed(1)}" &nbsp;/&nbsp; ${(totalIn/12).toFixed(1)} ft</div>
+      `;
+      el.appendChild(ruler);
+    }
+
+    wrap.appendChild(el);
+
+    if (ri < state.runs.length - 1){
+      const connector = document.createElement("div");
+      connector.className = "run-connector";
+      const turn = state.shape === "double"
+        ? `Run ${state.runs[ri+1].id} is the opposite side of the island`
+        : `corner turn: Run ${run.id} \u2192 Run ${state.runs[ri+1].id} \u2014 place a ${state.shape === "v" ? "45&deg;" : "90&deg;"} corner module at each joining end`;
+      connector.innerHTML = `<span>&#8618; ${turn}</span>`;
+      wrap.appendChild(connector);
+    }
+  });
+}
+
+function computeInsertIndex(lane, clientX){
+  const placedEls = Array.from(lane.querySelectorAll(".placed"));
+  for (let i = 0; i < placedEls.length; i++){
+    const r = placedEls[i].getBoundingClientRect();
+    if (clientX < r.left + r.width / 2) return i;
+  }
+  return placedEls.length;
+}
+
+function makePlacedEl(runIndex, itemIndex, placedItem){
+  const it = byId(placedItem.catId);
+  const el = document.createElement("div");
+  el.className = "placed";
+  el.draggable = true;
+  el.innerHTML = `
+    <div class="tools">
+      <button class="mv-left" title="Move left">&#8592;</button>
+      <button class="mv-right" title="Move right">&#8594;</button>
+      <button class="dup" title="Duplicate">&#10697;</button>
+      <button class="del" title="Remove">&times;</button>
+    </div>
+    <img src="${IMAGES[it.file]}" alt="${esc(it.name)}" title="${esc(it.name)} \u2014 ${money(priceOf(it.id))}">
+    <div class="tag-strip">${esc(it.id)} \u2022 ${it.widthIn}"</div>
+    <div class="w-tick"><span>${it.widthIn}"</span></div>
+  `;
+  el.querySelector(".del").onclick = (e) => { e.stopPropagation(); removeItem(runIndex, itemIndex); renderAll(); };
+  el.querySelector(".dup").onclick = (e) => { e.stopPropagation(); checkpoint(); insertAt(runIndex, itemIndex + 1, placedItem.catId); renderAll(); };
+  el.querySelector(".mv-left").onclick = (e) => { e.stopPropagation(); shiftItem(runIndex, itemIndex, -1); renderAll(); };
+  el.querySelector(".mv-right").onclick = (e) => { e.stopPropagation(); shiftItem(runIndex, itemIndex, 1); renderAll(); };
+
+  el.addEventListener("dragstart", e => {
+    e.dataTransfer.setData("text/plain", JSON.stringify({ from: "placed", runIndex, itemIndex }));
+    e.dataTransfer.effectAllowed = "move";
+    setTimeout(() => el.classList.add("drag-ghost"), 0);
+  });
+  el.addEventListener("dragend", () => el.classList.remove("drag-ghost"));
+
+  return el;
+}
+
+function addToRun(runIndex, catId){
+  checkpoint();
+  state.runs[runIndex].items.push({ uid: state.uidCounter++, catId });
+  state.activeRun = runIndex;
+  renderAll();
+  showToast(byId(catId).name + " added to Run " + state.runs[runIndex].id);
+}
+// Callers checkpoint() first (drop and duplicate both insert).
+function insertAt(runIndex, idx, catId){
+  state.runs[runIndex].items.splice(idx, 0, { uid: state.uidCounter++, catId });
+}
+function removeItem(runIndex, itemIndex){
+  checkpoint();
+  state.runs[runIndex].items.splice(itemIndex, 1);
+}
+function shiftItem(runIndex, itemIndex, dir){
+  const items = state.runs[runIndex].items;
+  const j = itemIndex + dir;
+  if (j < 0 || j >= items.length) return;
+  checkpoint();
+  [items[itemIndex], items[j]] = [items[j], items[itemIndex]];
+}
+function moveItem(fromRun, fromIdx, toRun, toIdx){
+  if (!state.runs[fromRun] || !state.runs[fromRun].items[fromIdx]) return;
+  checkpoint();
+  const [moved] = state.runs[fromRun].items.splice(fromIdx, 1);
+  if (fromRun === toRun && fromIdx < toIdx) toIdx -= 1;
+  state.runs[toRun].items.splice(toIdx, 0, moved);
+}
+
+function renderSchematic(){
+  const def = SHAPES[state.shape];
+  // Each run is a segment; lengths follow the real run widths (min 24") so the
+  // plan view reads like the layout being built.
+  const lens = state.runs.map(r => Math.max(runWidth(r), 24));
+  const segs = [];
+  if (state.shape === "double"){
+    const L = Math.max(...lens);
+    segs.push([[0, 0], [L, 0]], [[0, 30], [L, 30]]);
+  } else {
+    let p = [0, 0];
+    def.angles.forEach((deg, i) => {
+      const rad = deg * Math.PI / 180;
+      const q = [p[0] + lens[i] * Math.cos(rad), p[1] - lens[i] * Math.sin(rad)];
+      segs.push([p, q]);
+      p = q;
+    });
+  }
+  const xs = segs.flat().map(pt => pt[0]), ys = segs.flat().map(pt => pt[1]);
+  const pad = 16, minX = Math.min(...xs), minY = Math.min(...ys);
+  const spanX = Math.max(...xs) - minX, spanY = Math.max(...ys) - minY;
+  const W = 190, H = 110, k = Math.min((W - pad * 2) / Math.max(spanX, 1), (H - pad * 2) / Math.max(spanY, 1));
+  const tx = pt => [pad + (pt[0] - minX) * k + ((W - pad * 2) - spanX * k) / 2, pad + (pt[1] - minY) * k + ((H - pad * 2) - spanY * k) / 2];
+
+  let body = "", labels = "";
+  segs.forEach((seg, i) => {
+    const [a, b] = seg.map(tx);
+    const d = `M ${a[0].toFixed(1)} ${a[1].toFixed(1)} L ${b[0].toFixed(1)} ${b[1].toFixed(1)}`;
+    const isActive = state.activeRun === i;
+    body += `<path d="${d}" stroke="${isActive ? 'var(--gold)' : '#CFC8BA'}" stroke-width="10" stroke-linecap="round"/>`;
+    body += `<path d="${d}" stroke="${isActive ? 'var(--gold-dark)' : '#9C9381'}" stroke-width="1.5" stroke-linecap="round"/>`;
+    const mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+    labels += `<g class="schem-run" data-run="${i}" role="button" tabindex="0" aria-label="Make Run ${state.runs[i].id} active">
+      <circle cx="${mid[0]}" cy="${mid[1]}" r="10" fill="${isActive ? 'var(--gold)' : '#1C1F26'}" stroke="var(--gold-dark)" stroke-width="1.5"/>
+      <text x="${mid[0]}" y="${mid[1] + 3.5}" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="${isActive ? '#1A1405' : '#D4B85A'}" font-weight="800">${state.runs[i].id}</text></g>`;
+  });
+
+  const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" aria-label="${esc(def.label)} plan view">${body}${labels}</svg>`;
+  $("#schematicSvg").innerHTML = svg;
+  $("#schematicSvg").querySelectorAll(".schem-run").forEach(g => {
+    const pick = () => { state.activeRun = +g.dataset.run; renderRuns(); renderSchematic(); renderCatalog(); };
+    g.addEventListener("click", pick);
+    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+  });
+
+  const legend = $("#schematicLegend");
+  legend.innerHTML = "";
+  let grandIn = 0;
+  state.runs.forEach(run => {
+    const totalIn = runWidth(run);
+    grandIn += totalIn;
+    const div = document.createElement("div");
+    div.className = "leg-item";
+    div.innerHTML = `<div class="lbl">Run ${run.id}</div><div class="val">${totalIn.toFixed(1)}" <small>/ ${(totalIn/12).toFixed(1)} ft</small></div>`;
+    legend.appendChild(div);
+  });
+  const totalDiv = document.createElement("div");
+  totalDiv.className = "leg-item";
+  totalDiv.innerHTML = `<div class="lbl">Total Length</div><div class="val">${(grandIn/12).toFixed(1)} ft <small>${state.runs.length} run${state.runs.length>1?'s':''}</small></div>`;
+  legend.appendChild(totalDiv);
+}
+
+function computeTotals(){
+  let subtotal = 0;
+  state.runs.forEach(run => run.items.forEach(it => subtotal += priceOf(it.catId)));
+  const includeInstall = state.includeInstall;
+  const taxRate = state.taxRate;
+  const install = includeInstall ? subtotal * (CONFIG.installPct/100) : 0;
+  const taxable = subtotal + install;
+  const tax = taxable * (taxRate/100);
+  const grand = taxable + tax;
+  return { subtotal, install, tax, grand, taxRate, includeInstall };
+}
+
+function renderPricing(){
+  const wrap = $("#quoteRuns");
+  wrap.innerHTML = "";
+  state.runs.forEach(run => {
+    const box = document.createElement("div");
+    box.className = "qrun";
+    const totalIn = runWidth(run);
+    box.innerHTML = `<div class="qrun-head"><span>Run ${run.id}</span><span>${totalIn.toFixed(1)}" / ${(totalIn/12).toFixed(1)} ft</span></div>`;
+    if (!run.items.length){
+      box.innerHTML += `<div class="qempty">No modules placed</div>`;
+    } else {
+      // Group identical items for display
+      const grouped = new Map();
+      run.items.forEach(pi => {
+        if (grouped.has(pi.catId)) grouped.get(pi.catId).qty++;
+        else grouped.set(pi.catId, { catId: pi.catId, qty: 1 });
+      });
+      grouped.forEach(({ catId, qty }) => {
+        const it = byId(catId);
+        const imgSrc = IMAGES[it.file] || "";
+        const url = productUrl(catId);
+        const line = document.createElement("div");
+        line.className = "qline qline-rich";
+        line.innerHTML = `
+          <img class="qline-img" src="${imgSrc}" alt="${esc(it.name)}" />
+          <div class="qline-info">
+            <div class="qline-name">${url ? `<a href="${esc(url)}" target="_top" title="View in store">${esc(it.name)}</a>` : esc(it.name)}</div>
+            <div class="qline-meta">${esc(it.id)} &middot; ${it.widthIn}\" wide${qty > 1 ? ` &times; ${qty}` : ""}${isBuyable(catId) ? "" : ` &middot; <span class="qline-call">call to order</span>`}</div>
+          </div>
+          <span class="p">${money(priceOf(catId) * qty)}</span>
+        `;
+        box.appendChild(line);
+      });
+    }
+    wrap.appendChild(box);
+  });
+
+  renderTotals();
+}
+
+// Controls are built once so the checkbox keeps its state and the tax field keeps focus.
+function renderTotals(){
+  const tw = $("#totalsWrap");
+  if (!tw.dataset.ready){
+    tw.dataset.ready = "1";
+    tw.innerHTML = `
+      <label class="toggle-row"><input type="checkbox" id="installToggle"> Include install &amp; finishing estimate (${CONFIG.installPct}%)</label>
+      <div class="trow"><label for="taxRateInput">Sales tax</label><span><input type="number" id="taxRateInput" min="0" max="20" step="0.05" value="${state.taxRate}"> %</span></div>
+      <div class="trow"><span>Modules subtotal</span><b data-t="subtotal"></b></div>
+      <div class="trow" id="installRow"><span>Install &amp; finishing</span><b data-t="install"></b></div>
+      <div class="trow"><span>Estimated tax</span><b data-t="tax"></b></div>
+      <div class="trow grand"><span>Estimated Total</span><span data-t="grand"></span></div>`;
+    $("#installToggle").addEventListener("change", e => { state.includeInstall = e.target.checked; renderTotals(); });
+    $("#taxRateInput").addEventListener("input", e => { const v = parseFloat(e.target.value); state.taxRate = Number.isFinite(v) && v >= 0 ? v : 0; renderTotals(); });
+  }
+  const t = computeTotals();
+  $("#installToggle").checked = t.includeInstall;
+  $("#installRow").style.display = t.includeInstall ? "flex" : "none";
+  ["subtotal", "install", "tax", "grand"].forEach(k => { tw.querySelector(`[data-t="${k}"]`).textContent = money(t[k]); });
+  const n = state.runs.reduce((s, r) => s + r.items.length, 0);
+  const btn = $("#btnCart");
+  if (!btn.disabled) btn.textContent = n ? `Add ${n} module${n > 1 ? "s" : ""} to Cart` : "Add to Cart";
+}
+
+function buildQuoteText(){
+  const t = computeTotals();
+  const name = $("#custName").value.trim();
+  const email = $("#custEmail").value.trim();
+  const phone = $("#custPhone").value.trim();
+  const notes = $("#custNotes").value.trim();
+  let lines = [];
+  lines.push("SUNSTONE / STAR BBQ OUTDOOR KITCHEN — PLANNING QUOTE");
+  lines.push("Generated " + new Date().toLocaleString());
+  lines.push("Layout: " + SHAPES[state.shape].label);
+  lines.push("");
+  if (name || email || phone) {
+    lines.push("Customer: " + (name || "\u2014"));
+    if (email) lines.push("Email: " + email);
+    if (phone) lines.push("Phone: " + phone);
+    lines.push("");
+  }
+  state.runs.forEach(run => {
+    const totalIn = runWidth(run);
+    lines.push(`RUN ${run.id}  (${totalIn.toFixed(1)}" / ${(totalIn/12).toFixed(1)} ft)`);
+    if (!run.items.length) lines.push("  (no modules placed)");
+    run.items.forEach(pi => {
+      const it = byId(pi.catId);
+      lines.push(`  - ${it.id}  ${it.name}  [${it.widthIn}"]  ${money(priceOf(pi.catId))}${isBuyable(it.id) ? "" : "  (call to order)"}`);
+    });
+    lines.push("");
+  });
+  lines.push("Modules subtotal: " + money(t.subtotal));
+  if (t.includeInstall) lines.push(`Install & finishing (${CONFIG.installPct}%): ` + money(t.install));
+  lines.push(`Estimated tax (${t.taxRate}%): ` + money(t.tax));
+  lines.push("ESTIMATED TOTAL: " + money(t.grand));
+  lines.push("");
+  if (notes) { lines.push("Notes: " + notes); lines.push(""); }
+  lines.push("This is a self-service planning estimate. Final pricing, lead times, and design confirmation will be provided by a Sunstone Metal Products representative.");
+  return lines.join("\n");
+}
+
+function openQuoteModal(){
+  $("#quotePre").textContent = buildQuoteText();
+  $("#quoteModalBg").classList.add("show");
+}
+function refreshQuotePre(){ $("#quotePre").textContent = buildQuoteText(); }
+
+function saveDesign(){
+  const payload = Object.assign({ version: 2, savedAt: new Date().toISOString() }, snapshot());
+  downloadBlob(JSON.stringify(payload, null, 2), "outdoor-kitchen-design.json", "application/json");
+  showToast("Design saved to your downloads");
+}
+
+function encodeDesign(){
+  const compact = { shape: state.shape, runs: state.runs.map(r => ({ items: r.items.map(i => ({ catId: i.catId })) })) };
+  return btoa(encodeURIComponent(JSON.stringify(compact)));
+}
+function decodeDesign(encoded){
+  return JSON.parse(decodeURIComponent(atob(encoded)));
+}
+// When embedded on the same-origin store page, share that page (not the bare iframe URL).
+function shareBaseUrl(){
+  try {
+    if (window.parent && window.parent !== window) {
+      const loc = window.parent.location;
+      return loc.origin + loc.pathname;
+    }
+  } catch(err){ /* cross-origin parent */ }
+  return window.location.origin + window.location.pathname;
+}
+
+function shareDesign(){
+  if (!hasModules()) return showToast("Add some modules before sharing", "err");
+  const url = shareBaseUrl() + "#design=" + encodeDesign();
+  const fallback = () => prompt("Copy this link to share your design:", url);
+  try {
+    navigator.clipboard.writeText(url).then(() => showToast("Share link copied to clipboard")).catch(fallback);
+  } catch(err){ fallback(); }
+}
+
+function loadDesignFromHash(){
+  const hashes = [window.location.hash];
+  try { if (window.parent && window.parent !== window) hashes.push(window.parent.location.hash); } catch(err){}
+  for (const hash of hashes){
+    if (!hash || !hash.startsWith("#design=")) continue;
+    try {
+      if (applyDesign(decodeDesign(hash.slice("#design=".length)), { quiet: true })){
+        showToast("Shared design loaded");
+        if (hash === window.location.hash) history.replaceState(null, "", window.location.pathname + window.location.search);
+        return true;
+      }
+    } catch(err){ /* bad link */ }
+    showToast("That design link is damaged \u2014 starting fresh", "err");
+  }
+  return false;
+}
+
+function loadDesignFile(file){
+  const reader = new FileReader();
+  reader.onload = () => {
+    let data = null;
+    try { data = JSON.parse(reader.result); } catch(err){}
+    // Prices in old design files are ignored on purpose: the quote always uses store pricing.
+    if (applyDesign(data)) showToast("Design loaded");
+    else showToast("Couldn't read that file \u2014 is it a saved design JSON?", "err");
+  };
+  reader.readAsText(file);
+}
+function downloadBlob(content, filename, type){
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
+let toastTimer;
+function showToast(msg, kind){
+  const el = $("#toast");
+  el.textContent = msg;
+  el.className = "toast show" + (kind ? " " + kind : "");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
+}
+
+// ── Run preview lightbox (sends to parent page via postMessage for full-screen coverage) ──
+function showRunPreview(startRi){
+  // Build runs data to send to parent
+  const runsData = state.runs.map((run, ri) => ({
+    id: run.id,
+    totalIn: runWidth(run),
+    totalPrice: runPrice(run),
+    items: run.items.map(pi => {
+      const it = byId(pi.catId);
+      return { name: it.name, code: it.id, widthIn: it.widthIn, image: IMAGES[it.file]||'' };
+    })
+  }));
+  const payload = { type: 'SUNSTONE_PREVIEW', runs: runsData, startIndex: startRi, shape: SHAPES[state.shape].label };
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage(payload, CONFIG.siteBaseUrl);
+  } else {
+    // Fallback: show inline if not embedded
+    showInlinePreview(runsData, startRi);
+  }
+}
+function showInlinePreview(runsData, startRi){
+  const existing = document.getElementById('runLightbox');
+  if (existing) existing.remove();
+  // Simple inline fallback
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.id = 'runLightbox';
+  const run = runsData[startRi];
+  const lane = run.items.length
+    ? `<div class="lightbox-lane"><div class="lightbox-floor"></div>${run.items.map(it=>`<div class="lightbox-item"><img src="${it.image}" alt="${esc(it.name)}" title="${esc(it.name)}"><div class="lbl"><b>${esc(it.code)}</b>${it.widthIn}"</div></div>`).join('')}</div>`
+    : `<div class="lightbox-empty">Run ${esc(run.id)} is empty \u2014 add some modules first.</div>`;
+  overlay.innerHTML = `<div class="lightbox-inner"><div class="lightbox-header"><h3>Run ${esc(run.id)} Preview \u00b7 ${run.totalIn.toFixed(1)}" \u00b7 ${money(run.totalPrice)}</h3><button class="lightbox-close">&times; Close</button></div><div class="lightbox-body">${lane}</div></div>`;
+  document.body.appendChild(overlay);
+  overlay.querySelector(".lightbox-close").addEventListener("click", () => overlay.remove());
+  overlay.addEventListener('click', e => { if (e.target===overlay) overlay.remove(); });
+}
+
+function renderAll(){
+  renderShapePicker();
+  renderCatTabs();
+  renderCatalog();
+  renderRuns();
+  renderSchematic();
+  renderPricing();
+  autosave();
+}
+
+$("#searchInput").addEventListener("input", e => { state.search = e.target.value; renderCatalog(); });
+
+// Admin price editing disabled
+
+$("#btnSave").addEventListener("click", saveDesign);
+$("#btnUndo").addEventListener("click", undo);
+$("#btnRedo").addEventListener("click", redo);
+document.addEventListener("keydown", e => {
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea") return;
+  const mod = e.ctrlKey || e.metaKey;
+  if (mod && e.key.toLowerCase() === "z" && !e.shiftKey){ e.preventDefault(); undo(); }
+  else if (mod && (e.key.toLowerCase() === "y" || (e.key.toLowerCase() === "z" && e.shiftKey))){ e.preventDefault(); redo(); }
+  else if (e.key === "Escape"){
+    const lb = document.getElementById("runLightbox"); if (lb) lb.remove();
+    $("#quoteModalBg").classList.remove("show");
+  }
+});
+
+// ── AI Render button ────────────────────────────────────────────────────────
+const btnAIRender = document.querySelector('#btnAIRender');
+if (btnAIRender) {
+  btnAIRender.addEventListener('click', function() {
+    if (!hasModules()) return showToast("Add some modules before requesting a render", "err");
+    if (!isEmbedded()) return showToast("AI renders are requested from the Sunstone store page");
+    const runImages = captureRunImages();
+    const kitchenDesc = buildKitchenDesc();
+    const shapeLabel = SHAPES[state.shape].label;
+    const runMeasurements = buildRunMeasurements();
+    const grandTotalIn = runMeasurements.reduce((s, r) => s + r.totalIn, 0);
+    const configData = {
+      shape: state.shape,
+      runs: state.runs.map(r => ({ id: r.id, items: r.items.map(it => ({ catId: it.catId })) })),
+    };
+    window.parent.postMessage({
+      type: 'SUNSTONE_AI_RENDER_REQUEST',
+      runImages: runImages,
+      kitchenDesc: kitchenDesc,
+      shape: state.shape,
+      shapeLabel: shapeLabel,
+      totalModules: state.runs.reduce((s, r) => s + r.items.length, 0),
+      runMeasurements: runMeasurements,
+      grandTotalIn: parseFloat(grandTotalIn.toFixed(1)),
+      grandTotalFt: parseFloat((grandTotalIn / 12).toFixed(2)),
+      configData: configData,
+    }, '*');
+  });
+}
+
+function captureRunImages() {
+  const ITEM_HEIGHT = 160;
+  const LABEL_H = 26;
+  const ANGLE_BANNER_H = 32;
+  const RUN_PAD = 8;
+  const shapeInfo = SHAPES[state.shape];
+  const angles = shapeInfo ? shapeInfo.angles : [];
+
+  // Collect per-run data
+  const runData = [];
+  for (let ri = 0; ri < state.runs.length; ri++) {
+    const run = state.runs[ri];
+    if (run.items.length === 0) continue;
+    const imgEls = run.items.map(item => {
+      const src = IMAGES[byId(item.catId)?.file];
+      if (!src) return null;
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+    const itemWidths = imgEls.map(img => img && img.naturalWidth > 0 ? Math.round(img.naturalWidth * (ITEM_HEIGHT / img.naturalHeight)) : 70);
+    const totalW = Math.max(itemWidths.reduce((s, w) => s + w, 0), 1);
+    const angle = angles[ri] || 0;
+    runData.push({ run, imgEls, itemWidths, totalW, angle, runIndex: ri });
+  }
+  if (runData.length === 0) return [];
+
+  // Calculate canvas dimensions
+  // Add angle banners between runs for multi-run shapes
+  const maxW = Math.max(...runData.map(r => r.totalW), 500);
+  let totalH = 0;
+  const rowOffsets = [];
+  runData.forEach((rd, i) => {
+    rowOffsets.push(totalH);
+    totalH += LABEL_H + ITEM_HEIGHT + RUN_PAD;
+    // Add angle banner between runs (except after last)
+    if (i < runData.length - 1 && runData.length > 1) {
+      totalH += ANGLE_BANNER_H;
+    }
+  });
+
+  const composite = document.createElement('canvas');
+  composite.width = maxW;
+  composite.height = totalH;
+  const ctx = composite.getContext('2d');
+  ctx.fillStyle = '#F2EFE9';
+  ctx.fillRect(0, 0, maxW, totalH);
+
+  // Draw shape header
+  ctx.fillStyle = '#1C1F26';
+  ctx.font = 'bold 12px Montserrat, sans-serif';
+  ctx.textBaseline = 'top';
+
+  runData.forEach(({ run, imgEls, itemWidths, totalW, angle, runIndex }, i) => {
+    let yOff = rowOffsets[i];
+
+    // Run label bar
+    ctx.fillStyle = '#1C1F26';
+    ctx.fillRect(0, yOff, maxW, LABEL_H);
+    ctx.fillStyle = '#C8A84A';
+    ctx.font = 'bold 11px Montserrat, sans-serif';
+    ctx.textBaseline = 'middle';
+    const totalIn = run.items.reduce((s, it) => s + (byId(it.catId)?.widthIn || 0), 0);
+    const angleStr = angle > 0 ? `  |  ${angle}° from Run A` : '';
+    ctx.fillText(`Run ${run.id}  —  ${totalIn.toFixed(1)}"  (${(totalIn/12).toFixed(1)} ft)${angleStr}`, 10, yOff + LABEL_H / 2);
+    yOff += LABEL_H;
+
+    // Cabinet row background
+    ctx.fillStyle = '#E8E4DC';
+    ctx.fillRect(0, yOff, maxW, ITEM_HEIGHT);
+
+    // Floor line
+    ctx.strokeStyle = '#C8A84A';
+    ctx.lineWidth = 1.5;
+    ctx.globalAlpha = 0.5;
+    ctx.beginPath();
+    ctx.moveTo(0, yOff + ITEM_HEIGHT - 2);
+    ctx.lineTo(totalW, yOff + ITEM_HEIGHT - 2);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    // Draw cabinet images
+    let x = 0;
+    imgEls.forEach((img, j) => {
+      if (img && img.complete && img.naturalWidth > 0) {
+        ctx.drawImage(img, x, yOff, itemWidths[j], ITEM_HEIGHT);
+      }
+      x += itemWidths[j];
+    });
+    yOff += ITEM_HEIGHT + RUN_PAD;
+
+    // Angle connector banner between runs
+    if (i < runData.length - 1) {
+      const nextAngle = runData[i + 1].angle;
+      const angleDiff = nextAngle - angle;
+      let connectorText = '';
+      if (state.shape === 'l') connectorText = '↳  90° CORNER TURN  (L-Shape)';
+      else if (state.shape === 'u' && i === 0) connectorText = '↳  90° CORNER TURN  (U-Shape — left leg to back)';
+      else if (state.shape === 'u' && i === 1) connectorText = '↳  90° CORNER TURN  (U-Shape — back to right leg)';
+      else if (state.shape === 'v') connectorText = `↳  ${angleDiff}° ANGLED CORNER  (V-Shape)`;
+      else if (state.shape === 'double') connectorText = '↕  PARALLEL RUN  (Double Island — opposite side)';
+      else connectorText = `↳  Run ${runData[i+1].run.id} continues at ${nextAngle}°`;
+
+      ctx.fillStyle = '#2A3A2A';
+      ctx.fillRect(0, yOff, maxW, ANGLE_BANNER_H);
+      ctx.fillStyle = '#7EC8A0';
+      ctx.font = 'bold 10px Montserrat, sans-serif';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(connectorText, 14, yOff + ANGLE_BANNER_H / 2);
+      yOff += ANGLE_BANNER_H;
+    }
+  });
+
+  // Return single composite image
+  const compositeDataUrl = composite.toDataURL('image/jpeg', 0.80);
+  return [{ runId: 'composite', dataUrl: compositeDataUrl, itemCount: runData.reduce((s, r) => s + r.run.items.length, 0) }];
+}
+
+function buildKitchenDesc() {
+  const parts = [];
+  state.runs.forEach(run => {
+    if (run.items.length) {
+      const totalIn = run.items.reduce((s, it) => s + byId(it.catId).widthIn, 0);
+      const modules = run.items.map(item => {
+        const it = byId(item.catId);
+        return `${it.name} [${it.widthIn}"]`;
+      }).join(', ');
+      parts.push(`Run ${run.id} (total ${totalIn.toFixed(1)}" / ${(totalIn/12).toFixed(1)} ft): ${modules}`);
+    }
+  });
+  return parts.join(' | ') || 'stainless steel outdoor kitchen island';
+}
+function buildRunMeasurements() {
+  return state.runs
+    .filter(run => run.items.length > 0)
+    .map(run => ({
+      runId: run.id,
+      totalIn: parseFloat(run.items.reduce((s, it) => s + byId(it.catId).widthIn, 0).toFixed(1)),
+      totalFt: parseFloat((run.items.reduce((s, it) => s + byId(it.catId).widthIn, 0) / 12).toFixed(2)),
+      modules: run.items.map(item => { const it = byId(item.catId); return { name: it.name, widthIn: it.widthIn }; })
+    }));
+}
+
+$("#btnShare").addEventListener("click", shareDesign);
+$("#btnLoad").addEventListener("click", () => $("#loadFile").click());
+$("#loadFile").addEventListener("change", e => {
+  if (e.target.files[0]) loadDesignFile(e.target.files[0]);
+  e.target.value = "";
+});
+
+$("#btnClear").addEventListener("click", () => {
+  if (!hasModules()) return showToast("The layout is already empty");
+  checkpoint();
+  state.runs.forEach(r => r.items = []);
+  state.activeRun = 0;
+  renderAll();
+  showToast("Layout cleared \u2014 press Undo to bring it back");
+});
+
+$("#btnPrint").addEventListener("click", () => window.print());
+
+$("#btnQuote2").addEventListener("click", openQuoteModal);
+$("#quoteClose").addEventListener("click", () => $("#quoteModalBg").classList.remove("show"));
+$("#quoteModalBg").addEventListener("click", e => { if (e.target.id === "quoteModalBg") $("#quoteModalBg").classList.remove("show"); });
+["custName","custEmail","custPhone","custNotes"].forEach(id => $("#"+id).addEventListener("input", refreshQuotePre));
+
+$("#quoteCopy").addEventListener("click", () => {
+  navigator.clipboard.writeText(buildQuoteText()).then(() => showToast("Quote copied to clipboard"));
+});
+$("#quoteDownload").addEventListener("click", () => {
+  downloadBlob(buildQuoteText(), "outdoor-kitchen-quote.txt", "text/plain");
+});
+$("#quoteEmail").addEventListener("click", () => {
+  const subject = encodeURIComponent("Outdoor Kitchen Configurator Quote");
+  const body = encodeURIComponent(buildQuoteText());
+  window.location.href = `mailto:${CONFIG.salesEmail}?subject=${subject}&body=${body}`;
+});
+
+/* ============================================================
+   Sunstone cart integration
+   See README.md "Cart Integration" section for setup steps.
+   ============================================================ */
+
+function getSessionId(){
+  try {
+    let id = localStorage.getItem("smp_session_id");
+    if (!id){
+      id = (crypto.randomUUID ? crypto.randomUUID() : "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2));
+      localStorage.setItem("smp_session_id", id);
+    }
+    return id;
+  } catch(err){
+    // localStorage unavailable (e.g. some sandboxed preview contexts) — fall back to
+    // an in-memory id for this page load only.
+    if (!window.__smpFallbackSession) window.__smpFallbackSession = "sess_" + Date.now();
+    return window.__smpFallbackSession;
+  }
+}
+
+function buildCartItems(){
+  const byProduct = new Map(); // productId -> cart line
+  const skipped = new Map();   // catId -> qty (not sold online yet)
+  state.runs.forEach(run => run.items.forEach(pi => {
+    const it = byId(pi.catId);
+    const productId = CART_ID_MAP[it.id];
+    if (!productId || !isBuyable(it.id)){
+      skipped.set(it.id, (skipped.get(it.id) || 0) + 1);
+      return;
+    }
+    if (byProduct.has(productId)) byProduct.get(productId).quantity += 1;
+    else byProduct.set(productId, { productId, sku: it.id, name: it.name, price: priceOf(it.id), quantity: 1 });
+  }));
+  return { items: Array.from(byProduct.values()), skipped };
+}
+
+function setCartStatus(msg, kind){
+  const el = $("#cartStatus");
+  el.textContent = msg;
+  el.className = "cart-status" + (kind ? " " + kind : "");
+}
+
+function isEmbedded(){ return window.parent && window.parent !== window; }
+
+async function addDesignToCart(){
+  if (!hasModules()){
+    setCartStatus("Add some modules to your layout first.", "err");
+    return;
+  }
+  const { items, skipped } = buildCartItems();
+  const skippedList = Array.from(skipped.keys()).join(", ");
+  if (!items.length){
+    setCartStatus(`These modules aren't sold online yet (${skippedList}). Call 888-934-9449 or use Email / Save Quote.`, "err");
+    return;
+  }
+  const embedded = isEmbedded();
+  if (CONFIG.cartIntegrationMode === "postMessage" && !embedded){
+    setCartStatus("Open the configurator on the store page to add to cart \u2014 or use Email / Save Quote.", "err");
+    return;
+  }
+
+  const btn = $("#btnCart");
+  btn.disabled = true;
+  btn.textContent = "Adding...";
+  setCartStatus("");
+  const qty = items.reduce((s, i) => s + i.quantity, 0);
+
+  try {
+    if (CONFIG.cartIntegrationMode === "postMessage"){
+      window.parent.postMessage({
+        type: "SUNSTONE_ADD_TO_CART",
+        items,
+        redirectToCart: CONFIG.redirectToCartOnAdd
+      }, CONFIG.siteBaseUrl);
+    } else {
+      await addToCartDirectApi(items);
+    }
+    setCartStatus(`${qty} module${qty > 1 ? "s" : ""} sent to your cart.` + (skipped.size ? ` Not sold online yet (call to order): ${skippedList}.` : ""), skipped.size ? "err" : "ok");
+    showToast(skipped.size ? `${qty} added \u2014 ${skipped.size} module type(s) need a call to order` : "Added to cart");
+  } catch(err){
+    console.error(err);
+    setCartStatus("Couldn't reach the cart \u2014 please try again, or use Email / Save Quote.", "err");
+    showToast("Cart request failed", "err");
+  } finally {
+    btn.disabled = false;
+    renderTotals();
+  }
+}
+
+async function addToCartDirectApi(newItems){
+  const sessionId = getSessionId();
+  const base = CONFIG.siteBaseUrl;
+
+  const getInput = encodeURIComponent(JSON.stringify({ json: { sessionId } }));
+  const getRes = await fetch(`${base}/api/trpc/cart.get?input=${getInput}`, { credentials: "include" });
+  if (!getRes.ok) throw new Error("cart.get failed: " + getRes.status);
+  const getData = await getRes.json();
+  const currentItems = getData?.result?.data?.json?.items ?? [];
+  const cartId = getData?.result?.data?.json?.id;
+
+  let merged = currentItems.slice();
+  newItems.forEach(newItem => {
+    const idx = merged.findIndex(i => i.productId === newItem.productId);
+    if (idx >= 0){
+      merged[idx] = { ...merged[idx], quantity: merged[idx].quantity + newItem.quantity };
+    } else {
+      merged.push(newItem);
+    }
+  });
+
+  const updateRes = await fetch(`${base}/api/trpc/cart.update`, {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ "0": { json: { sessionId, cartId, items: merged } } })
+  });
+  if (!updateRes.ok) throw new Error("cart.update failed: " + updateRes.status);
+
+  if (CONFIG.redirectToCartOnAdd){
+    const target = base + "/cart";
+    try { (window.top || window).location.href = target; }
+    catch(err) { window.location.href = target; }
+  }
+}
+
+$("#btnCart").addEventListener("click", addDesignToCart);
+
+document.addEventListener("dragover", e => e.preventDefault());
+
+// Startup: a shared link wins, then the visitor's autosaved design, else an empty layout.
+if (!loadDesignFromHash() && !loadAutosave()) renderAll();
+syncWithStore();
+
+// ── Sidebar toggle logic (grid-based collapse) ───────────────────────────────
+(function(){
+  const app = document.querySelector('.app');
+  const btnCatalog = $('#btnToggleCatalog');
+  const btnPricing = $('#btnTogglePricing');
+  if (!app || !btnCatalog || !btnPricing) return;
+
+  function updateToggleLabels(){
+    const catCollapsed = app.classList.contains('catalog-collapsed');
+    const priceCollapsed = app.classList.contains('pricing-collapsed');
+    btnCatalog.textContent = (catCollapsed ? '\u2630 Show Modules' : '\u2630 Hide Modules');
+    btnPricing.textContent = (priceCollapsed ? '\uD83D\uDCB0 Show Quote' : '\uD83D\uDCB0 Hide Quote');
+    btnCatalog.classList.toggle('on', !catCollapsed);
+    btnPricing.classList.toggle('on', !priceCollapsed);
+  }
+
+  btnCatalog.addEventListener('click', () => {
+    app.classList.toggle('catalog-collapsed');
+    updateToggleLabels();
+  });
+
+  btnPricing.addEventListener('click', () => {
+    app.classList.toggle('pricing-collapsed');
+    updateToggleLabels();
+  });
+
+  // Start with both panels open
+  updateToggleLabels();
+})();
+
+
+// ── Export Parts List ─────────────────────────────────────────────────────────
+function buildPartsData() {
+  const rows = [];
+  let grandTotal = 0;
+  state.runs.forEach(run => {
+    if (!run.items.length) return;
+    const totalIn = run.items.reduce((s, it) => s + byId(it.catId).widthIn, 0);
+    // Aggregate duplicates within a run
+    const counts = {};
+    run.items.forEach(pi => {
+      counts[pi.catId] = (counts[pi.catId] || 0) + 1;
+    });
+    const seen = new Set();
+    run.items.forEach(pi => {
+      if (seen.has(pi.catId)) return;
+      seen.add(pi.catId);
+      const it = byId(pi.catId);
+      const qty = counts[pi.catId];
+      const lineTotal = priceOf(pi.catId) * qty;
+      grandTotal += lineTotal;
+      rows.push({
+        run: run.id,
+        sku: it.id,
+        name: it.name,
+        widthIn: it.widthIn,
+        qty,
+        unitPrice: priceOf(pi.catId),
+        lineTotal,
+        category: it.category || ''
+      });
+    });
+    rows.push({ run: run.id, sku: '', name: `Run ${run.id} Subtotal`, widthIn: totalIn, qty: '', unitPrice: '', lineTotal: '', category: '', isSubtotal: true });
+  });
+  return { rows, grandTotal };
+}
+
+function exportCSV() {
+  const { rows, grandTotal } = buildPartsData();
+  if (!rows.length) { showToast('Add modules first', 'err'); return; }
+  const cell = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  const dollars = n => n === '' ? '' : (+n).toFixed(2);
+  const lines = [['Run','SKU','Description','Width (in)','Qty','Unit Price (USD)','Line Total (USD)','Category'].map(cell).join(',')];
+  rows.forEach(r => {
+    lines.push((r.isSubtotal
+      ? [r.run, '', r.name, r.widthIn.toFixed(1), '', '', '', '']
+      : [r.run, r.sku, r.name, r.widthIn, r.qty, dollars(r.unitPrice), dollars(r.lineTotal), r.category]
+    ).map(cell).join(','));
+  });
+  lines.push(['', '', 'GRAND TOTAL', '', '', '', grandTotal.toFixed(2), ''].map(cell).join(','));
+  downloadBlob(lines.join('\r\n'), 'sunstone-island-parts-list.csv', 'text/csv');
+  showToast('CSV downloaded');
+}
+
+function exportPDF() {
+  const { rows, grandTotal } = buildPartsData();
+  if (!rows.length) { showToast('Add modules first', 'err'); return; }
+  const shapeLabel = SHAPES[state.shape].label;
+  const date = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  let tableRows = '';
+  rows.forEach(r => {
+    if (r.isSubtotal) {
+      tableRows += `<tr class="subtotal"><td colspan="5">${r.name}</td><td>${r.widthIn.toFixed(1)}"</td><td></td></tr>`;
+    } else {
+      tableRows += `<tr>
+        <td>${r.run}</td>
+        <td><strong>${r.sku}</strong><br><small>${r.name}</small></td>
+        <td>${r.widthIn}"</td>
+        <td>${r.qty}</td>
+        <td>$${r.unitPrice.toLocaleString('en-US')}</td>
+        <td>$${r.lineTotal.toLocaleString('en-US')}</td>
+      </tr>`;
+    }
+  });
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8">
+  <title>Sunstone Island Parts List<\/title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+    body{font-family:'Montserrat',sans-serif;color:#111;margin:0;padding:32px;font-size:12px;}
+    .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #C8A84A;}
+    .logo{font-size:18px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;}
+    .logo span{color:#C8A84A;}
+    .meta{text-align:right;color:#555;font-size:11px;}
+    h2{font-size:20px;font-weight:800;margin:0 0 4px;letter-spacing:-.01em;}
+    .subtitle{color:#888;font-size:11px;margin-bottom:24px;}
+    table{width:100%;border-collapse:collapse;margin-top:8px;}
+    th{background:#1C1F26;color:#C8A84A;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 10px;text-align:left;}
+    td{padding:8px 10px;border-bottom:1px solid #eee;vertical-align:top;}
+    tr:hover td{background:#fafaf7;}
+    tr.subtotal td{background:#f5f2ec;font-weight:700;font-size:11px;color:#888;border-top:1px solid #ddd;}
+    .grand-total{display:flex;justify-content:flex-end;margin-top:20px;padding-top:16px;border-top:2px solid #C8A84A;}
+    .grand-total .label{font-weight:700;font-size:14px;margin-right:24px;}
+    .grand-total .amount{font-weight:800;font-size:18px;color:#C8A84A;}
+    small{color:#888;font-size:10px;}
+    @media print{body{padding:16px;}button{display:none;}}
+  <\/style>
+  <\/head><body>
+  <div class="header">
+    <div><div class="logo">SUNSTONE <span>METAL PRODUCTS</span></div><div style="font-size:11px;color:#888;margin-top:4px;">sunstonemetalproducts.com</div></div>
+    <div class="meta"><div>${date}</div><div>Island Configurator Parts List</div></div>
+  </div>
+  <h2>Cabinet Island Parts List</h2>
+  <div class="subtitle">${shapeLabel} layout &nbsp;·&nbsp; ${rows.filter(r=>!r.isSubtotal).reduce((s,r)=>s+(r.qty||0),0)} total modules</div>
+  <table>
+    <thead><tr><th>Run</th><th>Module</th><th>Width</th><th>Qty</th><th>Unit Price</th><th>Total</th></tr></thead>
+    <tbody>${tableRows}</tbody>
+  </table>
+  <div class="grand-total"><span class="label">Grand Total</span><span class="amount">$${grandTotal.toLocaleString('en-US')}</span></div>
+  <div style="margin-top:32px;font-size:10px;color:#aaa;">Generated by Sunstone Island Configurator &nbsp;·&nbsp; Prices subject to change without notice &nbsp;·&nbsp; Contact your dealer for final quote</div>
+  <\/body><\/html>`;
+  const win = window.open('', '_blank', 'width=900,height=700');
+  if (!win) { showToast('Allow popups to export PDF', 'err'); return; }
+  win.document.write(html);
+  win.document.close();
+  win.focus();
+  setTimeout(() => { win.print(); }, 600);
+}
+
+// Export button: show dropdown for PDF vs CSV
+const btnExport = document.querySelector('#btnExport');
+if (btnExport) {
+  btnExport.addEventListener('click', function(e) {
+    // Toggle a small dropdown
+    let existing = document.getElementById('exportDropdown');
+    if (existing) { existing.remove(); return; }
+    const dropdown = document.createElement('div');
+    dropdown.id = 'exportDropdown';
+    dropdown.style.cssText = 'position:absolute;z-index:9999;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;min-width:160px;';
+    const rect = btnExport.getBoundingClientRect();
+    dropdown.style.top = (rect.bottom + 4) + 'px';
+    dropdown.style.left = rect.left + 'px';
+    const itemStyle = 'display:block;width:100%;padding:10px 16px;background:none;border:none;text-align:left;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--text-primary);cursor:pointer;transition:.1s;';
+    dropdown.innerHTML = `
+      <button style="${itemStyle}" id="exportCSVBtn">📄 Download CSV</button>
+      <button style="${itemStyle}border-top:1px solid var(--border-subtle);" id="exportPDFBtn">🖨️ Export PDF (Print)</button>
+    `;
+    document.body.appendChild(dropdown);
+    document.getElementById('exportCSVBtn').onclick = () => { exportCSV(); dropdown.remove(); };
+    document.getElementById('exportPDFBtn').onclick = () => { exportPDF(); dropdown.remove(); };
+    // Close on outside click
+    setTimeout(() => {
+      document.addEventListener('click', function handler(ev) {
+        if (!dropdown.contains(ev.target) && ev.target !== btnExport) { dropdown.remove(); document.removeEventListener('click', handler); }
+      });
+    }, 50);
+  });
+}
+
+// ── Messages from the host page: Hubbase price map, gallery "load this design" ──
+window.addEventListener('message', function(e) {
+  if (!e.data || (e.source !== window && e.source !== window.parent)) return;
+  if (CONFIG.siteBaseUrl !== "*" && e.origin !== CONFIG.siteBaseUrl && e.source !== window) return;
+  if (e.data.type === 'SUNSTONE_PRICE_MAP') {
+    const incoming = e.data.prices;
+    if (!incoming || typeof incoming !== 'object') return;
+    Object.entries(incoming).forEach(([id, price]) => {
+      const normalized = Number(price);
+      if (Number.isFinite(normalized) && normalized > 0 && byId(id)) state.prices[id] = normalized;
+    });
+    renderCatalog();
+    renderRuns();
+    renderPricing();
+    return;
+  }
+  if (e.data.type !== 'SUNSTONE_LOAD_DESIGN') return;
+  if (applyDesign(e.data.config)) {
+    showToast('Design loaded from gallery!');
+    if (isEmbedded()) window.parent.postMessage({ type: 'SUNSTONE_GALLERY_DESIGN_LOADED' }, CONFIG.siteBaseUrl);
+  } else {
+    showToast('Could not load design', 'err');
+  }
+});
+
+// ── Live store sync: prices, product links and what can be bought online ──────
+async function syncWithStore(){
+  const hb = hubbaseInfo();
+  const skus = CATALOG.map(c => c.id).join(",");
+  const refs = CATALOG.map(c => CART_ID_MAP[c.id]).filter(Boolean).join(",");
+  const url = `${hb.api}${CONFIG.storeApi}?siteId=${encodeURIComponent(hb.siteId)}&refs=${encodeURIComponent(refs)}&skus=${encodeURIComponent(skus)}`;
+  try {
+    const res = await fetch(url, { credentials: "same-origin" });
+    if (!res.ok) throw new Error("products " + res.status);
+    const results = (await res.json()).results || [];
+    if (!results.length) return;
+    const byRef = new Map(results.map(p => [String(p.ref), p]));
+    const bySku = new Map(results.map(p => [String(p.sku || "").toLowerCase(), p]));
+    STORE.available.clear();
+    CATALOG.forEach(it => {
+      const hit = byRef.get(String(CART_ID_MAP[it.id])) || bySku.get(it.id.toLowerCase());
+      if (!hit) return;
+      STORE.available.add(it.id);
+      if (hit.slug) STORE.slugs[it.id] = hit.slug;
+      const dollars = Number(hit.price) / 100; // store prices are in cents
+      if (Number.isFinite(dollars) && dollars > 0) state.prices[it.id] = dollars;
+    });
+    STORE.loaded = true;
+    renderCatalog();
+    renderRuns();
+    renderPricing();
+  } catch(err){
+    // Offline, file:// or a preview sandbox: keep the built-in prices from the store snapshot.
+    console.info("Store sync skipped:", err.message);
+  }
+}
+
+</script>
+</body>
+</html>
