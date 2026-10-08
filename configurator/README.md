@@ -36,7 +36,7 @@ python3 -I configurator/tools/fix_catalog.py   # only if the store snapshot chan
 python3 -I configurator/tools/build.py
 ```
 
-Test before uploading (27 checks: rendering with the Hubbase price injection, prices,
+Test before uploading (34 checks: rendering with the Hubbase price injection, prices,
 widths, click/drag, undo, cart hand-off, links, all five shapes, CSV, share links,
 autosave, bad files and phone layout):
 
@@ -77,6 +77,24 @@ that way.
 > (write `<\/body>`). Hubbase injects its price script before the first closing
 > `body` tag it finds. One inside a JS string is what blanked the live
 > configurator. `build.py` refuses to build if there is more than one.
+
+## Version 2 interface (October 2026)
+
+A rebuilt interface that matches the Austin site (Montserrat, blue accent, white panels):
+
+- **Starter layouts**: six one-click designs (grill run, compact station, kamado & pizza
+  corner, entertainer's L, two-sided island, chef's U), all real modules at store prices.
+- **Space per run**: enter the space you have; a meter shows what's left or how far over you are,
+  and "Only modules that fit" filters the catalog.
+- **Swap**: replace a placed cabinet with its other versions (insert, handing, style) and see
+  the price difference.
+- **Module details**: large image, SKU, width, includes, buy-online status, store link.
+- **Selection and keyboard**: click a cabinet, then ←/→ move, D duplicates, Delete removes,
+  Esc deselects; Ctrl+Z / Ctrl+Y undo and redo.
+- **File menu**: save/open a design file, share link, print, parts list as CSV or a printable
+  PDF with the layout picture, photo-real render request, clear.
+- **Phones**: bottom tabs for Catalog, Layout (with module count) and Quote (with total).
+- The unused "direct" cart mode, which called the old sunscape.ai cart, was removed.
 
 ## What was fixed (October 2026)
 

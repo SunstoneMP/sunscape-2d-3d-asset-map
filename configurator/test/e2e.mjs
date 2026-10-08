@@ -68,26 +68,49 @@ for (const [label, n] of [['L-Shape', 2], ['U-Shape', 3], ['V-Shape', 2], ['Doub
 }
 await f.click('.schem-run[data-run="1"]');
 ok(await f.$eval('.run.active .tag', e => e.textContent) === 'B', 'clicking schematic badge activates Run B');
+// New: space available + fit filter on Run B (currently active)
+await f.fill('.run.active .space input', '30'); await f.press('.run.active .space input', 'Enter');
+await f.waitForSelector('#fitRow:not([hidden])');
+await f.check('#fitToggle');
+const fitW = await f.$$eval('.cab-card .w', els => els.map(e => parseFloat(e.textContent)));
+ok(fitW.length > 0 && fitW.every(w => w <= 30), `fit filter shows only modules <= 30": ${fitW.length} cards`);
+await f.uncheck('#fitToggle');
+await f.click('.cab-card[data-cat-id="SBC36CDD"]');
+ok(/too long/.test(await f.$eval('.run.active .meter .state', e => e.textContent)), 'meter warns when a run is longer than its space');
+// New: swap a placed module for another version, keyboard delete, details
+await f.click('.run.active .placed:last-child');
+await f.click('.run.active .placed.selected .swap');
+const swapTo = await f.$eval('.swap-opt', e => e.dataset.id);
+await f.click('.swap-opt');
+ok(await f.$eval('.run.active .placed:last-child img', (e, id) => e.alt.length > 0, swapTo) && (await f.evaluate(() => document.querySelector('.run.active .placed.selected') !== null)), 'swap replaces the module with ' + swapTo);
+const before = await f.$$eval('.run.active .placed', e => e.length);
+await f.focus('.run.active .placed.selected'); await p.keyboard.press('Delete');
+ok((await f.$$eval('.run.active .placed', e => e.length)) === before - 1, 'Delete key removes the selected module');
+await f.click('#btnUndo');
+await f.click('.cab-card[data-cat-id="SBC18STD"] .info-btn');
+ok(/SBC18STD/.test(await f.$eval('#detailTitle', e => e.textContent)) && /\$1,811/.test(await f.$eval('#detailBody', e => e.textContent)), 'details dialog shows SKU and store price');
+await f.click('#detailClose');
 // CSV
-const [dl] = await Promise.all([p.waitForEvent('download'), (async () => { await f.click('#btnExport'); await f.click('#exportCSVBtn'); })()]);
+const [dl] = await Promise.all([p.waitForEvent('download'), (async () => { await f.click('#btnMore'); await f.click('#exportCSVBtn'); })()]);
 const csv = await (await import('node:fs')).promises.readFile(await dl.path(), 'utf8');
 const rows = csv.trim().split('\r\n').map(r => r.match(/"([^"]|"")*"/g).length);
 ok(rows.every(n => n === 8), 'CSV rows all 8 columns: ' + csv.split('\r\n')[1]);
 // share link round trip via parent URL + autosave on reload
-await f.click('#btnShare'); await p.waitForTimeout(300);
+const placedNow = await f.$$eval('.placed', e => e.length);
+await f.click('#btnMore'); await f.click('#btnShare'); await p.waitForTimeout(300);
 // In the sandbox the clipboard is blocked and the app shows the link in a prompt instead.
 const shareUrl = (await p.evaluate(() => navigator.clipboard.readText()).catch(() => '')) || lastPrompt;
 if (!sandbox) {
   ok(shareUrl.startsWith(base + '/s/austin/configurator#design='), 'share link points at store page: ' + shareUrl.slice(0, 70));
   await p.reload(); const f2 = await (await p.waitForSelector('#f')).contentFrame(); await f2.waitForSelector('.placed');
-  ok((await f2.$$eval('.placed', e => e.length)) === 6, 'autosave restored design after reload');
-  await f2.click('#btnClear');
+  ok((await f2.$$eval('.placed', e => e.length)) === placedNow, `autosave restored all ${placedNow} modules after reload`);
+  await f2.click('#btnMore'); await f2.click('#btnClear');
 } else {
   ok(shareUrl.startsWith(base + '/s/austin/apps/island-configurator#design='), 'sandboxed share link opens the app itself: ' + shareUrl.slice(0, 70));
 }
 const p2 = await ctx.newPage(); await p2.goto(shareUrl);
 const f3 = sandbox ? p2.mainFrame() : await (await p2.waitForSelector('#f')).contentFrame(); await f3.waitForSelector('.placed');
-ok((await f3.$$eval('.placed', e => e.length)) === 6, 'shared link loads the design');
+ok((await f3.$$eval('.placed', e => e.length)) === placedNow, `shared link loads all ${placedNow} modules`);
 // bad design file
 await f3.setInputFiles('#loadFile', { name: 'x.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify({ shape: 'l', runs: [{ items: [{ catId: 'NOPE' }, { catId: 'SBC18STD' }] }] })) });
 await p2.waitForTimeout(300);
@@ -97,6 +120,11 @@ const m = await b.newPage({ viewport: { width: 390, height: 844 } });
 m.on('pageerror', e => errs.push('mobile pageerror: ' + e.message));
 await m.goto(base + '/s/austin/apps/island-configurator'); await m.waitForSelector('.cab-card');
 await m.click('.cab-card[data-cat-id="SBC24STD"]');
+await m.click('#tabbar button[data-view="layout"]');
+ok(await m.isVisible('.run'), 'mobile tab bar switches to the layout');
+await m.click('#btnMore'); await m.click('#btnClear');
+await m.click('.tpl');
+ok((await m.$$eval('.placed', e => e.length)) === 4, 'starter layout loads 4 modules');
 const ov = await m.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 ok(ov <= 0, 'mobile: no horizontal page overflow: ' + ov);
 console.log(errs.length ? errs.join('\n') : 'no page errors');
