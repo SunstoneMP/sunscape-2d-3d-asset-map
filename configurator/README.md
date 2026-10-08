@@ -16,11 +16,18 @@ layout to the Hubbase cart.
 | `src/island-configurator.html` | The app code (HTML/CSS/JS), with placeholders for the data below |
 | `data/catalog.json` | The 85 modules: SKU, name, width, category, default price, store slug |
 | `data/cart-id-map.json` | Module SKU → store product `ref` used by Add to Cart |
-| `data/images.json` | The 2D webp renders as base64 data URLs |
+| `data/images.json` | The 2D renders as base64 WebP data URLs (400px tall) |
 | `data/store-products.snapshot.json` | Hubbase store records the catalog was rebuilt from |
 | `data/catalog.original.json` | The catalog as it was before this fix, for reference |
 | `tools/fix_catalog.py` | Rebuilds `catalog.json` from the original catalog + store snapshot |
+| `tools/import_images.py` | Converts the release PNGs into `data/images.json` |
 | `tools/build.py` | Inlines the data and writes `dist/island-configurator.html` |
+
+Module images come from the `2dconfigurator-assets` release of SunstoneMP/shared-files
+(`2D.Configurator.Image.Files.zip`, 950px PNGs). To refresh them, unzip that file and run
+`python3 -I configurator/tools/import_images.py "<unzipped folder>"`. In the October 2026
+release, `SAC34DWC.png` is an empty file, and SCC15SPE, SCC21SPE and SCC25SPE have no render,
+so those four modules still use the old low-res images.
 
 After you edit anything, rebuild:
 
