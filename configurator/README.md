@@ -41,9 +41,25 @@ widths, click/drag, undo, cart hand-off, links, all five shapes, CSV, share link
 autosave, bad files and phone layout):
 
 ```sh
-npm i --no-save playwright && node configurator/test/mock-hubbase.mjs &
+npm i --no-save playwright && node configurator/test/mock-hubbase.mjs &   # SANDBOX=1 for hubbase.app mode
 node configurator/test/e2e.mjs
 ```
+
+## Where Hubbase keeps it
+
+The app is the site doc `app_island-configurator` on Austin (`site_affv5holph`), shaped
+`{ html, priceRefs }`. `priceRefs` maps each module to its store product ref, and the `/apps/`
+route uses it to inject `SUNSTONE_PRICE_MAP`. Hubbase's "Island Configurator (classic)" option
+(Admin → Configurators, `island-classic`) copies this doc to any site that adds it, so updating
+Austin's doc updates that option everywhere it is added afterwards. A doc update is live
+immediately (`PUT /api/sites/site_affv5holph/docs/app_island-configurator`, owner/admin);
+keep `priceRefs` and replace only `html`. The doc as it was before this fix is saved in
+`data/austin-app-doc.before-fix.json` for rollback.
+
+On hubbase.app the app is served sandboxed (origin `"null"`). It can't read the parent page
+or use storage there, so autosave is off and Share shows the link to copy (pointing at the
+app itself). Prices, store links and Add to Cart work. `SANDBOX=1` runs the mock and the test
+that way.
 
 ## How it ties into the store
 

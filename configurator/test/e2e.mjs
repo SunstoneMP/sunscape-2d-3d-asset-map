@@ -3,10 +3,12 @@
 // Needs the playwright package; set CHROMIUM_PATH to use an existing Chromium.
 import { chromium } from 'playwright';
 const base = 'http://127.0.0.1:8765';
+const sandbox = process.env.SANDBOX === '1'; // match the mock: app served like hubbase.app
 const b = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true, permissions: ['clipboard-read','clipboard-write'] });
 const p = await ctx.newPage();
-p.on('dialog', d => d.accept());
+let lastPrompt = '';
+p.on('dialog', d => { if (d.type() === 'prompt') lastPrompt = d.defaultValue(); d.accept(); });
 const errs = [];
 p.on('pageerror', e => errs.push('pageerror: ' + e.message));
 p.on('console', m => { if (m.type() === 'error') errs.push('console: ' + m.text()); });
@@ -73,14 +75,19 @@ const rows = csv.trim().split('\r\n').map(r => r.match(/"([^"]|"")*"/g).length);
 ok(rows.every(n => n === 8), 'CSV rows all 8 columns: ' + csv.split('\r\n')[1]);
 // share link round trip via parent URL + autosave on reload
 await f.click('#btnShare'); await p.waitForTimeout(300);
-const shareUrl = await p.evaluate(() => navigator.clipboard.readText());
-ok(shareUrl.startsWith(base + '/s/austin/configurator#design='), 'share link points at store page: ' + shareUrl.slice(0, 70));
-await p.reload(); const f2 = await (await p.waitForSelector('#f')).contentFrame(); await f2.waitForSelector('.placed');
-ok((await f2.$$eval('.placed', e => e.length)) === 6, 'autosave restored design after reload');
-await f2.click('#btnClear'); 
+// In the sandbox the clipboard is blocked and the app shows the link in a prompt instead.
+const shareUrl = (await p.evaluate(() => navigator.clipboard.readText()).catch(() => '')) || lastPrompt;
+if (!sandbox) {
+  ok(shareUrl.startsWith(base + '/s/austin/configurator#design='), 'share link points at store page: ' + shareUrl.slice(0, 70));
+  await p.reload(); const f2 = await (await p.waitForSelector('#f')).contentFrame(); await f2.waitForSelector('.placed');
+  ok((await f2.$$eval('.placed', e => e.length)) === 6, 'autosave restored design after reload');
+  await f2.click('#btnClear');
+} else {
+  ok(shareUrl.startsWith(base + '/s/austin/apps/island-configurator#design='), 'sandboxed share link opens the app itself: ' + shareUrl.slice(0, 70));
+}
 const p2 = await ctx.newPage(); await p2.goto(shareUrl);
-const f3 = await (await p2.waitForSelector('#f')).contentFrame(); await f3.waitForSelector('.placed');
-ok((await f3.$$eval('.placed', e => e.length)) === 6, 'shared link loads the design into the iframe');
+const f3 = sandbox ? p2.mainFrame() : await (await p2.waitForSelector('#f')).contentFrame(); await f3.waitForSelector('.placed');
+ok((await f3.$$eval('.placed', e => e.length)) === 6, 'shared link loads the design');
 // bad design file
 await f3.setInputFiles('#loadFile', { name: 'x.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify({ shape: 'l', runs: [{ items: [{ catId: 'NOPE' }, { catId: 'SBC18STD' }] }] })) });
 await p2.waitForTimeout(300);

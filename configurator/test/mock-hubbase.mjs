@@ -5,6 +5,8 @@ const here = new URL('..', import.meta.url).pathname;
 const distPath = here + 'dist/island-configurator.html';
 const products = JSON.parse(fs.readFileSync(here + 'data/store-products.snapshot.json', 'utf8'));
 const port = +(process.argv[2] || 8765);
+// SANDBOX=1 serves the app the way hubbase.app does: CSP sandbox, so its origin is "null".
+const sandbox = process.env.SANDBOX === '1';
 const prices = Object.fromEntries(products.map(p => [p.sku, p.price / 100]));
 const inj = '<script>window.addEventListener("load",function(){window.postMessage({type:"SUNSTONE_PRICE_MAP",prices:' + JSON.stringify(prices) + '},"*")});</script>';
 const parent = `<!doctype html><html><head><title>Parent</title></head><body>
@@ -13,7 +15,7 @@ const parent = `<!doctype html><html><head><title>Parent</title></head><body>
 <script>
 var frame=document.getElementById('f');
 window.addEventListener("message",function(e){
-  if (e.source!==frame.contentWindow) return; var m=e.data||{};
+  if (e.source!==frame.contentWindow || (e.origin!==location.origin && e.origin!=="null")) return; var m=e.data||{};
   if (m.type==="SUNSTONE_ADD_TO_CART"){
     var its=(m.items||[]).filter(function(x){return x&&(x.productId||x.ref||x.sku)});
     var refs=its.map(function(x){return x.productId||""}).join(","),skus=its.map(function(x){return x.sku||""}).join(",");
@@ -31,9 +33,11 @@ http.createServer((req, res) => {
   if (u.pathname === '/s/austin/apps/island-configurator') {
     // mimic Hubbase: inject the price map before the first </body>
     const html = fs.readFileSync(distPath, 'utf8').replace(/<\/body>/i, inj + '</body>');
-    res.writeHead(200, {'content-type':'text/html'}); return res.end(html);
+    const headers = {'content-type':'text/html'};
+    if (sandbox) headers['content-security-policy'] = 'sandbox allow-scripts allow-forms allow-popups allow-modals allow-downloads';
+    res.writeHead(200, headers); return res.end(html);
   }
-  if (u.pathname === '/api/public/products') { res.writeHead(200, {'content-type':'application/json'}); return res.end(JSON.stringify({ results: products })); }
+  if (u.pathname === '/api/public/products') { res.writeHead(200, {'content-type':'application/json', 'access-control-allow-origin':'*'}); return res.end(JSON.stringify({ results: products })); }
   if (u.pathname === '/favicon.ico') { res.writeHead(204); return res.end(); }
   res.writeHead(404); res.end();
 }).listen(port, '127.0.0.1', () => console.log('mock hubbase on http://127.0.0.1:' + port));

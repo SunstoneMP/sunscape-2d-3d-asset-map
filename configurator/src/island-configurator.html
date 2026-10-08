@@ -1363,21 +1363,24 @@ function encodeDesign(){
 function decodeDesign(encoded){
   return JSON.parse(decodeURIComponent(atob(encoded)));
 }
-// When embedded on the same-origin store page, share that page (not the bare iframe URL).
+// When embedded on a same-origin store page, share that page (not the bare iframe URL).
+// On hubbase.app the app runs in a sandbox (origin "null") and can't read the parent page,
+// so it shares its own address, which opens the design standalone.
 function shareBaseUrl(){
   try {
     if (window.parent && window.parent !== window) {
       const loc = window.parent.location;
       return loc.origin + loc.pathname;
     }
-  } catch(err){ /* cross-origin parent */ }
-  return window.location.origin + window.location.pathname;
+  } catch(err){ /* sandboxed or cross-origin parent */ }
+  return window.location.protocol + "//" + window.location.host + window.location.pathname;
 }
 
 function shareDesign(){
   if (!hasModules()) return showToast("Add some modules before sharing", "err");
   const url = shareBaseUrl() + "#design=" + encodeDesign();
   const fallback = () => prompt("Copy this link to share your design:", url);
+  if (window.origin === "null" || !navigator.clipboard) return fallback(); // sandboxed: clipboard is blocked
   try {
     navigator.clipboard.writeText(url).then(() => showToast("Share link copied to clipboard")).catch(fallback);
   } catch(err){ fallback(); }
@@ -1761,7 +1764,12 @@ async function addDesignToCart(){
   }
   const embedded = isEmbedded();
   if (CONFIG.cartIntegrationMode === "postMessage" && !embedded){
-    setCartStatus("Open the configurator on the store page to add to cart \u2014 or use Email / Save Quote.", "err");
+    setCartStatus("Add to Cart works on the store's configurator page. Save your design (Save), open ", "err");
+    const a = document.createElement("a");
+    a.href = hubbaseInfo().base + "/configurator";
+    a.target = "_top";
+    a.textContent = "the store configurator";
+    $("#cartStatus").append(a, " and Load it there \u2014 or use Email / Save Quote.");
     return;
   }
 
