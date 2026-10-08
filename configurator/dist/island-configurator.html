@@ -219,6 +219,14 @@ a{color:var(--accent)}
 .cart-status{font-size:12px;color:var(--muted);text-align:center;min-height:16px}
 .cart-status.ok{color:var(--ok);font-weight:600}
 .cart-status.err{color:var(--err)}
+.gas-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px;padding:9px 12px;border-radius:8px;background:var(--warn-soft);font-size:12.5px}
+.gas-row b{font-weight:700}
+.gas-row button{border:0;background:transparent;color:var(--accent);font-weight:700;font-size:12px;padding:0}
+.gas-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.gas-choices button{height:64px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);font-weight:700;font-size:14px}
+.gas-choices button:hover{border-color:var(--accent);background:var(--accent-soft)}
+.gas-choices button small{display:block;font-weight:500;font-size:11.5px;color:var(--muted)}
+.cart-status button{border:0;background:transparent;color:var(--accent);font-weight:700;font-size:12px;padding:0;text-decoration:underline}
 .disclaimer{margin-top:16px;font-size:11.5px;line-height:1.55;color:var(--muted);background:var(--surface-2);border-radius:8px;padding:10px 12px}
 
 /* ---------- modals, toast ---------- */
@@ -418,6 +426,16 @@ a{color:var(--accent)}
   </div>
 </div>
 
+<div class="modal-bg" id="gasModalBg" role="dialog" aria-modal="true" aria-labelledby="gasTitle">
+  <div class="modal" style="max-width:440px">
+    <div class="modal-head"><h3 id="gasTitle">Which gas will you use?</h3><button class="ibtn" id="gasClose" aria-label="Close">✕</button></div>
+    <div class="modal-body">
+      <p style="margin:0;color:var(--muted);font-size:13px">Your island has gas appliances. They're built for one gas type, so pick the one at your home. You can change it before checkout.</p>
+      <div class="gas-choices"><button data-gas="NG">Natural gas<small>Piped from the house</small></button><button data-gas="LP">Propane (LP)<small>From a tank</small></button></div>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -486,6 +504,7 @@ let state = {
   search: "",
   fitOnly: false,
   sel: null,          // selected placed module: { run, idx }
+  gasType: null,      // "NG" | "LP" for gas appliances, asked once per design
   prices: {},
   uidCounter: 1,
   includeInstall: false,
@@ -529,7 +548,17 @@ const ICON = {
 };
 
 /* ---------- store sync results ---------- */
-const STORE = { loaded: false, available: new Set(), slugs: {} };
+const STORE = { loaded: false, available: new Set(), slugs: {}, gas: null, dealer: false };
+// Modules holding a gas appliance (the store's own list replaces this when /configurator/map answers).
+const GAS_PATTERN = /_(RUBY3B|RUBY4B|RUBY5BIR|SUNCHSZ30|SUNCHDZ42|SUN13VDB|SUN13CPRO|SUN24PCB)/;
+function needsGas(catId){ return STORE.gas ? STORE.gas.has(catId) : GAS_PATTERN.test(catId); }
+function designNeedsGas(){ return state.runs.some(r => r.items.some(i => needsGas(i.catId))); }
+const GAS_LABEL = { NG: "Natural gas", LP: "Propane (LP)" };
+const TOOL = "island-classic";
+// Analytics for Admin → Configurators (the host page records add-to-cart and orders itself).
+function track(event, data){
+  if (isEmbedded()) window.parent.postMessage({ type: "HB_CONFIGURATOR_EVENT", tool: TOOL, event, data: data || {} }, CONFIG.siteBaseUrl);
+}
 CATALOG.forEach(it => { if (it.inStore) STORE.available.add(it.id); if (it.slug) STORE.slugs[it.id] = it.slug; });
 function isBuyable(catId){ return STORE.available.has(catId) && !!CART_ID_MAP[catId]; }
 
@@ -567,6 +596,7 @@ function snapshot(){
   return {
     shape: state.shape,
     targets: state.targets.slice(),
+    gasType: state.gasType,
     runs: state.runs.map(r => ({ id: r.id, items: r.items.map(i => ({ uid: i.uid, catId: i.catId })) }))
   };
 }
@@ -581,6 +611,7 @@ function restore(json){
   state.shape = snap.shape;
   state.runs = snap.runs;
   state.targets = snap.targets || state.runs.map(() => null);
+  state.gasType = snap.gasType || null;
   state.sel = null;
   if (state.activeRun >= state.runs.length) state.activeRun = 0;
 }
@@ -632,6 +663,7 @@ function applyDesign(data, opts){
   state.shape = data.shape;
   state.runs = runs;
   state.targets = targets;
+  state.gasType = data.gasType === "NG" || data.gasType === "LP" ? data.gasType : null;
   state.activeRun = 0;
   state.sel = null;
   renderAll();
@@ -1129,6 +1161,13 @@ function renderPricing(){
     }
     wrap.appendChild(box);
   });
+  if (designNeedsGas()){
+    const row = document.createElement("div");
+    row.className = "gas-row";
+    row.innerHTML = `<span>Gas type: <b>${state.gasType ? GAS_LABEL[state.gasType] : "not chosen yet"}</b></span><button type="button">${state.gasType ? "Change" : "Choose"}</button>`;
+    row.querySelector("button").onclick = () => askGas();
+    wrap.appendChild(row);
+  }
   renderTotals();
 }
 
@@ -1164,6 +1203,7 @@ function buildQuoteText(){
   lines.push("SUNSTONE OUTDOOR KITCHEN — ISLAND PLANNING QUOTE");
   lines.push("Generated " + new Date().toLocaleString());
   lines.push("Layout: " + SHAPES[state.shape].label);
+  if (designNeedsGas()) lines.push("Gas type: " + (state.gasType ? GAS_LABEL[state.gasType] : "not chosen yet"));
   lines.push("");
   if (name || email || phone){
     lines.push("Customer: " + (name || "—"));
@@ -1197,9 +1237,10 @@ function saveDesign(){
   const payload = Object.assign({ version: 3, savedAt: new Date().toISOString() }, snapshot());
   downloadBlob(JSON.stringify(payload, null, 2), "outdoor-kitchen-design.json", "application/json");
   showToast("Design saved to your downloads");
+  track("design_saved", { modules: moduleCount() });
 }
 function encodeDesign(){
-  const compact = { shape: state.shape, targets: state.targets, runs: state.runs.map(r => ({ items: r.items.map(i => ({ catId: i.catId })) })) };
+  const compact = { shape: state.shape, targets: state.targets, gasType: state.gasType, runs: state.runs.map(r => ({ items: r.items.map(i => ({ catId: i.catId })) })) };
   return btoa(encodeURIComponent(JSON.stringify(compact)));
 }
 function decodeDesign(encoded){ return JSON.parse(decodeURIComponent(atob(encoded))); }
@@ -1218,6 +1259,7 @@ function shareBaseUrl(){
 function shareDesign(){
   if (!hasModules()) return showToast("Add some cabinets before sharing", "err");
   const url = shareBaseUrl() + "#design=" + encodeDesign();
+  track("design_shared", { modules: moduleCount() });
   const fallback = () => prompt("Copy this link to share your design:", url);
   if (window.origin === "null" || !navigator.clipboard) return fallback(); // sandboxed: clipboard is blocked
   try { navigator.clipboard.writeText(url).then(() => showToast("Share link copied")).catch(fallback); }
@@ -1297,7 +1339,9 @@ function showRunPreview(ri){
   openModal("#previewBg");
 }
 
+let designStarted = false;
 function renderAll(){
+  if (!designStarted && hasModules()){ designStarted = true; track("design_started", { modules: moduleCount() }); }
   renderShapePicker();
   renderCatTabs();
   renderCatalog();
@@ -1329,7 +1373,7 @@ $("#btnSave").addEventListener("click", saveDesign);
 $("#btnLoad").addEventListener("click", () => $("#loadFile").click());
 $("#loadFile").addEventListener("change", e => { if (e.target.files[0]) loadDesignFile(e.target.files[0]); e.target.value = ""; });
 $("#btnShare").addEventListener("click", shareDesign);
-$("#btnPrint").addEventListener("click", () => window.print());
+$("#btnPrint").addEventListener("click", () => { track("design_printed", { modules: moduleCount() }); window.print(); });
 $("#exportCSVBtn").addEventListener("click", exportCSV);
 $("#exportPDFBtn").addEventListener("click", exportPDF);
 $("#btnClear").addEventListener("click", () => {
@@ -1351,6 +1395,7 @@ $("#quoteCopy").addEventListener("click", () => {
 });
 $("#quoteDownload").addEventListener("click", () => downloadBlob(buildQuoteText(), "outdoor-kitchen-quote.txt", "text/plain"));
 $("#quoteEmail").addEventListener("click", () => {
+  track("quote_sent", { modules: moduleCount(), total: Math.round(computeTotals().subtotal) });
   const href = `mailto:${CONFIG.salesEmail}?subject=${encodeURIComponent("Outdoor kitchen island quote")}&body=${encodeURIComponent(buildQuoteText())}`;
   try { window.top.location.href = href; } catch(err){ window.open(href, "_blank"); }
 });
@@ -1470,24 +1515,75 @@ function setCartStatus(msg, kind){
   el.textContent = msg;
   el.className = "cart-status" + (kind ? " " + kind : "");
 }
+// Gas type is asked once per design, the first time it matters. onPick runs after a choice.
+let gasThen = null;
+function askGas(onPick){
+  gasThen = onPick || null;
+  openModal("#gasModalBg");
+}
+document.querySelectorAll("#gasModalBg [data-gas]").forEach(b => b.addEventListener("click", () => {
+  state.gasType = b.dataset.gas;
+  closeModal("#gasModalBg");
+  renderPricing();
+  autosave();
+  const then = gasThen; gasThen = null;
+  if (then) then();
+}));
+$("#gasClose").onclick = () => { gasThen = null; closeModal("#gasModalBg"); };
+
+function quoteForSkipped(skipped){
+  $("#custNotes").value = "Please quote these modules (not sold online):\n" + Array.from(skipped.entries()).map(([id, q]) => `- ${id} x ${q}`).join("\n");
+  refreshQuotePre();
+  openModal("#quoteModalBg");
+}
+function skippedNote(skipped){
+  const list = Array.from(skipped.keys()).join(", ");
+  const b = document.createElement("button");
+  b.type = "button";
+  b.textContent = "Request a quote for these";
+  b.onclick = () => quoteForSkipped(skipped);
+  return [` Not sold online yet: ${list}. `, b];
+}
+// The design travels with the cart (C1 of the store hand-off): saved with the order and abandoned-cart follow-ups.
+function designForCart(){
+  const layout = { shape: state.shape, targets: state.targets, gasType: state.gasType,
+    runs: state.runs.map(r => ({ id: r.id, items: r.items.map(i => ({ id: "m" + i.uid, catId: i.catId })) })) };
+  let image;
+  try { const shot = captureRunImages()[0]; if (shot && shot.dataUrl.length < 800000) image = shot.dataUrl; } catch(err){}
+  return { name: `${SHAPES[state.shape].label} · ${moduleCount()} cabinets`, layout, image };
+}
+let cartPending = null;
 function addDesignToCart(){
   if (!hasModules()) return setCartStatus("Add some cabinets to your layout first.", "err");
   const { items, skipped } = buildCartItems();
-  const skippedList = Array.from(skipped.keys()).join(", ");
-  if (!items.length) return setCartStatus(`These modules aren't sold online yet (${skippedList}). Call ${CONFIG.salesPhone} or email this quote.`, "err");
+  if (!items.length){
+    setCartStatus(`These modules aren't sold online yet. Call ${CONFIG.salesPhone}, or `, "err");
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = "request a quote for them";
+    b.onclick = () => quoteForSkipped(skipped);
+    $("#cartStatus").append(b, ".");
+    return;
+  }
   if (!isEmbedded()){
-    setCartStatus("Add to Cart works on the store's configurator page. Save your design (File → Save), open ", "err");
+    setCartStatus("Add to Cart works on the store's configurator page. Save your design (File \u2192 Save), open ", "err");
     const a = document.createElement("a");
     a.href = hubbaseInfo().base + "/configurator";
     a.target = "_top";
     a.textContent = "the store configurator";
-    $("#cartStatus").append(a, " and open it there — or email this quote.");
+    $("#cartStatus").append(a, " and open it there \u2014 or email this quote.");
     return;
   }
+  if (items.some(i => needsGas(i.sku)) && !state.gasType) return askGas(addDesignToCart);
+  const lines = items.map(i => Object.assign({ productId: i.productId, sku: i.sku, name: i.name, quantity: i.quantity },
+    needsGas(i.sku) ? { options: { gasType: state.gasType } } : {}));
   const qty = items.reduce((s, i) => s + i.quantity, 0);
-  window.parent.postMessage({ type: "SUNSTONE_ADD_TO_CART", items, redirectToCart: CONFIG.redirectToCartOnAdd }, CONFIG.siteBaseUrl);
-  setCartStatus(`${qty} module${qty > 1 ? "s" : ""} sent to your cart.` + (skipped.size ? ` Not sold online yet (call to order): ${skippedList}.` : ""), skipped.size ? "err" : "ok");
-  showToast(skipped.size ? `${qty} added — ${skipped.size} module type(s) need a call to order` : "Added to your cart");
+  cartPending = { qty, skipped };
+  // One message for every configurator (store hand-off C1). The store looks each line up by product ref, then SKU,
+  // and always uses its own prices.
+  window.parent.postMessage({ type: "HB_ADD_TO_CART", v: 2, tool: TOOL, items: lines, design: designForCart(), redirectToCart: CONFIG.redirectToCartOnAdd }, CONFIG.siteBaseUrl);
+  setCartStatus(`${qty} module${qty > 1 ? "s" : ""} sent to your cart.`, skipped.size ? "err" : "ok");
+  if (skipped.size) $("#cartStatus").append(...skippedNote(skipped));
+  showToast(skipped.size ? `${qty} added \u2014 ${skipped.size} module type(s) need a quote` : "Added to your cart");
 }
 $("#btnCart").addEventListener("click", addDesignToCart);
 
@@ -1528,6 +1624,7 @@ function exportPDF(){
   const body = rows.map(r => r.isSubtotal
     ? `<tr class="sub"><td colspan="3">${esc(r.name)} · ${r.widthIn.toFixed(1)}"</td><td></td><td></td><td>${money(r.lineTotal)}</td></tr>`
     : `<tr><td>${r.run}</td><td><b>${esc(r.sku)}</b><br><small>${esc(r.name)}</small></td><td>${r.widthIn}"</td><td>${r.qty}</td><td>${money(r.unitPrice)}</td><td>${money(r.lineTotal)}</td></tr>`).join("");
+  track("design_printed", { modules: moduleCount(), pdf: true });
   const plan = captureRunImages()[0];
   const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Sunstone island parts list<\/title>
   <style>body{font-family:Montserrat,Arial,sans-serif;color:#14181f;margin:0;padding:32px;font-size:12px}
@@ -1558,6 +1655,7 @@ function exportPDF(){
 window.addEventListener("message", e => {
   if (!e.data || (e.source !== window && e.source !== window.parent)) return;
   if (e.data.type === "SUNSTONE_PRICE_MAP"){
+    if (STORE.dealer) return; // a signed-in dealer's prices from /configurator/map win over the web price map
     const incoming = e.data.prices;
     if (!incoming || typeof incoming !== "object") return;
     Object.entries(incoming).forEach(([id, price]) => {
@@ -1567,7 +1665,21 @@ window.addEventListener("message", e => {
     renderCatalog(); renderRuns(); renderPricing();
     return;
   }
-  if (e.data.type !== "SUNSTONE_LOAD_DESIGN") return;
+  if (e.data.type === "HB_CART_RESULT" && cartPending){
+    // The store's answer (hand-off C1): how many lines it found, and which it couldn't.
+    const missing = Array.isArray(e.data.missing) ? e.data.missing : [];
+    const added = Number(e.data.added) || 0;
+    const skipped = cartPending.skipped;
+    cartPending = null;
+    setCartStatus(added ? `${added} item${added > 1 ? "s" : ""} added to your cart.` : "The store couldn't add these items.", missing.length || skipped.size || !added ? "err" : "ok");
+    if (missing.length){
+      missing.forEach(m => { const id = Object.keys(CART_ID_MAP).find(k => String(CART_ID_MAP[k]) === String(m)) || String(m); skipped.set(id, skipped.get(id) || 1); });
+    }
+    if (skipped.size) $("#cartStatus").append(...skippedNote(skipped));
+    return;
+  }
+  // SUNSCAPE_LOAD_2D_DESIGN: the store page reopening a saved design ("Open design" links on quotes and carts).
+  if (e.data.type !== "SUNSTONE_LOAD_DESIGN" && e.data.type !== "SUNSCAPE_LOAD_2D_DESIGN") return;
   if (applyDesign(e.data.config)){
     showToast("Design loaded from the gallery");
     if (isEmbedded()) window.parent.postMessage({ type: "SUNSTONE_GALLERY_DESIGN_LOADED" }, CONFIG.siteBaseUrl);
@@ -1577,8 +1689,25 @@ window.addEventListener("message", e => {
 });
 
 /* ---------- live store sync: prices, product links, what can be bought online ---------- */
+// GET /api/public/configurator/map (store hand-off C3): the owner-edited module → product map, live prices
+// (a signed-in dealer gets their own) and which modules need a gas type. Not every Hubbase has it yet.
+async function syncMap(hb){
+  try {
+    const res = await fetch(`${hb.api}/api/public/configurator/map?siteId=${encodeURIComponent(hb.siteId)}&tool=${TOOL}`, { credentials: "same-origin" });
+    if (!res.ok) return;
+    const d = await res.json();
+    if (!d || !d.map || typeof d.map !== "object") return;
+    Object.entries(d.map).forEach(([id, ref]) => { if (byId(id) && ref) CART_ID_MAP[id] = ref; });
+    Object.entries(d.prices || {}).forEach(([id, p]) => { const n = Number(p); if (byId(id) && Number.isFinite(n) && n > 0) state.prices[id] = n; });
+    if (Array.isArray(d.gas)) STORE.gas = new Set(d.gas);
+    STORE.dealer = !!d.dealer;
+    if (STORE.dealer) document.querySelector(".quote .eyebrow").textContent = "Your dealer price";
+  } catch(err){ /* not available: keep the built-in map */ }
+}
+
 async function syncWithStore(){
   const hb = hubbaseInfo();
+  await syncMap(hb);
   const skus = CATALOG.map(c => c.id).join(",");
   const refs = CATALOG.map(c => CART_ID_MAP[c.id]).filter(Boolean).join(",");
   try {
@@ -1595,7 +1724,7 @@ async function syncWithStore(){
       STORE.available.add(it.id);
       if (hit.slug) STORE.slugs[it.id] = hit.slug;
       const dollars = Number(hit.price) / 100; // store prices are in cents
-      if (Number.isFinite(dollars) && dollars > 0) state.prices[it.id] = dollars;
+      if (!STORE.dealer && Number.isFinite(dollars) && dollars > 0) state.prices[it.id] = dollars;
     });
     STORE.loaded = true;
     renderCatalog(); renderRuns(); renderPricing();

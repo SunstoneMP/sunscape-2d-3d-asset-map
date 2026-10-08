@@ -36,7 +36,7 @@ python3 -I configurator/tools/fix_catalog.py   # only if the store snapshot chan
 python3 -I configurator/tools/build.py
 ```
 
-Test before uploading (34 checks: rendering with the Hubbase price injection, prices,
+Test before uploading (41 checks: rendering with the Hubbase price injection, prices,
 widths, click/drag, undo, cart hand-off, links, all five shapes, CSV, share links,
 autosave, bad files and phone layout):
 
@@ -95,6 +95,27 @@ A rebuilt interface that matches the Austin site (Montserrat, blue accent, white
   PDF with the layout picture, photo-real render request, clear.
 - **Phones**: bottom tabs for Catalog, Layout (with module count) and Quote (with total).
 - The unused "direct" cart mode, which called the old sunscape.ai cart, was removed.
+
+## Store hand-off contract (island app side)
+
+`2D-CONFIGURATOR-HANDOFF.md` (from the Hubbase cart chat) defines what the store accepts. The island
+app now follows it:
+
+| Hand-off item | Island app |
+| --- | --- |
+| A3 saved files can't change prices | done (prices in files are ignored) |
+| A5 gas type | asks Natural gas / Propane once per design before Add to Cart; sent as `options.gasType` on gas lines; shown in the quote |
+| A6 dead direct cart mode | removed |
+| A7 skipped modules | named, with "Request a quote for these" (pre-fills the quote form) |
+| B1 / C1 one cart message | sends `HB_ADD_TO_CART` v2, `tool: "island-classic"`, no prices |
+| B2 design with the order | sends `design` (layout, name, picture under 600 KB) |
+| B4 open a saved design | handles `SUNSCAPE_LOAD_2D_DESIGN` and `SUNSTONE_LOAD_DESIGN` |
+| B6 analytics | posts `HB_CONFIGURATOR_EVENT`: design_started, design_saved, design_shared, design_printed, quote_sent |
+| B7 / C3 map, live and dealer prices | reads `/api/public/configurator/map` first, falls back to the products API; dealer prices win |
+| C1 reply | reads `HB_CART_RESULT` and reports what was added and what was missing |
+
+The store side of C1–C4 isn't deployed on hubbase.app yet (the map endpoint answers 401), so for now
+the app falls back and the cart ignores `gasType` and `design`. Nothing breaks either way.
 
 ## What was fixed (October 2026)
 

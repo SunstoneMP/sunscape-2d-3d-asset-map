@@ -53,7 +53,24 @@ const btnTxt = await f.$eval('#btnCart', e => e.textContent); ok(btnTxt === 'Add
 await f.click('#btnCart'); await p.waitForTimeout(600);
 const cart = await p.evaluate(() => window.CART);
 ok(cart.length === 4 && cart.find(c => c.sku === 'SBC18STD').qty === 2, 'parent cart got items: ' + JSON.stringify(cart));
-const status = await f.$eval('#cartStatus', e => e.textContent); ok(/5 modules sent.*SAC46GLPCD_RUBY5BIR/.test(status), 'cart status honest: ' + status);
+const status = await f.$eval('#cartStatus', e => e.textContent); ok(/(5 modules sent|4 items added to your cart).*SAC46GLPCD_RUBY5BIR/.test(status), 'cart status honest: ' + status);
+const sent = await p.evaluate(() => window.LAST_CART);
+ok(sent && sent.type === 'HB_ADD_TO_CART' && sent.v === 2 && sent.tool === 'island-classic' && sent.design && sent.design.layout.runs[0].items.length === 6 && /^data:image\/jpeg/.test(sent.design.image || ''), 'cart message is v2 with the design and its picture');
+ok(sent.items.every(i => !('price' in i)), 'cart lines carry no price (the store prices them)');
+const evs = await p.evaluate(() => window.TOASTS.filter(t => t.startsWith('event:')));
+ok(evs.includes('event:design_started'), 'design_started event sent: ' + evs.join(','));
+// Gas appliance: asked once, then sent on the line
+await p.evaluate(() => { window.CART = []; window.MISSING = []; });
+await f.click('.cab-card[data-cat-id="SAC34GLPCD_RUBY3B"]');
+await f.click('#btnCart');
+ok(await f.isVisible('#gasModalBg.show'), 'gas type is asked before adding a gas grill');
+await f.click('#gasModalBg [data-gas="LP"]'); await p.waitForTimeout(600);
+const gasLine = (await p.evaluate(() => window.CART)).find(c => c.sku === 'SAC34GLPCD_RUBY3B');
+ok(gasLine && gasLine.gas === 'LP', 'the gas grill line carries gasType LP');
+ok(/Propane/.test(await f.$eval('.gas-row', e => e.textContent)), 'quote shows the gas choice');
+await f.click('#btnCart'); await p.waitForTimeout(300);
+ok(!(await f.isVisible('#gasModalBg.show')), 'gas type is not asked twice');
+await f.click('#btnUndo');
 const link = await f.$eval('.qline-name a', e => e.getAttribute('href')); ok(link.startsWith('/s/austin/products/'), 'store link: ' + link);
 // schematic shapes
 for (const shape of ['L', 'U', 'Double', 'V', 'Straight']) {
