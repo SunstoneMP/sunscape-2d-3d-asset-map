@@ -1,0 +1,570 @@
+[
+ {
+  "module": "SAC20CSDL",
+  "product_id": "pr_mc51jbip59",
+  "old_price": 1574.0,
+  "new_price": 1573.75,
+  "parts": "SAC20CSDL $1,573.75",
+  "notes": ""
+ },
+ {
+  "module": "SAC20CSDL_BRBC14",
+  "product_id": "pr_fpbw1qupln",
+  "old_price": 1753.0,
+  "new_price": 2696.25,
+  "parts": "SAC20CSDL $1,573.75 + B-RBC14 $1,122.50",
+  "notes": ""
+ },
+ {
+  "module": "SAC20CSDL_SUN13CPRO",
+  "product_id": "pr_7c997d3s9v",
+  "old_price": 1740.0,
+  "new_price": 2683.75,
+  "parts": "SAC20CSDL $1,573.75 + SUN13CPRO $1,110.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC20CSDL_SUN13VDB",
+  "product_id": "pr_2l1hfnxay3",
+  "old_price": 1490.0,
+  "new_price": 2433.75,
+  "parts": "SAC20CSDL $1,573.75 + SUN13VDB $860.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC20CSDR",
+  "product_id": "pr_cv5x8ysnjt",
+  "old_price": 1574.0,
+  "new_price": 1573.75,
+  "parts": "SAC20CSDR $1,573.75",
+  "notes": ""
+ },
+ {
+  "module": "SAC20CSDR_BRBC14",
+  "product_id": "pr_edy8i3nx93",
+  "old_price": 1753.0,
+  "new_price": 2696.25,
+  "parts": "SAC20CSDR $1,573.75 + B-RBC14 $1,122.50",
+  "notes": ""
+ },
+ {
+  "module": "SAC20CSDR_SUN13CPRO",
+  "product_id": "pr_3fhu966y5w",
+  "old_price": 1740.0,
+  "new_price": 2683.75,
+  "parts": "SAC20CSDR $1,573.75 + SUN13CPRO $1,110.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC20CSDR_SUN13VDB",
+  "product_id": "pr_vda2kkm6ph",
+  "old_price": 1490.0,
+  "new_price": 2433.75,
+  "parts": "SAC20CSDR $1,573.75 + SUN13VDB $860.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC30APC_SAPFR21PRO",
+  "product_id": "pr_tq4jkbdlzr",
+  "old_price": 2326.0,
+  "new_price": 3546.0,
+  "parts": "SAC30APC $2,110.00 + SAPFR21PRO $1,436.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC30KBDC_KAMADO_RAIL",
+  "product_id": "pr_dbbulh1ldz",
+  "old_price": 1260.0,
+  "new_price": 2833.75,
+  "parts": "SAC30KBDC $2,673.75 + SCC30KB-SPRAIL $160.00",
+  "notes": "KAMADO: the kamado grill itself is a third-party grill, not a Sunstone item"
+ },
+ {
+  "module": "SAC30KBDC_KAMADO_SHELF",
+  "product_id": "pr_jhsjvujqwk",
+  "old_price": 1210.0,
+  "new_price": 2673.75,
+  "parts": "SAC30KBDC $2,673.75",
+  "notes": "KAMADO: the kamado grill itself is a third-party grill, not a Sunstone item; SHELF: no item number on the sheet for this kamado option"
+ },
+ {
+  "module": "SAC30KBDC_SUN24PCB-GD",
+  "product_id": "pr_j4pvcq8aie",
+  "old_price": 1210.0,
+  "new_price": 6421.25,
+  "parts": "SAC30KBDC $2,673.75 + SUN24PCB-GD $3,747.50",
+  "notes": ""
+ },
+ {
+  "module": "SAC30KBDC_SUN24PCB-PB",
+  "product_id": "pr_u7dbubb51z",
+  "old_price": 1260.0,
+  "new_price": 6746.25,
+  "parts": "SAC30KBDC $2,673.75 + SUN24PCB-PB $4,072.50",
+  "notes": ""
+ },
+ {
+  "module": "SAC33PBDC_SUN24PCB",
+  "product_id": "pr_7k0xdgfq36",
+  "old_price": 1380.0,
+  "new_price": 7521.25,
+  "parts": "SAC33PBDC $2,523.75 + SUN24PCB $4,997.50",
+  "notes": ""
+ },
+ {
+  "module": "SAC34DWC_SAPWD30PROx2",
+  "product_id": "pr_nqpyiu2bpl",
+  "old_price": 3596.0,
+  "new_price": 4645.0,
+  "parts": "SAC34DWC $2,069.00 + 2 x SAP30WDPRO $1,288.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC34GLPCD",
+  "product_id": "pr_vri5ozgkr7",
+  "old_price": 2774.0,
+  "new_price": 2773.75,
+  "parts": "SAC34GLPCD $2,773.75",
+  "notes": ""
+ },
+ {
+  "module": "SAC34GLPCD_RUBY3B",
+  "product_id": "pr_vzsbkehaac",
+  "old_price": 3863.0,
+  "new_price": 5196.25,
+  "parts": "SAC34GLPCD $2,773.75 + RUBY3B $2,422.50",
+  "notes": ""
+ },
+ {
+  "module": "SAC34SWC_SAPWD30PRO",
+  "product_id": "pr_q93k6vi6kn",
+  "old_price": 2308.0,
+  "new_price": 3657.0,
+  "parts": "SAC34SWC $2,369.00 + SAP30WDPRO $1,288.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC3OKBDC_KAMADO_OPEN",
+  "product_id": "pr_j2nx71lqwp",
+  "old_price": 1260.0,
+  "new_price": 2673.75,
+  "parts": "SAC30KBDC $2,673.75",
+  "notes": "KAMADO: the kamado grill itself is a third-party grill, not a Sunstone item; OPEN: no item number on the sheet for this kamado option"
+ },
+ {
+  "module": "SAC40GLPCD",
+  "product_id": "pr_uhb9w9aoan",
+  "old_price": 3199.0,
+  "new_price": 3198.75,
+  "parts": "SAC40GLPCD $3,198.75",
+  "notes": ""
+ },
+ {
+  "module": "SAC40GLPCD_RUBY4B",
+  "product_id": "pr_u96cxpxruo",
+  "old_price": 4530.0,
+  "new_price": 6058.75,
+  "parts": "SAC40GLPCD $3,198.75 + RUBY4B $2,860.00",
+  "notes": ""
+ },
+ {
+  "module": "SAC46CGDC",
+  "product_id": "pr_07f4k4m9si",
+  "old_price": 3536.0,
+  "new_price": 3536.25,
+  "parts": "SAC46CGDC $3,536.25",
+  "notes": ""
+ },
+ {
+  "module": "SAC46GLPCD",
+  "product_id": "pr_kt0rwsihcs",
+  "old_price": 3623.0,
+  "new_price": 3622.5,
+  "parts": "SAC46GLPCD $3,622.50",
+  "notes": ""
+ },
+ {
+  "module": "SAC46GLPCD_RUBY5BIR",
+  "product_id": "pr_jpyv8zmiqr",
+  "old_price": 0.0,
+  "new_price": 7495.0,
+  "parts": "SAC46GLPCD $3,622.50 + RUBY5BIR $3,872.50",
+  "notes": ""
+ },
+ {
+  "module": "SBC12SLS_RIGHT",
+  "product_id": "pr_i1e0txdiyu",
+  "old_price": 1190.0,
+  "new_price": 2723.75,
+  "parts": "SBC12SLS $2,723.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC12SSRD",
+  "product_id": "pr_ilu5kyglll",
+  "old_price": 1749.0,
+  "new_price": 1748.75,
+  "parts": "SBC12SSRD $1,748.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC18CSDL",
+  "product_id": "pr_adtc9w6q64",
+  "old_price": 1974.0,
+  "new_price": 1973.75,
+  "parts": "SBC18CSDL $1,973.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC18CSDR",
+  "product_id": "pr_vw0y0jivzb",
+  "old_price": 1974.0,
+  "new_price": 1973.75,
+  "parts": "SBC18CSDR $1,973.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC18DPIC",
+  "product_id": "pr_oif9prk0tx",
+  "old_price": 2361.0,
+  "new_price": 2361.25,
+  "parts": "SBC18DPIC $2,361.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDL",
+  "product_id": "pr_n3gn7byxf3",
+  "old_price": 1399.0,
+  "new_price": 1398.75,
+  "parts": "SBC18FSDL $1,398.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDL_ASS17",
+  "product_id": "pr_9uxts291dj",
+  "old_price": 550.0,
+  "new_price": 1686.75,
+  "parts": "SBC18FSDL $1,398.75 + A-SS17 $288.00",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDL_BIC14",
+  "product_id": "pr_k6dg24j2np",
+  "old_price": 998.0,
+  "new_price": 1846.75,
+  "parts": "SBC18FSDL $1,398.75 + B-IC14 $448.00",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDL_SUN13VSB",
+  "product_id": "pr_a0bn3uhmnz",
+  "old_price": 1049.0,
+  "new_price": 1897.75,
+  "parts": "SBC18FSDL $1,398.75 + SUN13VSB $499.00",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDR",
+  "product_id": "pr_hlam73pr4f",
+  "old_price": 1399.0,
+  "new_price": 1398.75,
+  "parts": "SBC18FSDR $1,398.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDR_ASS17",
+  "product_id": "pr_bkj2urenqi",
+  "old_price": 550.0,
+  "new_price": 1686.75,
+  "parts": "SBC18FSDR $1,398.75 + A-SS17 $288.00",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDR_BIC14",
+  "product_id": "pr_j4bxftj634",
+  "old_price": 998.0,
+  "new_price": 1846.75,
+  "parts": "SBC18FSDR $1,398.75 + B-IC14 $448.00",
+  "notes": ""
+ },
+ {
+  "module": "SBC18FSDR_SUN13VSB",
+  "product_id": "pr_7pvr189jzz",
+  "old_price": 1049.0,
+  "new_price": 1897.75,
+  "parts": "SBC18FSDR $1,398.75 + SUN13VSB $499.00",
+  "notes": ""
+ },
+ {
+  "module": "SBC18SLPCD",
+  "product_id": "pr_d6oiwz53kx",
+  "old_price": 1761.0,
+  "new_price": 1761.25,
+  "parts": "SBC18SLPCD $1,761.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC18STD",
+  "product_id": "pr_dn0qgl9jn1",
+  "old_price": 1811.0,
+  "new_price": 1811.25,
+  "parts": "SBC18STD $1,811.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC18STRD",
+  "product_id": "pr_1kvvvbmkks",
+  "old_price": 1586.0,
+  "new_price": 1586.25,
+  "parts": "SBC18STRD $1,586.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC24CDD",
+  "product_id": "pr_ytge91wi3r",
+  "old_price": 1774.0,
+  "new_price": 1773.75,
+  "parts": "SBC24CDD $1,773.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC24CDD_BPS21",
+  "product_id": "pr_ad94jcu9x4",
+  "old_price": 1543.0,
+  "new_price": 2596.25,
+  "parts": "SBC24CDD $1,773.75 + B-PS21 $822.50",
+  "notes": ""
+ },
+ {
+  "module": "SBC24FDD",
+  "product_id": "pr_9u7cgrc450",
+  "old_price": 1711.0,
+  "new_price": 1711.25,
+  "parts": "SBC24FDD $1,711.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC24FDD_BPS21",
+  "product_id": "pr_srgb35ixwr",
+  "old_price": 1543.0,
+  "new_price": 2533.75,
+  "parts": "SBC24FDD $1,711.25 + B-PS21 $822.50",
+  "notes": ""
+ },
+ {
+  "module": "SBC24STD",
+  "product_id": "pr_lh7futhcsd",
+  "old_price": 2236.0,
+  "new_price": 2236.25,
+  "parts": "SBC24STD $2,236.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC30CDD",
+  "product_id": "pr_w2fxxu7xis",
+  "old_price": 2061.0,
+  "new_price": 2061.25,
+  "parts": "SBC30CDD $2,061.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC30CDD_BPS21",
+  "product_id": "pr_hm20ega1ob",
+  "old_price": 1713.0,
+  "new_price": 2883.75,
+  "parts": "SBC30CDD $2,061.25 + B-PS21 $822.50",
+  "notes": ""
+ },
+ {
+  "module": "SBC30CDD_BSK34",
+  "product_id": "pr_bll9w6np0u",
+  "old_price": 1638.0,
+  "new_price": 2808.75,
+  "parts": "SBC30CDD $2,061.25 + B-SK34 $747.50",
+  "notes": ""
+ },
+ {
+  "module": "SBC30FDD",
+  "product_id": "pr_djjl88atze",
+  "old_price": 1911.0,
+  "new_price": 1911.25,
+  "parts": "SBC30FDD $1,911.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC30FDD_BPS21",
+  "product_id": "pr_utwsro2pgd",
+  "old_price": 1713.0,
+  "new_price": 2733.75,
+  "parts": "SBC30FDD $1,911.25 + B-PS21 $822.50",
+  "notes": ""
+ },
+ {
+  "module": "SBC30STD",
+  "product_id": "pr_63md9rv4di",
+  "old_price": 2711.0,
+  "new_price": 2711.25,
+  "parts": "SBC30STD $2,711.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC36CDD",
+  "product_id": "pr_5t7lsll53g",
+  "old_price": 2449.0,
+  "new_price": 2448.75,
+  "parts": "SBC36CDD $2,448.75",
+  "notes": ""
+ },
+ {
+  "module": "SBC36CDD_AIC",
+  "product_id": "pr_fjrxpbsjjb",
+  "old_price": 2060.0,
+  "new_price": 3408.75,
+  "parts": "SBC36CDD $2,448.75 + A-IC $960.00",
+  "notes": ""
+ },
+ {
+  "module": "SBC36CDD_BPS21",
+  "product_id": "pr_xws14zyaqe",
+  "old_price": 1923.0,
+  "new_price": 3271.25,
+  "parts": "SBC36CDD $2,448.75 + B-PS21 $822.50",
+  "notes": ""
+ },
+ {
+  "module": "SBC36FDD",
+  "product_id": "pr_9o8w9161n7",
+  "old_price": 2286.0,
+  "new_price": 2286.25,
+  "parts": "SBC36FDD $2,286.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC3C45_LEFT",
+  "product_id": "pr_wojqm6wdsf",
+  "old_price": 810.0,
+  "new_price": 1311.25,
+  "parts": "SBC3C45 $1,311.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC3C45_RIGHT",
+  "product_id": "pr_2yegg3uybe",
+  "old_price": 810.0,
+  "new_price": 1311.25,
+  "parts": "SBC3C45 $1,311.25",
+  "notes": ""
+ },
+ {
+  "module": "SBC6SPEL",
+  "product_id": "pr_nm5zn5ktuj",
+  "old_price": 636.0,
+  "new_price": 636.25,
+  "parts": "SBC6SPEL $636.25",
+  "notes": ""
+ },
+ {
+  "module": "SCC25SPE",
+  "product_id": "pr_ayvvwxqpwa",
+  "old_price": 688.0,
+  "new_price": 687.5,
+  "parts": "SCC25SPE $687.50",
+  "notes": ""
+ },
+ {
+  "module": "SCC31BP90_ASS17_LEFT",
+  "product_id": "pr_vrpcxnaiwd",
+  "old_price": 1090.0,
+  "new_price": 1511.75,
+  "parts": "SCC31BP90 $1,223.75 + A-SS17 $288.00",
+  "notes": ""
+ },
+ {
+  "module": "SCC31BP90_ASS17_RIGHT",
+  "product_id": "pr_2d7veq82x2",
+  "old_price": 1090.0,
+  "new_price": 1511.75,
+  "parts": "SCC31BP90 $1,223.75 + A-SS17 $288.00",
+  "notes": ""
+ },
+ {
+  "module": "SCC31BP90_LEFT",
+  "product_id": "pr_y2afsua79r",
+  "old_price": 1090.0,
+  "new_price": 1223.75,
+  "parts": "SCC31BP90 $1,223.75",
+  "notes": ""
+ },
+ {
+  "module": "SCC31BP90_RIGHT",
+  "product_id": "pr_cye2gru29v",
+  "old_price": 1090.0,
+  "new_price": 1223.75,
+  "parts": "SCC31BP90 $1,223.75",
+  "notes": ""
+ },
+ {
+  "module": "SCC3SP90_ASS17_LEFT",
+  "product_id": "pr_zl268n0eke",
+  "old_price": 1090.0,
+  "new_price": 474.25,
+  "parts": "SCC3SP90 $186.25 + A-SS17 $288.00",
+  "notes": ""
+ },
+ {
+  "module": "SCC3SP90_ASS17_RIGHT",
+  "product_id": "pr_2tudxu0g26",
+  "old_price": 1090.0,
+  "new_price": 474.25,
+  "parts": "SCC3SP90 $186.25 + A-SS17 $288.00",
+  "notes": ""
+ },
+ {
+  "module": "SCC3SP90_LEFT",
+  "product_id": "pr_f7a3d96k1x",
+  "old_price": 1040.0,
+  "new_price": 186.25,
+  "parts": "SCC3SP90 $186.25",
+  "notes": ""
+ },
+ {
+  "module": "SCC3SP90_RIGHT",
+  "product_id": "pr_t50h4bic3l",
+  "old_price": 1040.0,
+  "new_price": 186.25,
+  "parts": "SCC3SP90 $186.25",
+  "notes": ""
+ },
+ {
+  "module": "SCC3SP90_SUN13VSB_LEFT",
+  "product_id": "pr_cclaao2ac8",
+  "old_price": 1090.0,
+  "new_price": 685.25,
+  "parts": "SCC3SP90 $186.25 + SUN13VSB $499.00",
+  "notes": ""
+ },
+ {
+  "module": "SCC3SP90_SUN13VSB_RIGHT",
+  "product_id": "pr_vur369dm15",
+  "old_price": 1090.0,
+  "new_price": 685.25,
+  "parts": "SCC3SP90 $186.25 + SUN13VSB $499.00",
+  "notes": ""
+ },
+ {
+  "module": "SCC3SPF",
+  "product_id": "pr_y03h56zk6e",
+  "old_price": 124.0,
+  "new_price": 123.75,
+  "parts": "SCC3SPF $123.75",
+  "notes": ""
+ },
+ {
+  "module": "SCC6SPF",
+  "product_id": "pr_5ezyaiqku2",
+  "old_price": 149.0,
+  "new_price": 148.75,
+  "parts": "SCC6SPF $148.75",
+  "notes": ""
+ }
+]

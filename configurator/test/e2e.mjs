@@ -24,7 +24,7 @@ const tabs = await f.$$eval('.cat-tab', els => els.map(e => e.textContent.trim()
 ok(!tabs.some(t => t.startsWith('Wall')), 'empty Wall Cabinets tab hidden: ' + tabs.join(' | '));
 // price from store/injection: SAC20CSDL should be $1,574
 const price = await f.$eval('.cab-card[data-cat-id="SAC20CSDL"] .price', e => e.textContent);
-ok(price === '$1,574', 'SAC20CSDL price matches store: ' + price);
+ok(price === '$1,573.75', 'SAC20CSDL price matches store (MAP): ' + price);
 const kam = await f.$eval('.cab-card[data-cat-id="SAC30KBDC_KAMADO_RAIL"] .w', e => e.textContent);
 ok(kam === '30"', 'Kamado width fixed: ' + kam);
 const call = await f.$$eval('.badge-call', els => els.map(e => e.closest('.cab-card').dataset.catId));
@@ -34,7 +34,7 @@ for (const id of ['SAC34GLPCD', 'SBC18STD', 'SBC18STD']) await f.click(`.cab-car
 let placed = await f.$$eval('.placed', els => els.length);
 ok(placed === 3, 'click adds modules: ' + placed);
 const total = await f.$eval('[data-t="subtotal"]', e => e.textContent);
-ok(total === '$6,396', 'subtotal 2774+1811*2: ' + total);
+ok(total === '$6,396.25', 'subtotal 2773.75 + 1811.25 x 2: ' + total);
 // drag & drop a catalog card into the lane at the start
 await f.dragAndDrop('.cab-card[data-cat-id="SBC12SSRD"]', '.lane', { targetPosition: { x: 5, y: 100 } });
 const first = await f.$eval('.placed img', e => e.alt);
@@ -105,7 +105,7 @@ await f.focus('.run.active .placed.selected'); await p.keyboard.press('Delete');
 ok((await f.$$eval('.run.active .placed', e => e.length)) === before - 1, 'Delete key removes the selected module');
 await f.click('#btnUndo');
 await f.click('.cab-card[data-cat-id="SBC18STD"] .info-btn');
-ok(/SBC18STD/.test(await f.$eval('#detailTitle', e => e.textContent)) && /\$1,811/.test(await f.$eval('#detailBody', e => e.textContent)), 'details dialog shows SKU and store price');
+ok(/SBC18STD/.test(await f.$eval('#detailTitle', e => e.textContent)) && /\$1,811\.25/.test(await f.$eval('#detailBody', e => e.textContent)), 'details dialog shows SKU and store price');
 await f.click('#detailClose');
 // CSV
 const [dl] = await Promise.all([p.waitForEvent('download'), (async () => { await f.click('#btnMore'); await f.click('#exportCSVBtn'); })()]);

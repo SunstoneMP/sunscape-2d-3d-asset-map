@@ -1,0 +1,3254 @@
+{
+"SAC37HGDC": [
+{
+"item": "SAC37HGDC",
+"desc": "37” Sunstone Hybrid Grill Base Cabinet, Combo PKG of (1) SCC22PTD, (1) SCC22BPE, (1) SCC15PTD, (1) SCC15BPE, (1) SCC16RARM,   (1) SCC16LARM, (1) SCCHGCTK4.75",
+"map": 3685.0,
+"sheet": "cabinets"
+}
+],
+"SAC44HGDC": [
+{
+"item": "SAC44HGDC",
+"desc": "44” Sunstone Hybrid Grill Base Cabinet, Combo PKG of (2) SCC22PTD, (2) SCC22BPE, (1) SCC16RARM,   (1) SCC16LARM, (1) SCCHGCTK4.75",
+"map": 3910.0,
+"sheet": "cabinets"
+}
+],
+"SAC52HGDC": [
+{
+"item": "SAC52HGDC",
+"desc": "52” Sunstone Hybrid Grill Base Cabinet, Combo PKG of (1) SCC22PTD, (1) SCC22BPE, (2) SCC15PTD, (2) SCC15BPE,(1) SCC16RARM, (1) SCC16LARM,           (1) SCCHGCTK4.75",
+"map": 5172.5,
+"sheet": "cabinets"
+}
+],
+"SAC66HGDC": [
+{
+"item": "SAC66HGDC",
+"desc": "66” Sunstone Hybrid Grill Base Cabinet, Combo PKG of (3) SCC22PTD, (3) SCC22BPE,(1) SCC16RARM, (1) SCC16LARM,  (1) SCCHGCTK4.75",
+"map": 5622.5,
+"sheet": "cabinets"
+}
+],
+"SCC22PTD": [
+{
+"item": "SCC22PTD",
+"desc": "22\" Component Base Drawer for Pellet Grill (SAC44PTGDC 2 REQ)",
+"map": 1310.0,
+"sheet": "cabinets"
+}
+],
+"SCC15PTD": [
+{
+"item": "SCC15PTD",
+"desc": "15\" Component Base Drawer for Pellet Grill (SAC44PTGDC 2 REQ)",
+"map": 1160.0,
+"sheet": "cabinets"
+}
+],
+"SCC22BPE": [
+{
+"item": "SCC22BPE",
+"desc": "22\" Back Panel Support for similar 22\" Width Base Component (SAC44PTGDC 2 REQ)",
+"map": 397.5,
+"sheet": "cabinets"
+}
+],
+"SCC15BPE": [
+{
+"item": "SCC15BPE",
+"desc": "15\" Back Panel Support for similar 22\" Width Base Component (SAC44PTGDC 2 REQ)",
+"map": 322.5,
+"sheet": "cabinets"
+}
+],
+"SCC16RARM": [
+{
+"item": "SCC16RARM",
+"desc": "16\" Height Grill Component Arm for Right Side Cabinet Assembly (SAC44PTGDC 1 REQ)",
+"map": 247.5,
+"sheet": "cabinets"
+}
+],
+"SCC16LARM": [
+{
+"item": "SCC16LARM",
+"desc": "16\" Height Grill Component Arm for Left Side Cabinet Assembly (SAC44PTGDC 1 REQ)",
+"map": 247.5,
+"sheet": "cabinets"
+}
+],
+"SAC30KBDC": [
+{
+"item": "SAC30KBDC",
+"desc": "30\" Kamado Hybrid Grill Base Cabinet",
+"map": 2673.75,
+"sheet": "cabinets"
+}
+],
+"SCC30KB-RISER": [
+{
+"item": "SCC30KB-RISER",
+"desc": "Place at base of cabinet to lift height of Kamado  -  Primo® Oval Large 300 Kamado - 775, Primo®  Oval Junior 200 Kamado - 774, Primo®  Large Round Ceramic Kamado - 771, Grill Dome Infinity®  Kamado -  GDS-BK",
+"map": 222.5,
+"sheet": "cabinets"
+}
+],
+"SCC30KB-WLSHELF": [
+{
+"item": "SCC30KB-WLSHELF",
+"desc": "Floating Shelf for Item No. SAC30KBDC, can be mounted on front face of cabinet to extend work area, or mount on Wall or BBQ Island on its own",
+"map": 147.5,
+"sheet": "cabinets"
+},
+{
+"item": "SCC30KB-WLSHELF",
+"desc": "304 Stainless Steel Sturdy Wall Shelf 22-1/2\"W x 1-3/8\"H x 8\"D",
+"map": 147.5,
+"sheet": "grills"
+}
+],
+"SCC30KB-SPRAIL": [
+{
+"item": "SCC30KB-SPRAIL",
+"desc": "Speed Rail for Item No. SAC30KBDC, can be mounted on front face of cabinet to hold up to 8 Liquor Bottles, or mount on Wall or BBQ Island on its own.",
+"map": 160.0,
+"sheet": "cabinets"
+},
+{
+"item": "SCC30KB-SPRAIL",
+"desc": "304 Stainless Steel Speed Rail Pocket Shelfl 22-1/2\"W x 5\"H x 4-1/2\"D",
+"map": 160.0,
+"sheet": "grills"
+}
+],
+"SAC33PBDC": [
+{
+"item": "SAC33PBDC",
+"desc": "33\" Power Burner Cabinet",
+"map": 2523.75,
+"sheet": "cabinets"
+}
+],
+"SAC34GLPCD": [
+{
+"item": "SAC34GLPCD",
+"desc": "34” Sunstone Gas Grill Base Cabinet",
+"map": 2773.75,
+"sheet": "cabinets"
+}
+],
+"SAC40GLPCD": [
+{
+"item": "SAC40GLPCD",
+"desc": "40” Sunstone Gas Grill Base Cabinet",
+"map": 3198.75,
+"sheet": "cabinets"
+}
+],
+"SAC46GLPCD": [
+{
+"item": "SAC46GLPCD",
+"desc": "46” Sunstone Gas Grill Base Cabinet",
+"map": 3622.5,
+"sheet": "cabinets"
+}
+],
+"SAC34CGDC": [
+{
+"item": "SAC34CGDC",
+"desc": "34” Sunstone Charcoal Grill Base Cabinet",
+"map": 2189.0,
+"sheet": "cabinets"
+}
+],
+"SCC34CTK34": [
+{
+"item": "SCC34CTK34",
+"desc": "All Kamado Joe® Grills , All Primo® Grills, All Big Green Egg® Grills,   All Grill Dome® Grills, All Vision® Grills, and most other Brands",
+"map": 261.25,
+"sheet": "cabinets"
+}
+],
+"SAC46CGDC": [
+{
+"item": "SAC46CGDC",
+"desc": "46” Sunstone Charcoal Grill Base Cabinet",
+"map": 3536.25,
+"sheet": "cabinets"
+}
+],
+"SAC34SWC": [
+{
+"item": "SAC34SWC",
+"desc": "34\" Sunstone Single Warming Drawer Cabinet",
+"map": 2369.0,
+"sheet": "cabinets"
+}
+],
+"SAC34DWC": [
+{
+"item": "SAC34DWC",
+"desc": "34\" Sunstone Double Warming Drawer Cabinet",
+"map": 2069.0,
+"sheet": "cabinets"
+}
+],
+"SAC20CSDR": [
+{
+"item": "SAC20CSDR",
+"desc": "20\" Sunstone Appliance Base Cabinet w/Right Swing Door",
+"map": 1573.75,
+"sheet": "cabinets"
+}
+],
+"SAC20CSDL": [
+{
+"item": "SAC20CSDL",
+"desc": "20\" Sunstone Appliance Base Cabinet w/Left Swing Door",
+"map": 1573.75,
+"sheet": "cabinets"
+}
+],
+"SAC24APC": [
+{
+"item": "SAC24APC",
+"desc": "24” Sunstone Appliance Cabinet for up to 15” Wide Fridge",
+"map": 1935.0,
+"sheet": "cabinets"
+}
+],
+"SAC30APC": [
+{
+"item": "SAC30APC",
+"desc": "30” Sunstone Appliance Cabinet for up to 21” Wide Fridge",
+"map": 2110.0,
+"sheet": "cabinets"
+}
+],
+"SAC34APC": [
+{
+"item": "SAC34APC",
+"desc": "34” Sunstone Appliance Cabinet for up to 25” Wide Fridge",
+"map": 2185.0,
+"sheet": "cabinets"
+}
+],
+"SCC4SPER": [
+{
+"item": "SCC4SPER/SCC4SPEL",
+"desc": "4\" Combo Left & Right Appliance Partition Panels",
+"map": 1497.5,
+"sheet": "cabinets"
+}
+],
+"SCC4SPEL": [
+{
+"item": "SCC4SPER/SCC4SPEL",
+"desc": "4\" Combo Left & Right Appliance Partition Panels",
+"map": 1497.5,
+"sheet": "cabinets"
+}
+],
+"SCC15SPE": [
+{
+"item": "SCC15SPE",
+"desc": "15\" Appliance Back Panels(Back Panel for SAC24APC)",
+"map": 350.0,
+"sheet": "cabinets"
+}
+],
+"SCC21SP": [
+{
+"item": "SCC21SP",
+"desc": "21\" Appliance Back Panels(Back Panel for SAC30APC)",
+"map": 612.5,
+"sheet": "cabinets"
+}
+],
+"SCC25SPE": [
+{
+"item": "SCC25SPE",
+"desc": "25\" Appliance Back Panels(Back Panel for SAC34APC)",
+"map": 687.5,
+"sheet": "cabinets"
+}
+],
+"SCC3CSP": [
+{
+"item": "SCC3CSP",
+"desc": "3\" Partition Panel for Appliance Runs & Product type seperator",
+"map": 599.0,
+"sheet": "cabinets"
+}
+],
+"SCPRANCHER8.10BY11": [
+{
+"item": "SCPRANCHER8.10BY11",
+"desc": "RUBY5BIR, SUN13VDB, SAPFR21PRO, B-PS21, SAC46GLPCD, SCC46GTK3.25, SAC20CSDR, SCC20CTK3.75, SBC12SLS, SBC18DPIC, SBC18STRD, SCC4SPEL & SCC4SPER & SCC21SPE, SBC24FDD, (2) SCC27EP, (2) SCC25KP",
+"map": 21453.75,
+"sheet": "cabinets"
+}
+],
+"SCPGALLEY10.8": [
+{
+"item": "SCPGALLEY10.8",
+"desc": "B-SK34, B-RBC14, A-IC, (2)SAPWD30PRO, BC-DT14, P-FHC  (2) SBC36FDD, SAC34DWC, SAC20CSDL, SCC20CTK3.25, (2) SCC25KP, (2) SCC27EP",
+"map": 14783.75,
+"sheet": "cabinets"
+}
+],
+"SCPFRENCHQUARTER13.7": [
+{
+"item": "SCPFRENCHQUARTER13.7",
+"desc": "RUBY5BIR, SAPWD30PRO, SAP30WDDE, SUN13VDB, SAPFR21PRO, B-PS21, SAC46GLPCD, SCC46GTK3.25, SBC6SPEL, SAC20CSDR, SCC20CTK3.75, SAC34SWC,  SCC4SPEL & SCC4SPER & SCC21SPE, SBC24CDD, (2) SCC27EP, (2) SCC25KP",
+"map": 20848.75,
+"sheet": "cabinets"
+}
+],
+"SCPBAYOU8.6": [
+{
+"item": "SCPBAYOU8.6",
+"desc": "RUBY3B, 1SSB, SAPFR21PRO, A-SS17, SAC34GLPCD, SCC34GTK3.25,  SCC4SPEL & SCC4SPER & SCC21SPE, SBC18FSDR, SBC18FSDL, (2) SCC27EP, (2) SCC25KP",
+"map": 12200.0,
+"sheet": "cabinets"
+}
+],
+"SCPTXTANGO19": [
+{
+"item": "SCPTXTANGO19",
+"desc": "RUBY3B, SUNCHZ30,SUN13VSB, SAPFR21PRO, B-PS21, SAC34GLPCD, SCC34GTK3.25 , SAC34CGDC, SCC34CTK3.75,  SCC4SPEL & SCC4SPER & SCC21SPE, SBC18STD, SBC18STRD,SCC31BP90,SCC3SP90 ,SBC24CDD,(2) SCC27EP, (2) SCC25KP",
+"map": 22632.5,
+"sheet": "cabinets"
+}
+],
+"SCPCYPRESS11.6": [
+{
+"item": "SCPCYPRESS11.6",
+"desc": "SUNPLT40, SUN13CPRO,SUN13CPRO-HOOD, SAPFR21PRO, B-PS21, SAC44HGDC, SCCHGDC3 , SAC20CSDR, SCC20CTK3.75, SBC18STD, SCC4SPEL & SCC4SPER & SCC21SPE, SBC24CDD, (2) SCC27EP, (2) SCC25KP",
+"map": 20626.25,
+"sheet": "cabinets"
+}
+],
+"SCPBIGTEX21": [
+{
+"item": "SCPBIGTEX21",
+"desc": "EMCHDZ42, SUN13CPRO,SUN13CPRO-HOOD,SAPFR21PRO, B-PS21, SAC46CGDC, SCC46CTK3.25, SAC20CSDR, SCC20CTK3.75, SBC24CDD, SBC18STD, SBC18STRD, SBC18DPIC, SBC12SSRD, SBC3C45, SBC6SPEL,SCC4SPEL & SCC4SPER & SCC21SPE,(2) SCC27EP, (2) SCC25KP",
+"map": 27486.25,
+"sheet": "cabinets"
+}
+],
+"SCPTEXCAJUN9": [
+{
+"item": "SCPTEXCAJUN9",
+"desc": "SUN24PCB, SUN24PCB-GD, SUN24PCB-HOOD, SUN13CPRO,SUN13CPRO-HOOD,, SAC33PBDC, SCC33PBTK22.75, SAC30KBDC, SAC20CSDR, SCC20CTK3.75 ,SBC12SMD, SBC12SSRD, (2) SCC27EP, (2) SCC25KP",
+"map": 20733.75,
+"sheet": "cabinets"
+}
+],
+"SCPSUMMIT10": [
+{
+"item": "SCPSUMMIT10",
+"desc": "RUBY3B, SUN13VDB, ADASK37, B-IC14, SAC34GLPCD, SCC34GTK3.25, SAC20CSDR, SCC20CTK3.75, ADA44BC, SBC18FSDR, (2) SCC27EP, (2) SCC25KP-ADA, (12) ADA-Legs, SCCADAFBKP34, SCCADAFBKP20, SCCADAFBKP24, SCCADAFBKP18",
+"map": 13233.75,
+"sheet": "cabinets"
+}
+],
+"SCPMAGNOLIA10": [
+{
+"item": "SCPMAGNOLIA10",
+"desc": "RUBY3B, SUN13VDB, ADASK20, B-IC14, SAC34GLPCD, SCC34GTK3.25, SAC20CSDR, SCC20CTK3.75, SBC18STD, SBC24FDD, SBC18FSDR,(2) SCC27EP, (2) SCC25KP-ADA, (12) ADA-Legs, SCCADAFBKP34, SCCADAFBKP20, (2) SCCADAFBKP18, SCCADAFBKP24",
+"map": 14377.5,
+"sheet": "cabinets"
+}
+],
+"SCPDALLAS14": [
+{
+"item": "SCPDALLAS14",
+"desc": "EMCHDZ42,  SUN13CPRO,SUN13CPRO-HOOD, SAPFR21PRO, B-PS21, SAC46CGDC, SCC46CTK3.25, SAC20CSDR, SCC20CTK3.75, SCC4SPEL & SCC4SPER & SCC21SPE, SBC18STD, SBC18STRD, SBC24CDD, SBC6SPEL, (2) SCC27EP, (2) SCC27EP",
+"map": 22336.25,
+"sheet": "cabinets"
+}
+],
+"SCPGULFBREEZE10.2": [
+{
+"item": "SCPGULFBREEZE10.2",
+"desc": "RUBY5BIR,  SUN13CPRO,SUN13CPRO-HOOD, SAPFR21PRO, B-PS21, SAC46GLPCD, SCC46GTK3.25, SAC20CSDR, SCC20CTK3.75, SBC6SPEL, SBC24CDD, (2) SCC27EP, (2) SCC25KP",
+"map": 14988.75,
+"sheet": "cabinets"
+}
+],
+"SCPALAMO10": [
+{
+"item": "SCPALAMO10",
+"desc": "SUNCHSZ30,  SUN13CPRO,SUN13CPRO-HOOD, A-IC, B-PS21, SAC34CGDC, SCC34CTK3.75, SAC20CSDR, SCC20CTK3.75, SBC36CDD. SBC24CDD, SBC6SPEL, (2) SCC27EP,(2) SCC25KP",
+"map": 16021.25,
+"sheet": "cabinets"
+}
+],
+"SCPBRAZOS9": [
+{
+"item": "SCPBRAZOS9",
+"desc": "RUBY3B, 1SSB, A-SS17, SAPFR21PRO, SAC34GLPCD, SCC34GTK3.25,  SCC4SPEL & SCC4SPER & SCC21SPE, SBC18FSDR, SBC24FDD, (2) SCC27EP,(2) SCC25KP",
+"map": 12497.5,
+"sheet": "cabinets"
+}
+],
+"SCPCAPRICE6.4": [
+{
+"item": "SCPCAPRICE6.4",
+"desc": "RUBY3B, SUN13VDB, B-RBC14, SAC34GLPCD, SCC34GTK3.25, SAC20CSDR, SCC20CTK3.75, SAC20CSDL, SCC20CTK3.25, (2) SCC27EP, (2) SCC25KP",
+"map": 10233.75,
+"sheet": "cabinets"
+}
+],
+"SCPHILLCOUNTRY13.6": [
+{
+"item": "SCPHILLCOUNTRY13.6",
+"desc": "RUBY5BIR, SUN24PCB, SUN13VDB, SAPFR21PRO,          B-PS21, SAC46GLPCD, SCC46GTK3.25, SAC20CSDR, SCC20CTK3.75, SAC33PBDC, SCC33PBTK22.75, SCC4SPEL & SCC4SPER & SCC21SPE,SBC6SPEL, SBC24CDD,(2) SCC27EP, (2) SCC25KP",
+"map": 23440.0,
+"sheet": "cabinets"
+}
+],
+"SCPHOUSTON9.8": [
+{
+"item": "SCPHOUSTON9.8",
+"desc": "RUBY4B, SUN13VDB, SAPFR21PRO, B-PS21, SAC40GLPCD, SCC40GTK3.25, SAC20CSDR, SCC20CTK3.75,SCC4SPEL & SCC4SPER & SCC21SPE, SBC24FDD, (2) SCC27EP, (2) SCC25KP",
+"map": 14266.25,
+"sheet": "cabinets"
+}
+],
+"SCPSAVANNA16": [
+{
+"item": "SCPSAVANNA16",
+"desc": "RUBY4BIR, SUN13VDB, B-RBC14, SAPFR21PRO, SAC40GLPCD, SCC40GTK3.25,  (2) SAC20CSDR, SCC20CTK3.75, SCC20CTK3.25, SCC4SPEL & SCC4SPER & SCC21SPE, SBC18STD, SBC18STRD, SBC5C30, SBC6SPEL, (2) SCC27EP, (2) SCC25KP",
+"map": 19712.5,
+"sheet": "cabinets"
+}
+],
+"SBC12SLS": [
+{
+"item": "SBC12SLS",
+"desc": "12”X12” Front face, 90 Degree Corner Cabinet w/Lazy Susan Shelves",
+"map": 2723.75,
+"sheet": "cabinets"
+}
+],
+"SBC12SMD": [
+{
+"item": "SBC12SMD",
+"desc": "12” 4 Multi Drawer Base Cabinet",
+"map": 1711.25,
+"sheet": "cabinets"
+}
+],
+"SBC12SSRD": [
+{
+"item": "SBC12SSRD",
+"desc": "12” Spice Rack Drawer Cabinet w/Removable Bins",
+"map": 1748.75,
+"sheet": "cabinets"
+}
+],
+"SBC18STRD": [
+{
+"item": "SBC18STRD",
+"desc": "18”  Trash Drawer Cabinet w/Two Front to Back Trash Bins",
+"map": 1586.25,
+"sheet": "cabinets"
+}
+],
+"SBC18SLPCD": [
+{
+"item": "SBC18SLPCD",
+"desc": "18\" Combo Propane Tank or Trash Storage Drawer w/Top Utility Drawer",
+"map": 1761.25,
+"sheet": "cabinets"
+}
+],
+"SBC18DPIC": [
+{
+"item": "SBC18DPIC",
+"desc": "18\"Combo Paper Towel Holder/Cutlery Drawer with Cutting Board & Insulated Ice Chest Dry Storage Drawer with Drain",
+"map": 2361.25,
+"sheet": "cabinets"
+}
+],
+"SBC18STD": [
+{
+"item": "SBC18STD",
+"desc": "18\" Triple Drawer Base Cabinet",
+"map": 1811.25,
+"sheet": "cabinets"
+}
+],
+"SBC24STD": [
+{
+"item": "SBC24STD",
+"desc": "24\" Large Triple Drawer Base Cabinet",
+"map": 2236.25,
+"sheet": "cabinets"
+}
+],
+"SBC30STD": [
+{
+"item": "SBC30STD",
+"desc": "30\" Large Triple Drawer Base Cabinet",
+"map": 2711.25,
+"sheet": "cabinets"
+}
+],
+"SBC30DSPC": [
+{
+"item": "SBC30DSPC",
+"desc": "30\" Weather Sealed Dry Storage Pantry with Multi-Drawers and shelves",
+"map": 2369.0,
+"sheet": "cabinets"
+}
+],
+"SBC18FSDR": [
+{
+"item": "SBC18FSDR",
+"desc": "18\" Full Height Right Swing Door Cabinet w/Shelf",
+"map": 1398.75,
+"sheet": "cabinets"
+}
+],
+"SBC18FSDL": [
+{
+"item": "SBC18FSDL",
+"desc": "18\" Full Height Left Swing Door Cabinet w/Shelf",
+"map": 1398.75,
+"sheet": "cabinets"
+}
+],
+"SBC24FDD": [
+{
+"item": "SBC24FDD",
+"desc": "24\" Full Double Door Base Cabinet",
+"map": 1711.25,
+"sheet": "cabinets"
+}
+],
+"SBC30FDD": [
+{
+"item": "SBC30FDD",
+"desc": "30\" Full Double Door Base Cabinet",
+"map": 1911.25,
+"sheet": "cabinets"
+}
+],
+"SBC36FDD": [
+{
+"item": "SBC36FDD",
+"desc": "36\" Full Double Door Base Cabinet",
+"map": 2286.25,
+"sheet": "cabinets"
+}
+],
+"ADA44BC": [
+{
+"item": "ADA44BC",
+"desc": "44\" ADA Compliant Combo Sink Base Cabinet",
+"map": 2061.25,
+"sheet": "cabinets"
+}
+],
+"SBC18CSDL": [
+{
+"item": "SBC18CSDL",
+"desc": "18” Single “Left” Swing Door Base Cabinet w/Shelf & Top Drawer",
+"map": 1973.75,
+"sheet": "cabinets"
+}
+],
+"SBC18CSDR": [
+{
+"item": "SBC18CSDR",
+"desc": "18” Single “Right” Swing Door Base Cabinet w/Shelf & Top Drawer",
+"map": 1973.75,
+"sheet": "cabinets"
+}
+],
+"SBC24CDD": [
+{
+"item": "SBC24CDD",
+"desc": "24\"Double Door Cabinet w/Shelf & Reversible Top Drawer or False Panel",
+"map": 1773.75,
+"sheet": "cabinets"
+}
+],
+"SBC30CDD": [
+{
+"item": "SBC30CDD",
+"desc": "30\"Double Door Cabinet w/Shelf & Reversible Top Drawer or False Panel",
+"map": 2061.25,
+"sheet": "cabinets"
+}
+],
+"SBC36CDD": [
+{
+"item": "SBC36CDD",
+"desc": "36\"Double Door Cabinet w/Shelf & Reversible Top Drawer or False Panel",
+"map": 2448.75,
+"sheet": "cabinets"
+}
+],
+"SBC6SPEL": [
+{
+"item": "SBC6SPEL",
+"desc": "6\" Spacer Base Cabinet w/Front & Back Interior Electrical Box",
+"map": 636.25,
+"sheet": "cabinets"
+}
+],
+"SCC31BP90": [
+{
+"item": "SCC31BP90",
+"desc": "90 Degree 31\"x 31\"Back Panel Corner Cabinet",
+"map": 1223.75,
+"sheet": "cabinets"
+}
+],
+"SBC5C30": [
+{
+"item": "SBC5C30",
+"desc": "60 Degree Corner Base Cabinet w/Bottom Utility Access",
+"map": 919.0,
+"sheet": "cabinets"
+}
+],
+"SBC3C45": [
+{
+"item": "SBC3C45",
+"desc": "45 Degree Corner Base Cabinet w/Bottom Utility Access",
+"map": 1311.25,
+"sheet": "cabinets"
+}
+],
+"SCC27EP": [
+{
+"item": "SCC27EP",
+"desc": "Base Cabinet End Panel",
+"map": 148.75,
+"sheet": "cabinets"
+}
+],
+"SCC25KP": [
+{
+"item": "SCC25KP",
+"desc": "25-1/2\" Universal Kick Plate  for Left or Right Sides of Base Cabinets",
+"map": 73.75,
+"sheet": "cabinets"
+}
+],
+"SCC3SP90": [
+{
+"item": "SCC3SP90",
+"desc": "3\"X3\" 90 Degree Spacer Create 60 Degree Angel for base cabinet Island",
+"map": 186.25,
+"sheet": "cabinets"
+}
+],
+"SCC3SPF": [
+{
+"item": "SCC3SPF",
+"desc": "3\" Spacer Panel for Cabinet Front",
+"map": 123.75,
+"sheet": "cabinets"
+}
+],
+"SCC3SPB": [
+{
+"item": "SCC3SPB",
+"desc": "3\" Spacer Panel for Cabinet Back",
+"map": 61.25,
+"sheet": "cabinets"
+}
+],
+"SCC6SPF": [
+{
+"item": "SCC6SPF",
+"desc": "6\" Spacer Panel for Cabinet Front",
+"map": 148.75,
+"sheet": "cabinets"
+}
+],
+"SCC6SPB": [
+{
+"item": "SCC6SPB",
+"desc": "6\" Spacer Panel for Cabinet Back",
+"map": 86.25,
+"sheet": "cabinets"
+}
+],
+"SCC3ENDSPL": [
+{
+"item": "SCC3ENDSPL",
+"desc": "3\" End Corner Guard Panel for Left Side of Base Cabinets",
+"map": 99.0,
+"sheet": "cabinets"
+}
+],
+"SCC3ENDSPR": [
+{
+"item": "SCC3ENDSPR",
+"desc": "3\" End Corner Guard Panel for Right Side of Base Cabinets",
+"map": 99.0,
+"sheet": "cabinets"
+}
+],
+"SAWC": [
+{
+"item": "SAWC",
+"desc": "304 Stainless Steel Heavy-Duty Straight Aligned Wheel Caster",
+"map": 31.25,
+"sheet": "cabinets"
+}
+],
+"SLWC": [
+{
+"item": "SLWC",
+"desc": "304 Stainless Steel Heavy-Duty Swivel Locking Wheel Caster",
+"map": 37.5,
+"sheet": "cabinets"
+}
+],
+"SWC18CSDL": [
+{
+"item": "SWC18CSDL",
+"desc": "18\" Upper Wall Left Swing Door Cabinet",
+"map": 639.0,
+"sheet": "cabinets"
+}
+],
+"SWC18CSDR": [
+{
+"item": "SWC18CSDR",
+"desc": "18\" Upper Wall Right Swing Door Cabinet",
+"map": 639.0,
+"sheet": "cabinets"
+}
+],
+"SWC18FSDL": [
+{
+"item": "SWC18FSDL",
+"desc": "18\" Full Height Left Swing Door Cabinet",
+"map": 1229.0,
+"sheet": "cabinets"
+}
+],
+"SWC18FSDR": [
+{
+"item": "SWC18FSDR",
+"desc": "18\" Full Height Right Swing Door Cabinet",
+"map": 1229.0,
+"sheet": "cabinets"
+}
+],
+"SWC24FDD": [
+{
+"item": "SWC24FDD",
+"desc": "24\" Full Height Double Door Cabinet w/Four Shelves",
+"map": 1609.0,
+"sheet": "cabinets"
+}
+],
+"SWC30FDD": [
+{
+"item": "SWC30FDD",
+"desc": "30\" Full Height Double Door Cabinet w/Four Shelves",
+"map": 1939.0,
+"sheet": "cabinets"
+}
+],
+"SWC36FDD": [
+{
+"item": "SWC36FDD",
+"desc": "36\" Full Height Double Door Cabinet w/Four Shelves",
+"map": 2119.0,
+"sheet": "cabinets"
+}
+],
+"SWC12SLS": [
+{
+"item": "SWC12SLS",
+"desc": "12\" x 12\" Full Height 360 Swivel Door Corner Cabinet w/Three Shelves",
+"map": 2089.0,
+"sheet": "cabinets"
+}
+],
+"SWC3SP90": [
+{
+"item": "SWC3SP90",
+"desc": "3\"x 3\" 90 Degree Corner Spacer Panel for Full Height Wall Cabinet Front",
+"map": 236.25,
+"sheet": "cabinets"
+}
+],
+"SWC3SPF": [
+{
+"item": "SWC3SPF",
+"desc": "3\" Spacer Panel for Full Height Wall Cabinet Front",
+"map": 109.0,
+"sheet": "cabinets"
+}
+],
+"SWC6SPF": [
+{
+"item": "SWC6SPF",
+"desc": "6\" Spacer Panel for Full Height Wall Cabinet Front",
+"map": 169.0,
+"sheet": "cabinets"
+}
+],
+"SWC42EP": [
+{
+"item": "SWC42EP",
+"desc": "42” Height Wall Cabinet End Panel",
+"map": 173.75,
+"sheet": "cabinets"
+}
+],
+"SWC12ECR": [
+{
+"item": "SWC12ECR",
+"desc": "12\" End Crown Molding Panel for all Wall Cabinet Left/Right Side",
+"map": 48.75,
+"sheet": "cabinets"
+}
+],
+"SWC21EP": [
+{
+"item": "SWC21EP",
+"desc": "21\" Height Upper Wall Cabinet End Panel",
+"map": 123.75,
+"sheet": "cabinets"
+}
+],
+"SUN24PCB": [
+{
+"item": "SUN24PCB-LP/ SUN24PCB-NG",
+"desc": "Sunstone 24\" Power Burner w/3 Cirque Burners 65,000 BTU's. Includes Hood, 3-In-1 Cooking Grates & 15\" Dia. Pizza Stone,Includes Vinyl Cover (SUN24PCB-HOOD & SUN24PCB-GRATE & SUN24PCB-GRIDDLE &  SUN15PSTONE)",
+"map": 4997.5,
+"sheet": "grills"
+},
+{
+"item": "SUN24PCB-LP/ SUN24PCB-NG",
+"desc": "Sunstone 24\" Power Burner w/3 Cirque Burners 65,000 BTU's. Includes Hood, 3-In-1 Cooking Grates & 15\" Dia. Pizza Stone,Includes Vinyl Cover (SUN24PCB-HOOD & SUN24PCB-GRATE & SUN24PCB-GRIDDLE &  SUN15PSTONE)",
+"map": 4997.5,
+"sheet": "grills"
+}
+],
+"SUN24PCB-PB": [
+{
+"item": "SUN24PCB-PB-LP/ SUN24PCB-PB-NG",
+"desc": "Sunstone 24” Power Cirque Power Burner & Flat-Top Griller & 3-In-1 Cooking Grates w/3 Cirque Burners 65,000 BTU's. Includes Vinyl Cover  & SUN24PCB-GRATE & SUN24PCB-GRIDDLE",
+"map": 4072.5,
+"sheet": "grills"
+},
+{
+"item": "SUN24PCB-PB-LP/ SUN24PCB-PB-NG",
+"desc": "Sunstone 24” Power Cirque Power Burner & Flat-Top Griller & 3-In-1 Cooking Grates w/3 Cirque Burners 65,000 BTU's. Includes Vinyl Cover  & SUN24PCB-GRATE & SUN24PCB-GRIDDLE",
+"map": 4072.5,
+"sheet": "grills"
+}
+],
+"SUN24PCB-GD": [
+{
+"item": "SUN24PCB-GD-LP / SUN24PCB-GD-NG",
+"desc": "Sunsone 24” Power Cirque Solid Steel Griddle Cirque Burners 65,000 BTU's. Includes Vinyl Cover & 19\" DIA. Solid Steel Flat-Top Griddle  (SUN24PCB-GRIDDLE)",
+"map": 3747.5,
+"sheet": "grills"
+},
+{
+"item": "SUN24PCB-GD-LP / SUN24PCB-GD-NG",
+"desc": "Sunsone 24” Power Cirque Solid Steel Griddle Cirque Burners 65,000 BTU's. Includes Vinyl Cover & 19\" DIA. Solid Steel Flat-Top Griddle  (SUN24PCB-GRIDDLE)",
+"map": 3747.5,
+"sheet": "grills"
+}
+],
+"SUN24PCB-BASE": [
+{
+"item": "SUN24PCB-Base-LP/ SUN24PCB-Base-NG",
+"desc": "Sunstone 24” Power Cirque Burners 65,000 BTU's Base Unit Includes Vinyl Cover,Propane or Natural Gas",
+"map": 2822.5,
+"sheet": "grills"
+},
+{
+"item": "SUN24PCB-Base-LP/ SUN24PCB-Base-NG",
+"desc": "Sunstone 24” Power Cirque Burners 65,000 BTU's Base Unit Includes Vinyl Cover,Propane or Natural Gas",
+"map": 2822.5,
+"sheet": "grills"
+}
+],
+"SUN24PCB-HOOD": [
+{
+"item": "SUN24PCB-HOOD",
+"desc": "24\" DIA. Vented Hood with Adjustable Smoke/Heat Exhaust, built-in Temperature Gauge & Large Handle",
+"map": 810.0,
+"sheet": "grills"
+}
+],
+"SUN24PCB-GRATE": [
+{
+"item": "SUN24PCB-GRATE",
+"desc": "20\" DIA. Power Cirque 304 Stainless Steel Raised Circular 3-IN-1 Cooking Grates",
+"map": 447.5,
+"sheet": "grills"
+}
+],
+"SUN24PCB-GRIDDLE": [
+{
+"item": "SUN24PCB-GRIDDLE",
+"desc": "19\" DIA. Solid Steel Flat-Top Griddle w/Non-Stick Finish & Powder-Coated Oil-Pan",
+"map": 785.0,
+"sheet": "grills"
+}
+],
+"SUN15PSTONE": [
+{
+"item": "SUN15PSTONE",
+"desc": "15” DIA. Pizza Stone w/Elevation Rack",
+"map": 122.5,
+"sheet": "grills"
+}
+],
+"SUN24PCB-FAUCET": [
+{
+"item": "SUN24PCB-Faucet",
+"desc": "Satin Finish Cold Water Faucet w/Flexible Neck (Mount on Either Back Left/Right Corner)",
+"map": 72.5,
+"sheet": "grills"
+}
+],
+"RUBY3B": [
+{
+"item": "Ruby3B-LP",
+"desc": "Ruby 30\" 3 Burner Pro-Sear w/LED Lights, High Heat Searing Grate Propane",
+"map": 2422.5,
+"sheet": "grills"
+},
+{
+"item": "Ruby3B-NG",
+"desc": "Ruby 30\" 3 Burner Pro-Sear w/LED Lights, High Heat Searing Grate Natural Gas",
+"map": 2422.5,
+"sheet": "grills"
+}
+],
+"RUBY4B": [
+{
+"item": "Ruby4B-LP",
+"desc": "Ruby 36\" 4 Burner Pro-Sear w/LED Lights, High Heat Searing Grate Propane",
+"map": 2860.0,
+"sheet": "grills"
+},
+{
+"item": "Ruby4B-NG",
+"desc": "Ruby 36\" 4 Burner Pro-Sear w/LED Lights, High Heat Searing Grate Natural Gas",
+"map": 2860.0,
+"sheet": "grills"
+}
+],
+"RUBY4BIR": [
+{
+"item": "Ruby4BIR-LP",
+"desc": "Ruby 36\" 4 Burner Pro-Sear w/IR Burner & Rotisserie Motor, Rod Assembly w/LED Lights, High Heat Searing Grate  Propane",
+"map": 3247.5,
+"sheet": "grills"
+},
+{
+"item": "Ruby4BIR-NG",
+"desc": "Ruby 36\" 4 Burner Pro-Sear w/IR Burner & Rotisserie Motor, Rod Assembly w/LED Lights, High Heat Searing Grate  Natural Gas",
+"map": 3247.5,
+"sheet": "grills"
+}
+],
+"RUBY5BIR": [
+{
+"item": "Ruby5BIR-LP",
+"desc": "Ruby 42\" 5 Burner Pro-Sear w/IR Burner & Rotisserie Motor, Rod Assembly w/LED Lights, High Heat Searing Grate Propane",
+"map": 3872.5,
+"sheet": "grills"
+},
+{
+"item": "Ruby5BIR-NG",
+"desc": "Ruby 42\" 5 Burner Pro-Sear w/IR Burner & Rotisserie Motor, Rod Assembly w/LED Lights, High Heat Searing Grate  Natural Gas",
+"map": 3872.5,
+"sheet": "grills"
+}
+],
+"SUNPLT40": [
+{
+"item": "SUNPLT40",
+"desc": "40\" Built-In Electric Pellet Grill with Integrated Cold Smoker and Full-Capacity Side Pellet Loader",
+"map": 6235.0,
+"sheet": "grills"
+}
+],
+"EMCHDZ42": [
+{
+"item": "EMCHDZ42-LP / EMCHDZ42-NG",
+"desc": "Emerald Series 42\" Gas-Hybrid Dual Zone 2 Burners  Charcaol/Wood Burning Grill Propane or Natural Gas(Conversion Required)",
+"map": 6185.0,
+"sheet": "grills"
+},
+{
+"item": "EMCHDZ42-LP / EMCHDZ42-NG",
+"desc": "Emerald Series 42\" Gas-Hybrid Dual Zone 2 Burners  Charcaol/Wood Burning Grill Propane or Natural Gas(Conversion Required)",
+"map": 6185.0,
+"sheet": "grills"
+}
+],
+"SUNCHSZ30IR": [
+{
+"item": "SUNCHSZ30IR-LP",
+"desc": "Sunstone 30\" Gas-Hybrid 2 Main Burners  w/IR-Burner Charcaol/Wood Burning Grill Proppane",
+"map": 3872.5,
+"sheet": "grills"
+},
+{
+"item": "SUNCHSZ30IR-NG",
+"desc": "Sunstone 30\" Gas-Hybrid 2 Main Burners  w/IR-Burner Charcaol/Wood Burning Grill Natural Gas",
+"map": 3872.5,
+"sheet": "grills"
+}
+],
+"SUNCHSZ28": [
+{
+"item": "SUNCHSZ28",
+"desc": "28\" Single Zone 304 Stainless Steel Charcoal Grill",
+"map": 2735.0,
+"sheet": "grills"
+}
+],
+"SUN-36BSSD": [
+{
+"item": "SUN-36BSSD",
+"desc": "36\" 304 Stainless Steel Grill Wall Panel w/Smoke Deflector",
+"map": 349.2,
+"sheet": "grills"
+}
+],
+"SUN-42BSSD": [
+{
+"item": "SUN-42BSSD",
+"desc": "42\" 304 Stainless Steel Grill Wall Panel w/Smoke Deflector",
+"map": 385.2,
+"sheet": "grills"
+}
+],
+"SUN-46BSSD": [
+{
+"item": "SUN-46BSSD",
+"desc": "46\" 304 Stainless Steel Grill Wall Panel w/Smoke Deflector",
+"map": 439.2,
+"sheet": "grills"
+}
+],
+"1SSB": [
+{
+"item": "1SSB-LP",
+"desc": "Drop-in Single Side Burner Propane",
+"map": 497.5,
+"sheet": "grills"
+},
+{
+"item": "1SSB-NG",
+"desc": "Drop-in Single Side Burner Natural Gas",
+"map": 497.5,
+"sheet": "grills"
+}
+],
+"SUN13VSB": [
+{
+"item": "SUN13VSB-LP",
+"desc": "Ruby Series 13\" Counter-top or Drop-in Versa Single Burner Propane",
+"map": 499.0,
+"sheet": "grills"
+},
+{
+"item": "SUN13VSB-NG",
+"desc": "Ruby Series 13\" Counter-top or Drop-in Versa Single Burner Natural Gas",
+"map": 499.0,
+"sheet": "grills"
+}
+],
+"SUN13VDB": [
+{
+"item": "SUN13VDB-LP",
+"desc": "Ruby Series 13\" Slide in Versa Double Burner Removable Cover W/LED Accent Light Propane",
+"map": 860.0,
+"sheet": "grills"
+},
+{
+"item": "SUN13VDB-NG",
+"desc": "Ruby Series 13\" Slide in Versa  Double Burner Removable Cover W/LED Accent Light Natural Gas",
+"map": 860.0,
+"sheet": "grills"
+}
+],
+"SUN13CPRO": [
+{
+"item": "SUN13CPRO-LP",
+"desc": "13\" Companion Pro Burner w/Cooking Grates & Flavorizer Rack & LED Accent Light-Propane",
+"map": 1110.0,
+"sheet": "grills"
+},
+{
+"item": "SUN13CPRO-NG",
+"desc": "13\" Companion Pro Burner w/Cooking Grates & Flavorizer Rack & LED Accent Light-Natural Gas",
+"map": 1110.0,
+"sheet": "grills"
+}
+],
+"SUN13CPRO-HOOD": [
+{
+"item": "SUN13CPRO-HOOD",
+"desc": "13\" Companion Pro Hood",
+"map": 485.0,
+"sheet": "grills"
+}
+],
+"SUNCP-FYER": [
+{
+"item": "SUNCP-FYER",
+"desc": "Sunstone 10\" Wide Deep Fryer w/Lid, Steamer Tray, & Fryer Basket (Works with Ruby Series Grills, SUN13CPRO & SUNCHSZ30IR)",
+"map": 498.75,
+"sheet": "grills"
+}
+],
+"SUNCP-GRIDDLE": [
+{
+"item": "SUNCP-GRIDDLE",
+"desc": "Sunstone 10\" Wide Griddle with Oil Reservoir (Works with Ruby Series Grills, SUN13CPRO & SUNCHSZ30IR)",
+"map": 285.0,
+"sheet": "grills"
+}
+],
+"SUNCP-CHTRAY": [
+{
+"item": "SUNCP-CHTRAY",
+"desc": "Sunstone 10\" Wide Charcoal Tray with Removable Panel (Works with Ruby Series Grills, SUN13CPRO & SUNCHSZ30IR)",
+"map": 185.0,
+"sheet": "grills"
+}
+],
+"SUNCP-SEAR": [
+{
+"item": "SUNCP-SEAR",
+"desc": "Sunstone 10\" Wide  (Works with Ruby Series Grills, SUN13CPRO & SUNCHSZ30IR)",
+"map": 210.0,
+"sheet": "grills"
+}
+],
+"SUNCP-DIVIDER": [
+{
+"item": "SUNCP-DIVIDER",
+"desc": "Ruby  Grill Flame Divider",
+"map": 36.25,
+"sheet": "grills"
+}
+],
+"SUNJK18": [
+{
+"item": "SUNJK18",
+"desc": "18\" Jacket for grills with mas Cut out of 12\"W X 10\"H X 22\"D - Work w/SUN13VDB & SUN13CPRO",
+"map": 558.4,
+"sheet": "grills"
+}
+],
+"SUNJK20": [
+{
+"item": "SUNJK20",
+"desc": "20\" Universal Jacket for Power Burners with an Cut-Out of up-to 14\"W x 12\"H x 22\"D",
+"map": 622.4000000000001,
+"sheet": "grills"
+}
+],
+"SUNJK25": [
+{
+"item": "SUNJK25",
+"desc": "25\" Universal Jacket for Power Burners with an Cut-Out of up-to 19\"W x 12\"H x 22\"D",
+"map": 678.4000000000001,
+"sheet": "grills"
+}
+],
+"SUNJK29": [
+{
+"item": "SUNJK29",
+"desc": "29\" Jacket for grills with max cut out  of 23\"W X 12\"H X 22\"D - Works w/SUN24PCB",
+"map": 702.4000000000001,
+"sheet": "grills"
+}
+],
+"SUNJK33": [
+{
+"item": "SUNJK33",
+"desc": "33\" Jacket for grills with mas Cut out of 26\"W X 12\"H X 22\"D - Works w/RUBY3B & SUNCHSZ30",
+"map": 798.4000000000001,
+"sheet": "grills"
+}
+],
+"SUNJK40": [
+{
+"item": "SUNJK40",
+"desc": "40\" Jacket for grills with mas Cut out of 34\"W X 12\"H X 22\"D - Works w/RUBY4B & RUBY4BIR",
+"map": 1422.5,
+"sheet": "grills"
+}
+],
+"SUNJK45": [
+{
+"item": "SUNJK45",
+"desc": "45\" Jacket for grills with mas Cut out of 39\"W X 12\"H X 22\"D - Works w/RUBY5BIR & EMCHDZ42",
+"map": 1485.0,
+"sheet": "grills"
+}
+],
+"SUNJKDIV6": [
+{
+"item": "SUNJKDIV6",
+"desc": "6\" Jacket Divider Box Panel for creating multiple connected jacket inserts all within a single cut-out",
+"map": 286.40000000000003,
+"sheet": "grills"
+}
+],
+"SUNJKPOST": [
+{
+"item": "SUNJKPOST",
+"desc": "22-1/2\"H Post fixture mount for grill jacket",
+"map": 558.4,
+"sheet": "grills"
+}
+],
+"SUNJKWING": [
+{
+"item": "SUNJKWING",
+"desc": "14\"W X 20-1/2\"D Two adjustable wings w/brackets for grill jacket",
+"map": 238.4,
+"sheet": "grills"
+}
+],
+"STAR-34SMK": [
+{
+"item": "STAR-34SMK",
+"desc": "34\" Charcoal Smoker & Pizza Oven Combo Griller Cart (Coming Soon)",
+"map": 4729.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS": [
+{
+"item": "STARBBQ-24CHBS",
+"desc": "24\" Charcoal Grill Base w/Burn Trays",
+"map": 605.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS": [
+{
+"item": "STARBBQ-24FPBS",
+"desc": "24\" Smokeless Fire-Pit Base Platform",
+"map": 499.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-HDR-EXG": [
+{
+"item": "STARBBQ-24CHBS-HDR-EXG",
+"desc": "24\" Charcoal Griller Base w/Smoker Hood & ExGrate Rim Insert Cooking Grate(STARBBQ-24CHBS & 24HDRIM & STARBBQ-EXGRATE)",
+"map": 1370.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-HDR-EXG-CRT": [
+{
+"item": "STARBBQ-24CHBS-HDR-EXG-CRT",
+"desc": "24\" Charcoal Griller Base w/Smoker Hood,  ExGrate Rim Insert Cooking Grate & BBQ Cart  (STARBBQ-24CHBS & 24HDRIM & EXGRATE &24CRT)",
+"map": 1748.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-SMR-RSE-EXG": [
+{
+"item": "STARBBQ-24CHBS-SMR-RSE-EXG",
+"desc": "24\" Charcoal Griller Base w/Santa Maria Rim & the Raised Sear Rim Insert & ExGrate Cooking Grate(STARBBQ-24CHBS & 24SMGRIM & RSEAR &EXGRATE)",
+"map": 1199.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-SMR-RGR-EXG": [
+{
+"item": "STARBBQ-24CHBS-SMR-RGR-EXG",
+"desc": "24\" Charcoal Griller Base w/Santa Maria Rim & the Raised Griddle Insert & ExGrate Cooking Grate(STARBBQ-24CHBS & 24SMGRIM & RGRIDDLE &EXGRATE)",
+"map": 1208.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-SMR-RGR-EXG-CRT": [
+{
+"item": "STARBBQ-24CHBS-SMR-RGR-EXG-CRT",
+"desc": "24\" Charcoal Griller Base w/Santa Maria Rim & the Raised Solid Steel Griddle Insert & ExGrate Cooking Grate on BBQ Cart (STARBBQ-24CHBS &24SMGRIM & RGRIDDLE &EXGRATE&24CRT)",
+"map": 1489.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-SMR-RSE-EXG-CRT": [
+{
+"item": "STARBBQ-24CHBS-SMR-RSE-EXG-CRT",
+"desc": "24\" Charcoal Griller Base w/Santa Maria Rim & the Raised Sear Rim Insert & ExGrate Cooking Grate on BBQ Cart (STARBBQ-24CHB &24SMGRIM & RSEAR &EXGRATE&24CRT)",
+"map": 1577.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-PMR-EXG": [
+{
+"item": "STARBBQ-24CHBS-PMR-EXG",
+"desc": "24\" Charcoal Griller Base w/Post-Mount Griller Rim & ExGrate Cooking Grate(STARBBQ-24CHBS&240PGRIM&EXGRATE)",
+"map": 1177.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-PMR-RSE": [
+{
+"item": "STARBBQ-24CHBS-PMR-RSE",
+"desc": "24\" Charcoal Griller Base w/Post-Mount Griller Rim & the Raised Sear Rim Insert (STARBBQ-24CHBS&240PGRIM&RSEAR)",
+"map": 1189.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-PMR-EXG-CRT": [
+{
+"item": "STARBBQ-24CHBS-PMR-EXG-CRT",
+"desc": "24\" Charcoal Griller Base w/Post-Mount Griller Rim & ExGrate Cooking Grate(STARBBQ-24CHBS&240PGRIM&EXGRATE&24CRT)",
+"map": 1555.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CHBS-PMR-RSE-CRT": [
+{
+"item": "STARBBQ-24CHBS-PMR-RSE-CRT",
+"desc": "24\" Charcoal Griller Base w/Post-Mount Griller Rim & Raised Sear Rim Insert & Rolling Cart(STARBBQ-24CHBS&240PGRIM&RSEAR&24CRT)",
+"map": 1567.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-BSR-EXG": [
+{
+"item": "STARBBQ-24FPBS-BSR-EXG",
+"desc": "24\" Smokeless Fire-Pit Base w/Base Rim & the ExGrate Rim Insert Cooking Grate (STARBBQ-24FPBS&24BSRIM&EXGRATE)",
+"map": 674.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-BSR-RSE": [
+{
+"item": "STARBBQ-24FPBS-BSR-RSE",
+"desc": "24\" Smokeless Fire-Pit Base w/Base Rim & the Raised Searing Grid(STARBBQ-24FPBS&24BSRIM&RSEAR)",
+"map": 686.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-BSR-RGR": [
+{
+"item": "STARBBQ-24FPBS-BSR-RGR",
+"desc": "24\" Smokeless Fire-Pit Base w/Base Rim & the Raised Solid Steel Griddle(STARBBQ-24FPBS&24BSRIM&RGRIDDLE)",
+"map": 695.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-HDR-EXG": [
+{
+"item": "STARBBQ-24FPBS-HDR-EXG",
+"desc": "24\" Smokeless Fire-Pit Base w/Smoker Hood & the ExGrate Rim Insert Cooking Grate(STARBBQ-24FPBS&24HDRIM&EXGRATE)",
+"map": 1264.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-SMR-RSE-EXG": [
+{
+"item": "STARBBQ-24FPBS-SMR-RSE-EXG",
+"desc": "24\" Smokeless Fire-Pit Base w/Santa Maria Rim & the Raised Sear Rim Insert & ExGrate Cooking Grate(STARBBQ-24FPBS&24SMGRIM&RSEAR&EXGRATE)",
+"map": 1092.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-SMR-RGR-EXG": [
+{
+"item": "STARBBQ-24FPBS-SMR-RGR-EXG",
+"desc": "24\" Smokeless Fire-Pit Base w/Santa Maria Rim & the Raised Griddle Insert & ExGrate Cooking Grate(STARBBQ-24FPBS&24SMGRIM&RGRIDDLE&EXGRATE)",
+"map": 1102.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-PMR-EXG": [
+{
+"item": "STARBBQ-24FPBS-PMR-EXG",
+"desc": "24\" Smokeless Fire-Pit Base w/Post-Mount Griller Rim & ExGrate Cooking Grate(STARBBQ-240PGRIM&EXGRATE)",
+"map": 1071.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24FPBS-PMR-RSE": [
+{
+"item": "STARBBQ-24FPBS-PMR-RSE",
+"desc": "24\" Smokeless Fire-Pit Base w/Post-Mount Griller Rim & the Raised Sear Rim Insert(STARBBQ-240PGRIM&RSEAR)",
+"map": 1092.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24BSRIM": [
+{
+"item": "STARBBQ-24BSRIM",
+"desc": "24\" BBQ Base Rim",
+"map": 78.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24HDRIM": [
+{
+"item": "STARBBQ-24HDRIM",
+"desc": "24\" BBQ Hood Rim w/Chimney & Warming Rack",
+"map": 668.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24SMGRIM": [
+{
+"item": "STARBBQ-24SMGRIM",
+"desc": "24\" Santa Maria Grill Rim w/Crank & Sausage Hooks",
+"map": 388.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-240PGRIM": [
+{
+"item": "STARBBQ-240PGRIM",
+"desc": "Outpost Dual Griller with w/(2) Round Racks Rim",
+"map": 475.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-24CART": [
+{
+"item": "STARBBQ-24CART",
+"desc": "24\" BBQ Cart Base w/(2) Wings & LP Tank Shelf",
+"map": 378.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-EXGRATE": [
+{
+"item": "STARBBQ-EXGRATE",
+"desc": "Diamond Grid Grilling Grate Insert",
+"map": 97.2,
+"sheet": "grills"
+}
+],
+"STARBBQ-RSEAR": [
+{
+"item": "STARBBQ-RSEAR",
+"desc": "Elevated Sear w/V-Track Rails BBQ Insert",
+"map": 109.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-RGRIDDLE": [
+{
+"item": "STARBBQ-RGRIDDLE",
+"desc": "Elevated Griddle w/Splash Guard BBQ Insert",
+"map": 118.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-36SFPR": [
+{
+"item": "STARBBQ-36SFPR",
+"desc": "StarBBQ™ 36″ Smokeless Fire Pit Insert",
+"map": 329.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-48SFPR": [
+{
+"item": "STARBBQ-48SFPR",
+"desc": "StarBBQ™ 48″ Smokeless Fire Pit Insert",
+"map": 429.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-36SFPR-PKG": [
+{
+"item": "STARBBQ-36SFPR-PKG",
+"desc": "48″ Smokeless Fire Pit Insert w/Short & Tall Post-Mount Swivel Grills(STARBBQ-36SFPR&FPOGSR-L&FPOGSR-S)",
+"map": 708.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-48SFPR-PKG": [
+{
+"item": "STARBBQ-48SFPR-PKG",
+"desc": "48″ Smokeless Fire Pit Insert w/ Short & Tall Post-Mount Swivel Grills(STARBBQ-48SFPR&FPOGSR-L&FPOGSR-S)",
+"map": 808.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-FPOGSR-L": [
+{
+"item": "STARBBQ-FPOGSR-L",
+"desc": "StarBBQ™ Post Mount Griller w/Tall Post",
+"map": 190.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-FPOGSR-S": [
+{
+"item": "STARBBQ-FPOGSR-S",
+"desc": "StarBBQ™ Post Mount Griller w/Short Post",
+"map": 190.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-AFCG": [
+{
+"item": "STARBBQ-AFCG",
+"desc": "StarBBQ™ Folding A-Frame Camper Charcoal Grill – Portable and Compact (Carry Bag Included)",
+"map": 186.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-FUFP": [
+{
+"item": "STARBBQ-FUFP",
+"desc": "StarBBQ™ Heavy-Duty Steel Fold-Out Camper Griller Portable Campfire Grill and Griddle Combo (Carry Bag Included)",
+"map": 130.0,
+"sheet": "grills"
+}
+],
+"STARBBQ-RSBBOX": [
+{
+"item": "STARBBQ-RSBBOX",
+"desc": "StarBBQ™ Rocket Stove Camper Box – Military-Grade Ammo Can Portable Stove",
+"map": 135.0,
+"sheet": "grills"
+}
+],
+"TEX-16SD": [
+{
+"item": "TEX-16SD",
+"desc": "16\" Texan Series Reversible Door Works w/Propane Tanks, Trash Bins (Cut-Out: 14-1/2\"W  x 19\"H )",
+"map": 135.0,
+"sheet": "grills"
+}
+],
+"TEX-DD30": [
+{
+"item": "TEX-DD30",
+"desc": "30\" Texan Series Double Doors, works best w/appliance between 28\" to 33\" Width     (Cut-Out: 28-1/8\"W  x 19\"H)",
+"map": 218.75,
+"sheet": "grills"
+}
+],
+"TEX-DD36": [
+{
+"item": "TEX-DD36",
+"desc": "36\" Texan Series Double Doors, works best w/appliance between 34\" to 40\" Width    (Cut-Out: 34-1/8\"W  x 19\"H)",
+"map": 250.0,
+"sheet": "grills"
+}
+],
+"TEX-DDV30": [
+{
+"item": "TEX-DDV30",
+"desc": "30\" Texan Series Vented Double Doors, works best w/appliance between 28\" to 33\" Width(Cut-Out: 28-1/8\"W  x 19\"H)",
+"map": 218.75,
+"sheet": "grills"
+}
+],
+"TEX-DDV36": [
+{
+"item": "TEX-DDV36",
+"desc": "36\" Texan Series Vented Double Doors, works best w/appliance between 34\" to 40\" Width(Cut-Out: 34-1/8\"W  x 19\"H)",
+"map": 250.0,
+"sheet": "grills"
+}
+],
+"TEX-16DD": [
+{
+"item": "TEX-16DD",
+"desc": "16\" Texan Series Extra-Large Double Drawers with ample storage     (Cut-Out: 14-1/2\"W  x 19\"H  x 21-1/2\"D)",
+"map": 320.0,
+"sheet": "grills"
+}
+],
+"TEX-16TD": [
+{
+"item": "TEX-16TD",
+"desc": "16\" Texan Series Large Triple Drawer Unit with Cutlery Drawer & Two Large Storage Drawers   (Cut-Out: 14-1/2\"W  x 19\"H  x 21-1/2\"D)",
+"map": 342.40000000000003,
+"sheet": "grills"
+}
+],
+"TEX-16TRD": [
+{
+"item": "TEX-16TRD",
+"desc": "16\" Texan Series Large Trash Drawer with an ABS Trash Bin Included    (Cut-Out: 14-1/2\"W  x 19\"H  x 21-1/2\"D)",
+"map": 286.40000000000003,
+"sheet": "grills"
+}
+],
+"TEX-16PCD": [
+{
+"item": "TEX-16PCD",
+"desc": "16\" Texan Series Swivel Paper Towel Holder & Single Extra-Large Drawer     (Cut-Out: 14-1/2\"W  x 19\"H  x 21-1/2\"D)",
+"map": 340.0,
+"sheet": "grills"
+}
+],
+"TEX-30TDDC": [
+{
+"item": "TEX-30TDDC",
+"desc": "30\" Texan Series Triple Drawer Door Combo w/Removable Support Frame, Cutlery Drawer & Two Large Storage Drawers (Cut-Out: 28-1/8\"W  x 19\"H  x 20-1/2\"D)",
+"map": 512.0,
+"sheet": "grills"
+}
+],
+"TEX-15IC": [
+{
+"item": "TEX-15IC",
+"desc": "15\" Texan Series over/under Insulated Ice Chest w/Chest Cover",
+"map": 262.40000000000003,
+"sheet": "grills"
+},
+{
+"item": "TEX-15IC",
+"desc": "15\" Texan Series over/under Insulated Ice Chest w/Chest Cover",
+"map": 328.0,
+"sheet": "grills"
+}
+],
+"TEX-15SK": [
+{
+"item": "TEX-15SK",
+"desc": "15\" Texan Series Over/Under Bar Sink w/Cold Water Faucet & Basin Cover",
+"map": 572.5,
+"sheet": "grills"
+},
+{
+"item": "TEX-15SK",
+"desc": "15\" Texan Series Over/Under Bar Sink w/Cold Water Faucet & Basin Cover",
+"map": 572.5,
+"sheet": "grills"
+}
+],
+"ARU-DV16": [
+{
+"item": "ARU-DV16",
+"desc": "16\" Aruba Series Left Swing Door Works w/Propane Tanks, Trash Bins, Utility Access, or Extra-Storage (Cut-Out: 14-3/8\"W  x 19\"H )",
+"map": 147.5,
+"sheet": "grills"
+}
+],
+"ARU-DD30": [
+{
+"item": "ARU-DD30",
+"desc": "30\" Aruba Series Double Doors, works best w/appliance between 28\" to 33\" Width (Cut-Out: 28-1/8\"W  x 19\"H)",
+"map": 231.25,
+"sheet": "grills"
+}
+],
+"ARU-DD36": [
+{
+"item": "ARU-DD36",
+"desc": "36\" Aruba Series Double Doors, works best w/appliance between 34\" to 40\" Width (Cut-Out: 34-1/8\"W  x 19\"H)",
+"map": 215.0,
+"sheet": "grills"
+}
+],
+"ARU-DDV30": [
+{
+"item": "ARU-DDV30",
+"desc": "30\" Aruba Series Vented Double Doors, works best w/appliance between 28\" to 33\" Width (Cut-Out: 28-1/8\"W  x 19\"H)",
+"map": 185.0,
+"sheet": "grills"
+}
+],
+"ARU-DDV36": [
+{
+"item": "ARU-DDV36",
+"desc": "36\" Aruba Series Vented Double Doors, works best w/appliance between 34\" to 40\" Width (Cut-Out: 34-1/8\"W  x 19\"H)",
+"map": 215.0,
+"sheet": "grills"
+}
+],
+"ARU-TDC30": [
+{
+"item": "ARU-TDC30",
+"desc": "30\" Aruba Series Triple Drawer Door Combo w/Removable Support Frame, Cutlery Drawer & Two Large Storage Drawers (Cut-Out: 28-1/8\"W  x 19\"H  x 20-1/2\"D)",
+"map": 660.0,
+"sheet": "grills"
+}
+],
+"ARU-16PCD": [
+{
+"item": "ARU-16PCD",
+"desc": "16\" Aruba Series Swivel Paper Towel Holder & Single Extra-Large Drawer (Cut-Out: 14-3/8\"W  x 19\"H  x 21-1/2\"D)",
+"map": 356.0,
+"sheet": "grills"
+}
+],
+"ARU-16TD": [
+{
+"item": "ARU-16TD",
+"desc": "16\" Aruba Series Large Triple Drawer Unit with Cutlery Drawer & Two Large Storage Drawers (Cut-Out: 14-3/8\"W  x 19\"H  x 21-1/2\"D)",
+"map": 445.0,
+"sheet": "grills"
+}
+],
+"ARU-16TRD": [
+{
+"item": "ARU-16TRD",
+"desc": "16\" Aruba Series Large Trash Drawer with an ABS Trash Bin Included (Cut-Out: 14-3/8\"W  x 19\"H  x 21-1/2\"D)",
+"map": 456.25,
+"sheet": "grills"
+}
+],
+"C-SD12": [
+{
+"item": "C-SD12",
+"desc": "12\" x 12\" Single Utility Access Door (Reversible)",
+"map": 86.4,
+"sheet": "grills"
+}
+],
+"C-VSDL12": [
+{
+"item": "C-VSDL12",
+"desc": "12\" x 12\" Left Swing Vented Door",
+"map": 135.0,
+"sheet": "grills"
+}
+],
+"C-VSDR12": [
+{
+"item": "C-VSDR12",
+"desc": "12\" x 12\" Right Swing Vented Door",
+"map": 135.0,
+"sheet": "grills"
+}
+],
+"DH1420": [
+{
+"item": "DH1420",
+"desc": "14\" x 20\" Horizontal  Door (Reversible)",
+"map": 197.5,
+"sheet": "grills"
+}
+],
+"DV1420": [
+{
+"item": "DV1420",
+"desc": "14\" x 20\" Vertical  Door (Reversible)",
+"map": 197.5,
+"sheet": "grills"
+}
+],
+"DH1724": [
+{
+"item": "DH1724",
+"desc": "17\" x 24\" Horizontal  Door (Reversible)",
+"map": 235.0,
+"sheet": "grills"
+}
+],
+"DV1724": [
+{
+"item": "DV1724",
+"desc": "17\" x 24\" Vertical Door (Reversible)",
+"map": 235.0,
+"sheet": "grills"
+}
+],
+"A-DH1420": [
+{
+"item": "A-DH1420",
+"desc": "14 X 20\" Right Swing Horizontal Vented Door",
+"map": 197.5,
+"sheet": "grills"
+}
+],
+"A-DH1420-L": [
+{
+"item": "A-DH1420-L",
+"desc": "14\" X 20\" Left  Swing Horizontal Vented Door",
+"map": 126.4,
+"sheet": "grills"
+}
+],
+"A-DV1420": [
+{
+"item": "A-DV1420",
+"desc": "14 X 20\" Right Swing Vertical Vented Door",
+"map": 197.5,
+"sheet": "grills"
+}
+],
+"A-DV1420-L": [
+{
+"item": "A-DV1420-L",
+"desc": "14\" X 20\" Left Swing Vertical Vented Door",
+"map": 197.5,
+"sheet": "grills"
+}
+],
+"A-DH1724": [
+{
+"item": "A-DH1724",
+"desc": "17\" x 24\" Right Swing Horizontal Vented Door",
+"map": 235.0,
+"sheet": "grills"
+}
+],
+"A-DH1724-L": [
+{
+"item": "A-DH1724-L",
+"desc": "17\" x 24\" Left  Swing Horizontal Vented Door",
+"map": 188.0,
+"sheet": "grills"
+}
+],
+"A-DV1724": [
+{
+"item": "A-DV1724",
+"desc": "17\" x 24\" Right Swing Vertical Vented Door",
+"map": 235.0,
+"sheet": "grills"
+}
+],
+"A-DV1724-L": [
+{
+"item": "A-DV1724-L",
+"desc": "17\" x 24\" Left Swing Vertical Vented Door",
+"map": 235.0,
+"sheet": "grills"
+}
+],
+"A-DD30": [
+{
+"item": "A-DD30",
+"desc": "30\" Double Door Flush Mount",
+"map": 297.5,
+"sheet": "grills"
+}
+],
+"A-DD33": [
+{
+"item": "A-DD33",
+"desc": "33\" Double Door Flush Mount",
+"map": 198.4,
+"sheet": "grills"
+}
+],
+"A-DD36": [
+{
+"item": "A-DD36",
+"desc": "36\" Double Door Flush Mount",
+"map": 372.5,
+"sheet": "grills"
+}
+],
+"A-DD42": [
+{
+"item": "A-DD42",
+"desc": "42\" Double Door Flush Mount",
+"map": 435.0,
+"sheet": "grills"
+}
+],
+"C-DD30": [
+{
+"item": "C-DD30",
+"desc": "30\" Vented Double Door Flush Mount",
+"map": 297.5,
+"sheet": "grills"
+}
+],
+"C-DD36": [
+{
+"item": "C-DD36",
+"desc": "36\" Vented Double Door Flush Mount",
+"map": 372.5,
+"sheet": "grills"
+}
+],
+"C-DD42": [
+{
+"item": "C-DD42",
+"desc": "42\" Vented Double Door Flush Mount",
+"map": 435.0,
+"sheet": "grills"
+}
+],
+"B-SD6": [
+{
+"item": "B-SD6",
+"desc": "14\" Flush Single Access Drawer",
+"map": 238.4,
+"sheet": "grills"
+}
+],
+"B-DD12": [
+{
+"item": "B-DD12",
+"desc": "14\" Flush Double Access Drawer",
+"map": 334.40000000000003,
+"sheet": "grills"
+}
+],
+"B-TD18": [
+{
+"item": "B-TD18",
+"desc": "14\" Flush Triple Access Drawer",
+"map": 722.5,
+"sheet": "grills"
+}
+],
+"DSH30": [
+{
+"item": "DSH30",
+"desc": "30\" Double Door Dry Storage (Assembly Required)",
+"map": 497.5,
+"sheet": "grills"
+}
+],
+"DSV1724": [
+{
+"item": "DSV1724",
+"desc": "24\" x 17\" Vertical Reversable Swing Dry Storage w/shelf (Assembly Required)",
+"map": 410.0,
+"sheet": "grills"
+}
+],
+"A-DPCF": [
+{
+"item": "A-DPCF",
+"desc": "17\" Double Drawer & Paper Towel Holder Combo",
+"map": 747.5,
+"sheet": "grills"
+}
+],
+"A-TRHD": [
+{
+"item": "A-TRHD",
+"desc": "20\" Enclosed Trash Drawer w/Trash Bag Ring & Top Punch-Out for counter trash chute",
+"map": 610.0,
+"sheet": "grills"
+}
+],
+"C-DDC30": [
+{
+"item": "C-DDC30",
+"desc": "30\" Classic Series Flush Style Double Drawer & Door Combo w/Removable Support Frame",
+"map": 590.4,
+"sheet": "grills"
+}
+],
+"C-DDC36": [
+{
+"item": "C-DDC36",
+"desc": "36\" Classic Series Flush Style Double Drawer & Door Combo w/Removable Support Frame",
+"map": 670.4000000000001,
+"sheet": "grills"
+}
+],
+"C-DDC42": [
+{
+"item": "C-DDC42",
+"desc": "42\" Classic Series Flush Style Double Drawer & Door Combo",
+"map": 798.4000000000001,
+"sheet": "grills"
+}
+],
+"A-LPCDD30": [
+{
+"item": "A-LPCDD30",
+"desc": "30\" Double Drawer Propane Tank Drawer w/Trash Bag Ring",
+"map": 662.4000000000001,
+"sheet": "grills"
+}
+],
+"A-LPCTD30": [
+{
+"item": "A-LPCTD30",
+"desc": "30\" Triple Drawer Propane Tank Drawer w/Trash Bag Ring",
+"map": 702.4000000000001,
+"sheet": "grills"
+}
+],
+"C-LPCD20": [
+{
+"item": "C-LPCD20",
+"desc": "20\" Tank Tray Swivel Action Door Combo",
+"map": 262.40000000000003,
+"sheet": "grills"
+}
+],
+"A-TH": [
+{
+"item": "A-TH",
+"desc": "Paper Towel Holder",
+"map": 158.0,
+"sheet": "grills"
+}
+],
+"BA-SD12": [
+{
+"item": "BA-SD12",
+"desc": "12\" x 12\" Beveled Frame Single Access Door",
+"map": 160.0,
+"sheet": "grills"
+}
+],
+"BA-VSDL12": [
+{
+"item": "BA-VSDL12",
+"desc": "12\" x 12\" Beveled Frame Left Swing Single Door",
+"map": 128.0,
+"sheet": "grills"
+}
+],
+"BA-VSDR12": [
+{
+"item": "BA-VSDR12",
+"desc": "12\" x 12\" Beveled Frame  Right Swing Single Door",
+"map": 128.0,
+"sheet": "grills"
+}
+],
+"BA-DH1420": [
+{
+"item": "BA-DH1420",
+"desc": "14\" x 20\" Beveled Frame Horizontal  Door  (Reversible)",
+"map": 235.0,
+"sheet": "grills"
+}
+],
+"BA-DH2027": [
+{
+"item": "BA-DH2027",
+"desc": "Signature Series 27\"x20\" Beveled Frame Horizontal Access Door Prev. BA-DH1724",
+"map": 272.5,
+"sheet": "grills"
+}
+],
+"BA-DV1723": [
+{
+"item": "BA-DV1723",
+"desc": "Signature Series 17\"x23\" Beveled Frame Vertical Access Door Prev. BA-DV1420",
+"map": 235.0,
+"sheet": "grills"
+}
+],
+"BA-DV2027": [
+{
+"item": "BA-DV2027",
+"desc": "Signature Series 20\"x27\" Beveled Frame Vertical Access Door Prev.BA-DV1724",
+"map": 272.5,
+"sheet": "grills"
+}
+],
+"BA-VDHL1420": [
+{
+"item": "BA-VDHL1420",
+"desc": "14\" x 20\" Beveled Frame Left Swing Horizontal Vented Door",
+"map": 150.4,
+"sheet": "grills"
+}
+],
+"BA-VDHR1420": [
+{
+"item": "BA-VDHR1420",
+"desc": "14\" x 20\" Beveled Frame Right Swing Horizontal Vented Door",
+"map": 150.4,
+"sheet": "grills"
+}
+],
+"BA-VDVL1420": [
+{
+"item": "BA-VDVL1420",
+"desc": "14\" x 20\" Beveled Frame Left Swing Vertical Vented Door",
+"map": 188.0,
+"sheet": "grills"
+}
+],
+"BA-VDVR1420": [
+{
+"item": "BA-VDVR1420",
+"desc": "14\" x 20\" Beveled Frame Right Swing Vertical Vented Door",
+"map": 188.0,
+"sheet": "grills"
+}
+],
+"BA-VDHL1724": [
+{
+"item": "BA-VDHL1724",
+"desc": "17\" x 24\" Beveled Frame Left Swing Horizontal Vented Door",
+"map": 174.4,
+"sheet": "grills"
+}
+],
+"BA-VDHR1724": [
+{
+"item": "BA-VDHR1724",
+"desc": "17\" x 24\" Beveled Frame Right Swing Horizontal Vented Door",
+"map": 174.4,
+"sheet": "grills"
+}
+],
+"BA-VDVL1724": [
+{
+"item": "BA-VDVL1724",
+"desc": "17\" x 24\"   Beveled Frame Left Swing Vertical Vented Door",
+"map": 218.0,
+"sheet": "grills"
+}
+],
+"BA-VDVR1724": [
+{
+"item": "BA-VDVR1724",
+"desc": "17\" x 24\"   Beveled Frame Right Swing Vertical Vented Door",
+"map": 218.0,
+"sheet": "grills"
+}
+],
+"BA-DD30": [
+{
+"item": "BA-DD30",
+"desc": "30\" Beveled Frame Double Door",
+"map": 322.5,
+"sheet": "grills"
+}
+],
+"BA-DD36": [
+{
+"item": "BA-DD36",
+"desc": "36\" Beveled Frame Double Door",
+"map": 385.0,
+"sheet": "grills"
+}
+],
+"BA-DD42": [
+{
+"item": "BA-DD42",
+"desc": "42\" Beveled Frame Double Door",
+"map": 435.0,
+"sheet": "grills"
+}
+],
+"BA-VDD30": [
+{
+"item": "BA-VDD30",
+"desc": "30\" Beveled Frame Vented Double Door",
+"map": 322.5,
+"sheet": "grills"
+}
+],
+"BA-VDD36": [
+{
+"item": "BA-VDD36",
+"desc": "36\" Beveled Frame Vented Double Door",
+"map": 385.0,
+"sheet": "grills"
+}
+],
+"BA-VDD42": [
+{
+"item": "BA-VDD42",
+"desc": "42\" Beveled Frame Vented Double Door",
+"map": 435.0,
+"sheet": "grills"
+}
+],
+"BA-SD6": [
+{
+"item": "BA-SD6",
+"desc": "6\" Beveled Frame Single Drawer",
+"map": 238.4,
+"sheet": "grills"
+}
+],
+"BA-DD12": [
+{
+"item": "BA-DD12",
+"desc": "12\" Beveled Frame Double Drawer",
+"map": 572.5,
+"sheet": "grills"
+}
+],
+"BA-TD18": [
+{
+"item": "BA-TD18",
+"desc": "18\" Beveled Frame Triple Drawer",
+"map": 747.5,
+"sheet": "grills"
+}
+],
+"BA-DPCF17": [
+{
+"item": "BA-DPCF17",
+"desc": "17\" Belved Frame Paper Towel Drawer Combo",
+"map": 797.5,
+"sheet": "grills"
+}
+],
+"BA-DSV1724": [
+{
+"item": "BA-DSV1724",
+"desc": "17” x 24” Weather Sealed,Beveled Frame Reversible Swing Dry  Storage Pantry (Assembly Required)",
+"map": 535.0,
+"sheet": "grills"
+}
+],
+"BA-DSH30": [
+{
+"item": "BA-DSH30",
+"desc": "30\" Weather Sealed,Beveled Frame Dry  Storage Pantry (Assembly Required)",
+"map": 610.0,
+"sheet": "grills"
+}
+],
+"BA-DDC30": [
+{
+"item": "BA-DDC30",
+"desc": "30\" Beveled Style Double Drawer & Door Combo w/Removable Support Frame",
+"map": 606.4,
+"sheet": "grills"
+}
+],
+"BA-DDC36": [
+{
+"item": "BA-DDC36",
+"desc": "36\" Beveled Style Double Drawer & Door Combo w/Removable Support Frame",
+"map": 710.4000000000001,
+"sheet": "grills"
+}
+],
+"BA-DDC42": [
+{
+"item": "BA-DDC42",
+"desc": "42\" Beveled Style Double Drawer & Door Combo w/Removable Support Frame",
+"map": 918.4000000000001,
+"sheet": "grills"
+}
+],
+"BA-LPCTD30": [
+{
+"item": "BA-LPCTD30",
+"desc": "30\" Beveled Frame Propane Combo w/ Trash Bag Ring & Triple Drawer Unit",
+"map": 694.4000000000001,
+"sheet": "grills"
+}
+],
+"BA-TRD2027": [
+{
+"item": "BA-TRD2027",
+"desc": "Signature Series 20\"x27\" Beveled Frame Trash Drawer w/Two Trash Bins. Prev.BA-TRD1724",
+"map": 685.0,
+"sheet": "grills"
+}
+],
+"BA-TH17": [
+{
+"item": "BA-TH17",
+"desc": "17\" Beveled Frame Paper Towel Holder",
+"map": 218.0,
+"sheet": "grills"
+}
+],
+"BA-SWVENT": [
+{
+"item": "BA-SWVENT",
+"desc": "18\" Vented Panel Door with Concealed Pressure Hinge",
+"map": 147.5,
+"sheet": "grills"
+}
+],
+"DE-DVR15": [
+{
+"item": "DE-DVR15",
+"desc": "Designer Series, Raised Style - 15\" Single Door w/Shelf Right Swing",
+"map": 297.5,
+"sheet": "grills"
+}
+],
+"DE-DVL15": [
+{
+"item": "DE-DVL15",
+"desc": "Designer Series, Raised Style - 15\" Single Door w/Shelf Left Swing",
+"map": 297.5,
+"sheet": "grills"
+}
+],
+"DE-DD30": [
+{
+"item": "DE-DD30",
+"desc": "Designer Series, Raised Style - 30\" Double Door w/Shelves",
+"map": 435.0,
+"sheet": "grills"
+}
+],
+"DE-DD36": [
+{
+"item": "DE-DD36",
+"desc": "Designer Series, Raised Style - 36\" Double Door w/Shelves",
+"map": 485.0,
+"sheet": "grills"
+}
+],
+"DE-DD42": [
+{
+"item": "DE-DD42",
+"desc": "Designer Series, Raised Style - 42\" Double Door w/Shelves",
+"map": 547.5,
+"sheet": "grills"
+}
+],
+"DE-DD13": [
+{
+"item": "DE-DD13",
+"desc": "Designer Series, Raised Style - 18\" x 13\" Height Double Drawer",
+"map": 390.40000000000003,
+"sheet": "grills"
+}
+],
+"DE-TD23": [
+{
+"item": "DE-TD23",
+"desc": "Designer Series, Raised Style - 18\" x 23\" Height Triple Drawer",
+"map": 847.5,
+"sheet": "grills"
+}
+],
+"DE-SD30": [
+{
+"item": "DE-SD30",
+"desc": "Designer Series, Raised Style - 30\" x 6-1/2\" Height Single Drawer",
+"map": 560.0,
+"sheet": "grills"
+}
+],
+"DE-MD30": [
+{
+"item": "DE-MD30",
+"desc": "Designer Series, Raised Style - 30\" x 10\" Height Single Drawer",
+"map": 610.0,
+"sheet": "grills"
+}
+],
+"DE-DVPR15": [
+{
+"item": "DE-DVPR15",
+"desc": "Designer Series, Raised Style - 15\" Single Door Dry Storage Pantry (Assembly Required)",
+"map": 547.5,
+"sheet": "grills"
+}
+],
+"DE-DVPL15": [
+{
+"item": "DE-DVPL15",
+"desc": "Designer Series, Raised Style - 15\" Single Door Dry Storage Pantry (Assembly Required)",
+"map": 547.5,
+"sheet": "grills"
+}
+],
+"DE-DDP30": [
+{
+"item": "DE-DDP30",
+"desc": "Designer Series, Raised Style - 30\" Double Door Dry Storage Pantry (Assembly Required)",
+"map": 747.5,
+"sheet": "grills"
+}
+],
+"DE-LPCTD30": [
+{
+"item": "DE-LPCTD30",
+"desc": "Designer Series, Raised Style - 30\" Liquid Propane Combo Triple Drawer",
+"map": 782.4000000000001,
+"sheet": "grills"
+}
+],
+"DE-TRD18": [
+{
+"item": "DE-TRD18",
+"desc": "Designer Series, Raised Style - 18\" Single Bin Trash Drawer",
+"map": 647.5,
+"sheet": "grills"
+}
+],
+"DE-DPCF23": [
+{
+"item": "DE-DPCF23",
+"desc": "Designer Series, Raised Style - 18\" Paper Towel Double Drawer Combo",
+"map": 822.5,
+"sheet": "grills"
+}
+],
+"DE-DPCF13": [
+{
+"item": "DE-DPCF13",
+"desc": "Designer Series 13\" Paper Towel Holder w/Cutlery Drawer",
+"map": 610.0,
+"sheet": "grills"
+}
+],
+"A-SS17": [
+{
+"item": "A-SS17",
+"desc": "17\" Single Sink w/Hot/Cold Faucet & Soap Dispenser, (1) Sink Drains",
+"map": 288.0,
+"sheet": "grills"
+}
+],
+"B-PS21": [
+{
+"item": "B-PS21",
+"desc": "21\" Premium Sink with Removable Lid, /Hot/Cold Water Faucet , Soap Dispenser, Sink Grid,Cutting Board & (2) Sink Drains",
+"map": 822.5,
+"sheet": "grills"
+}
+],
+"A-IC": [
+{
+"item": "A-IC",
+"desc": "28\" Fully Insulated Drop-in Ice Chest w/Hinged Lid & Two Removable Dividers",
+"map": 960.0,
+"sheet": "grills"
+}
+],
+"B-RBC14": [
+{
+"item": "B-RBC14",
+"desc": "Ruby Series 14\" Bar Sink Cocktail Center Insulated Ice Chest Station w/HOT/COLD Faucet, Removable Lid, Soap Dispenser, Speed Rail, Towel Holder, Condiment Bins, Drink Tender, Ice Bucket",
+"map": 1122.5,
+"sheet": "grills"
+}
+],
+"B-SK20": [
+{
+"item": "B-SK20",
+"desc": "Over/Under 20\" x 12\" Height Single Basin Sink w/Lid,  (1) Sink Drains",
+"map": 485.0,
+"sheet": "grills"
+}
+],
+"B-SK34": [
+{
+"item": "B-SK34",
+"desc": "Over/Under 34\" x 12\" Height Double Basin Sink w/Lids, (2) Sink Drains",
+"map": 747.5,
+"sheet": "grills"
+}
+],
+"ADASK20": [
+{
+"item": "ADASK20",
+"desc": "20” ADA Compliant Single Sink with Cover & Hot/Cold Faucet & Soap Dispenser,Removable Lid, (1) Sink Drain",
+"map": 585.0,
+"sheet": "grills"
+}
+],
+"ADASK37": [
+{
+"item": "ADASK37",
+"desc": "37” ADA Compliant Double Sink with Removable Lids, Hot/Cold Faucet, Soap Dispenser & (2) Sink Drains",
+"map": 960.0,
+"sheet": "grills"
+}
+],
+"B-IC14": [
+{
+"item": "B-IC14",
+"desc": "Over/Under 14\" x 12\" Height Single Basin Insulated Wall Ice Chest w/Removable Lid",
+"map": 448.0,
+"sheet": "grills"
+}
+],
+"BC-BC14": [
+{
+"item": "BC-BC14",
+"desc": "304 Stainless Steel 13-1/2\" Bar Caddy Speed Rail w/Drip Pan & Towel Holder",
+"map": 122.5,
+"sheet": "grills"
+}
+],
+"BC-DT14": [
+{
+"item": "BC-DT14",
+"desc": "304 Stainless Steel 13-1/2\" Draft Drip Tray w/Drip Pan & Bottle Opener",
+"map": 122.5,
+"sheet": "grills"
+}
+],
+"P-FHC": [
+{
+"item": "P-FHC",
+"desc": "Cold & Hot Water Faucet",
+"map": 211.25,
+"sheet": "grills"
+}
+],
+"BA-TRIM2": [
+{
+"item": "BA-TRIM2",
+"desc": "Signature Series Beveled Style Fridge Trim-Kit for up to 21 Inch Wide Fridges",
+"map": 210.0,
+"sheet": "grills"
+}
+],
+"SAPFR21PRO": [
+{
+"item": "SAPFR21PRO",
+"desc": "21\" 304 Stainless Steel Outdoor Rated Refrigerator w/Enlarged Front Venting Fan & Compressor",
+"map": 1436.0,
+"sheet": "grills"
+}
+],
+"SAP30WDPRO": [
+{
+"item": "SAP30WDPRO",
+"desc": "30\" 110 VOLT ELECTRICAL WARMING DRAWER COMBO W/DIGITAL DISPLAY & TEMPERATURE CONTROLS",
+"map": 1288.0,
+"sheet": "grills"
+}
+],
+"SAP30WDDE": [
+{
+"item": "SAP30WDDE",
+"desc": "Designer Series Face Panel for 30\" Warming Drawer",
+"map": 222.5,
+"sheet": "grills"
+}
+],
+"VENT-S": [
+{
+"item": "Vent-S",
+"desc": "15\"x 4-1/2\"Stainless Steel Venting Panel",
+"map": 22.5,
+"sheet": "grills"
+}
+],
+"VENT-L": [
+{
+"item": "Vent-L",
+"desc": "15\"x 6-1/2\" Stainless Steel Venting Panel",
+"map": 30.0,
+"sheet": "grills"
+}
+],
+"VENT-GBOX": [
+{
+"item": "VENT-GBOX",
+"desc": "304 SS Stackable Vent ( 9'L x 6' H x 4'D)",
+"map": 61.25,
+"sheet": "grills"
+}
+],
+"P-GIGNITER": [
+{
+"item": "P-Gigniter",
+"desc": "",
+"map": 23.75,
+"sheet": "grills"
+}
+],
+"P-GIGNITER-IR": [
+{
+"item": "P-Gigniter-IR",
+"desc": "Grill with IR igniter for Sunstone Grill",
+"map": 23.75,
+"sheet": "grills"
+}
+],
+"P-AISVALVE": [
+{
+"item": "P-AISvalve-LP",
+"desc": "Auto ignition Safety Valve Propane for Sunstone Grill",
+"map": 47.5,
+"sheet": "grills"
+},
+{
+"item": "P-AISvalve-NG",
+"desc": "Auto ignition Safety Valve Natural Gas for Sunstone Grill",
+"map": 47.5,
+"sheet": "grills"
+}
+],
+"P-AIVALVE": [
+{
+"item": "P-Aivalve-LP",
+"desc": "Auto ignition Valve Propane for Sunstone Grill",
+"map": 43.75,
+"sheet": "grills"
+},
+{
+"item": "P-Aivalve-NG",
+"desc": "Auto ignition Valve Natural Gas for Sunstone Grill",
+"map": 43.75,
+"sheet": "grills"
+}
+],
+"P-RVALVE": [
+{
+"item": "P-Rvalve-LP",
+"desc": "Regular Standard Grill Valve- Propane for Sunstone Grill",
+"map": 35.0,
+"sheet": "grills"
+},
+{
+"item": "P-Rvalve-NG",
+"desc": "Regular Standard Grill Valve- Natural Gas for Sunstone Grill",
+"map": 35.0,
+"sheet": "grills"
+}
+],
+"P-GBURNER": [
+{
+"item": "P-GBurner",
+"desc": "304 Cast Stainless Steel Burner(SUNSTONE Grill)",
+"map": 73.75,
+"sheet": "grills"
+}
+],
+"P-GBURNER-OCS": [
+{
+"item": "P-Gburner-OCS",
+"desc": "304 Cast Stainless Steel Burner ( OCS. Sapphire )",
+"map": 73.75,
+"sheet": "grills"
+}
+],
+"P-ORFICE": [
+{
+"item": "P-Orfice-LP",
+"desc": "",
+"map": 6.25,
+"sheet": "grills"
+},
+{
+"item": "P-Orfice-NG",
+"desc": "",
+"map": 6.25,
+"sheet": "grills"
+}
+],
+"P-ORFICE-IR": [
+{
+"item": "P-Orfice-IR-LP",
+"desc": "",
+"map": 6.25,
+"sheet": "grills"
+},
+{
+"item": "P-Orfice-IR-NG",
+"desc": "",
+"map": 6.25,
+"sheet": "grills"
+}
+],
+"P-FL-3B": [
+{
+"item": "P-FL-3B",
+"desc": "",
+"map": 36.25,
+"sheet": "grills"
+}
+],
+"P-FL-4B": [
+{
+"item": "P-FL-4B",
+"desc": "",
+"map": 36.25,
+"sheet": "grills"
+}
+],
+"P-FL-5B": [
+{
+"item": "P-FL-5B",
+"desc": "",
+"map": 36.25,
+"sheet": "grills"
+}
+],
+"P-DIVIDER": [
+{
+"item": "P-Divider",
+"desc": "",
+"map": 36.25,
+"sheet": "grills"
+}
+],
+"P-GSET3B": [
+{
+"item": "P-GSet3B",
+"desc": "",
+"map": 361.25,
+"sheet": "grills"
+}
+],
+"P-GSET4B": [
+{
+"item": "p-GSet4B",
+"desc": "",
+"map": 436.25,
+"sheet": "grills"
+}
+],
+"P-GSET5B": [
+{
+"item": "P-GSet5B",
+"desc": "",
+"map": 573.75,
+"sheet": "grills"
+}
+],
+"P-KNOB-L": [
+{
+"item": "P-Knob-L",
+"desc": "",
+"map": 36.25,
+"sheet": "grills"
+}
+],
+"P-KNOB-S": [
+{
+"item": "P-Knob-S",
+"desc": "",
+"map": 36.25,
+"sheet": "grills"
+}
+],
+"HOOD-3B": [
+{
+"item": "Hood-3B",
+"desc": "",
+"map": 597.5,
+"sheet": "grills"
+}
+],
+"HOOD-4B": [
+{
+"item": "Hood-4B",
+"desc": "",
+"map": 685.0,
+"sheet": "grills"
+}
+],
+"HOOD-5B": [
+{
+"item": "Hood-5B",
+"desc": "",
+"map": 922.5,
+"sheet": "grills"
+}
+],
+"P-WRACK-3B": [
+{
+"item": "P-Wrack-3B",
+"desc": "",
+"map": 111.25,
+"sheet": "grills"
+}
+],
+"P-WRACK-4B": [
+{
+"item": "P-Wrack-4B",
+"desc": "",
+"map": 123.75,
+"sheet": "grills"
+}
+],
+"P-WRACK-5B": [
+{
+"item": "P-Wrack-5B",
+"desc": "",
+"map": 136.25,
+"sheet": "grills"
+}
+],
+"P-RK-3B": [
+{
+"item": "P-RK-3B",
+"desc": "",
+"map": 211.25,
+"sheet": "grills"
+}
+],
+"P-RK-4B": [
+{
+"item": "P-RK-4B",
+"desc": "",
+"map": 223.75,
+"sheet": "grills"
+}
+],
+"P-RK-5B": [
+{
+"item": "P-RK-5B",
+"desc": "",
+"map": 236.25,
+"sheet": "grills"
+}
+],
+"NG-REG": [
+{
+"item": "NG-Reg",
+"desc": "",
+"map": 60.0,
+"sheet": "grills"
+}
+],
+"LP-REG": [
+{
+"item": "LP-Reg",
+"desc": "",
+"map": 60.0,
+"sheet": "grills"
+}
+],
+"NG-HOSE": [
+{
+"item": "NG-Hose",
+"desc": "",
+"map": 173.75,
+"sheet": "grills"
+}
+],
+"P-LT": [
+{
+"item": "P-LT",
+"desc": "",
+"map": 60.0,
+"sheet": "grills"
+}
+],
+"P-RMOTOR": [
+{
+"item": "P-RMotor",
+"desc": "",
+"map": 72.5,
+"sheet": "grills"
+}
+],
+"P-TMETER": [
+{
+"item": "P-TMeter",
+"desc": "",
+"map": 25.0,
+"sheet": "grills"
+}
+],
+"P-GLB": [
+{
+"item": "P-GLB",
+"desc": "",
+"map": 6.25,
+"sheet": "grills"
+}
+],
+"P-LIGHTCOVER": [
+{
+"item": "P-Lightcover",
+"desc": "",
+"map": 12.5,
+"sheet": "grills"
+}
+],
+"P-ELECTRODE": [
+{
+"item": "P-Electrode",
+"desc": "",
+"map": 3.75,
+"sheet": "grills"
+}
+],
+"P-IGNITORW-SP": [
+{
+"item": "P-IgnitorW-sp",
+"desc": "",
+"map": 12.5,
+"sheet": "grills"
+}
+],
+"P-IGNITORW-S": [
+{
+"item": "P-IgnitorW-s",
+"desc": "",
+"map": 3.75,
+"sheet": "grills"
+}
+],
+"P-GIMWIRE": [
+{
+"item": "P-GIMwire",
+"desc": "",
+"map": 18.75,
+"sheet": "grills"
+}
+],
+"P-GIMWIRE-IR": [
+{
+"item": "P-GIMwire-IR",
+"desc": "",
+"map": 25.0,
+"sheet": "grills"
+}
+],
+"P-TCOUPLE34": [
+{
+"item": "P-Tcouple34",
+"desc": "",
+"map": 37.5,
+"sheet": "grills"
+}
+],
+"P-TCOUPLE5": [
+{
+"item": "P-Tcouple5",
+"desc": "",
+"map": 37.5,
+"sheet": "grills"
+}
+],
+"P-GIFLINE": [
+{
+"item": "P-GIFline",
+"desc": "",
+"map": 25.0,
+"sheet": "grills"
+}
+],
+"P-MADAPTOR": [
+{
+"item": "P-MAdaptor-LP",
+"desc": "",
+"map": 10.0,
+"sheet": "grills"
+},
+{
+"item": "P-MAdaptor-NG",
+"desc": "",
+"map": 10.0,
+"sheet": "grills"
+}
+],
+"P-SMBOX": [
+{
+"item": "P-SMBox",
+"desc": "",
+"map": 48.75,
+"sheet": "grills"
+}
+],
+"P-R-FORK": [
+{
+"item": "P-R-Fork",
+"desc": "",
+"map": 48.75,
+"sheet": "grills"
+}
+],
+"P-LIGHTKIT": [
+{
+"item": "P-LightKit",
+"desc": "",
+"map": 37.5,
+"sheet": "grills"
+}
+],
+"R-RVALVE": [
+{
+"item": "R-Rvalve-LP",
+"desc": "",
+"map": 37.5,
+"sheet": "grills"
+},
+{
+"item": "R-Rvalve-NG",
+"desc": "",
+"map": 37.5,
+"sheet": "grills"
+}
+],
+"R-RSVALVE": [
+{
+"item": "R-RSvalve-LP",
+"desc": "",
+"map": 47.5,
+"sheet": "grills"
+},
+{
+"item": "R-RSvalve-NG",
+"desc": "",
+"map": 47.5,
+"sheet": "grills"
+}
+],
+"R-FL-3B": [
+{
+"item": "R-FL-3B",
+"desc": "",
+"map": 43.75,
+"sheet": "grills"
+}
+],
+"R-FL-4B": [
+{
+"item": "R-FL-4B",
+"desc": "",
+"map": 43.75,
+"sheet": "grills"
+}
+],
+"R-FL-5B": [
+{
+"item": "R-FL-5B",
+"desc": "",
+"map": 43.75,
+"sheet": "grills"
+}
+],
+"R-GR3B": [
+{
+"item": "R-GR3B",
+"desc": "",
+"map": 373.75,
+"sheet": "grills"
+}
+],
+"R-GR4B": [
+{
+"item": "R-GR4B",
+"desc": "",
+"map": 436.25,
+"sheet": "grills"
+}
+],
+"R-GR5B": [
+{
+"item": "R-GR5B",
+"desc": "",
+"map": 573.75,
+"sheet": "grills"
+}
+],
+"R-HOOD3B": [
+{
+"item": "R-Hood3B",
+"desc": "",
+"map": 660.0,
+"sheet": "grills"
+}
+],
+"R-HOOD4B": [
+{
+"item": "R-Hood4B",
+"desc": "",
+"map": 685.0,
+"sheet": "grills"
+}
+],
+"R-HOOD5B": [
+{
+"item": "R-Hood5B",
+"desc": "",
+"map": 947.5,
+"sheet": "grills"
+}
+],
+"R-LED-3B": [
+{
+"item": "R-LED-3B",
+"desc": "",
+"map": 73.75,
+"sheet": "grills"
+}
+],
+"R-LED-4B": [
+{
+"item": "R-LED-4B",
+"desc": "",
+"map": 86.25,
+"sheet": "grills"
+}
+],
+"R-LED-5B": [
+{
+"item": "R-LED-5B",
+"desc": "",
+"map": 98.75,
+"sheet": "grills"
+}
+],
+"R-WR-3B": [
+{
+"item": "R-WR-3B",
+"desc": "",
+"map": 123.75,
+"sheet": "grills"
+}
+],
+"R-WR-4B": [
+{
+"item": "R-WR-4B",
+"desc": "",
+"map": 136.25,
+"sheet": "grills"
+}
+],
+"R-WR-5B": [
+{
+"item": "R-WR-5B",
+"desc": "",
+"map": 148.75,
+"sheet": "grills"
+}
+],
+"R-LIGHT": [
+{
+"item": "R-Light",
+"desc": "",
+"map": 31.25,
+"sheet": "grills"
+}
+],
+"R-LIGHT-SW": [
+{
+"item": "R-Light-SW",
+"desc": "",
+"map": 18.75,
+"sheet": "grills"
+}
+],
+"R-TMETER": [
+{
+"item": "R-Tmeter",
+"desc": "",
+"map": 25.0,
+"sheet": "grills"
+}
+],
+"R-GIMWIRE-IR": [
+{
+"item": "R-GIMwire-IR",
+"desc": "",
+"map": 25.0,
+"sheet": "grills"
+}
+],
+"P-DBIGNITER": [
+{
+"item": "P-DBigniter",
+"desc": "",
+"map": 23.75,
+"sheet": "grills"
+}
+],
+"P-DBVALVE": [
+{
+"item": "P-DBValve-LP",
+"desc": "",
+"map": 23.75,
+"sheet": "grills"
+},
+{
+"item": "P-DBValve-NG",
+"desc": "",
+"map": 23.75,
+"sheet": "grills"
+}
+],
+"P-SBIGNITOR": [
+{
+"item": "P-SBignitor",
+"desc": "",
+"map": 23.75,
+"sheet": "grills"
+}
+],
+"P-SBVALVE": [
+{
+"item": "P-SBValve-LP",
+"desc": "",
+"map": 23.75,
+"sheet": "grills"
+},
+{
+"item": "P-SBValve-NG",
+"desc": "",
+"map": 23.75,
+"sheet": "grills"
+}
+],
+"R-DBVALVE": [
+{
+"item": "R-DBVALVE-LP",
+"desc": "",
+"map": 37.5,
+"sheet": "grills"
+},
+{
+"item": "R-DBVALVE-NG",
+"desc": "",
+"map": 37.5,
+"sheet": "grills"
+}
+],
+"R-RBVALVE-ORFICE": [
+{
+"item": "R-RBvalve-Orfice-LP",
+"desc": "",
+"map": 10.0,
+"sheet": "grills"
+},
+{
+"item": "R-RBvalve-Orfice-NG",
+"desc": "",
+"map": 10.0,
+"sheet": "grills"
+}
+],
+"P-HANDLE": [
+{
+"item": "P-Handle",
+"desc": "",
+"map": 18.75,
+"sheet": "grills"
+}
+],
+"P-BHANDLE": [
+{
+"item": "P-BHandle",
+"desc": "",
+"map": 18.75,
+"sheet": "grills"
+}
+],
+"P-DHANDLE": [
+{
+"item": "P-DHandle",
+"desc": "",
+"map": 31.25,
+"sheet": "grills"
+}
+],
+"DE-HINGE": [
+{
+"item": "De-Hinge",
+"desc": "",
+"map": 18.75,
+"sheet": "grills"
+}
+]
+}

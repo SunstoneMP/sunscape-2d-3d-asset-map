@@ -5,8 +5,9 @@
   "name": "20\" Sunstone Appliance Cabinet for UpTo 14-1/2 In. Cut-Out Width Appliance or BarStation w/Left Swing Door - SAC20CSDL",
   "slug": "20-sunstone-appliance-cabinet-for-upto-14-1-2-in-cut-out-width-appliance-or-barstation-w-left-swing-door-sac20csdl",
   "sku": "SAC20CSDL",
-  "price": 157400,
+  "price": 157375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDL_primary_09892140.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -15,8 +16,9 @@
   "name": "7\" Corner Sink & Drawer Cabinet (w/ BRBC14 insert) [L]",
   "slug": "sac20csdl-brbc14",
   "sku": "SAC20CSDL_BRBC14",
-  "price": 175300,
+  "price": 269625,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDL_primary_09892140.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -25,8 +27,9 @@
   "name": "7\" Corner Sink & Drawer Cabinet (w/ SUN13CPRO insert) [L]",
   "slug": "sac20csdl-sun13cpro",
   "sku": "SAC20CSDL_SUN13CPRO",
-  "price": 174000,
+  "price": 268375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDL_primary_09892140.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -35,8 +38,9 @@
   "name": "7\" Corner Sink & Drawer Cabinet (w/ SUN13VDB insert) [L]",
   "slug": "sac20csdl-sun13vdb",
   "sku": "SAC20CSDL_SUN13VDB",
-  "price": 149000,
+  "price": 243375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDL_primary_09892140.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -45,8 +49,9 @@
   "name": "20\" Sunstone Appliance Cabinet for UpTo 14-1/2 In. Cut-Out Width Appliance or BarStation w/Right Swing Door - SAC20CSDR",
   "slug": "20-sunstone-appliance-cabinet-for-upto-14-1-2-in-cut-out-width-appliance-or-barstation-w-right-swing-door-sac20csdr",
   "sku": "SAC20CSDR",
-  "price": 157400,
+  "price": 157375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDR_primary_17bee4e3.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -55,8 +60,9 @@
   "name": "7\" Corner Sink & Drawer Cabinet (w/ BRBC14 insert) [R]",
   "slug": "sac20csdr-brbc14",
   "sku": "SAC20CSDR_BRBC14",
-  "price": 175300,
+  "price": 269625,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDR_primary_17bee4e3.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -65,8 +71,9 @@
   "name": "7\" Corner Sink & Drawer Cabinet (w/ SUN13CPRO insert) [R]",
   "slug": "sac20csdr-sun13cpro",
   "sku": "SAC20CSDR_SUN13CPRO",
-  "price": 174000,
+  "price": 268375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDR_primary_17bee4e3.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -75,8 +82,9 @@
   "name": "7\" Corner Sink & Drawer Cabinet (w/ SUN13VDB insert) [R]",
   "slug": "sac20csdr-sun13vdb",
   "sku": "SAC20CSDR_SUN13VDB",
-  "price": 149000,
+  "price": 243375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC20CSDR_primary_17bee4e3.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -87,6 +95,7 @@
   "sku": "SAC24APC",
   "price": 193500,
   "image": "/media/sites/site_affv5holph/manus-storage/products/nDnXAH-593mmy4FeG4Bmh-SBC24APC__1__9768ecef.png",
+  "gas": false,
   "simple": false
  },
  {
@@ -97,6 +106,7 @@
   "sku": "SAC30APC",
   "price": 211000,
   "image": "/media/sites/site_affv5holph/manus-storage/products/-SZWdeFzIM0bOpFMIbH0--SBC30APC_fe596b49.png",
+  "gas": false,
   "simple": false
  },
  {
@@ -105,8 +115,9 @@
   "name": "10.5\" Access Panel Cabinet (w/ SAPFR21PRO insert)",
   "slug": "sac30apc-sapfr21pro",
   "sku": "SAC30APC_SAPFR21PRO",
-  "price": 232600,
+  "price": 354600,
   "image": "/media/sites/site_affv5holph/manus-storage/products/-SZWdeFzIM0bOpFMIbH0--SBC30APC_fe596b49.png",
+  "gas": false,
   "simple": true
  },
  {
@@ -115,8 +126,9 @@
   "name": "11\" Kamado Base Door Cabinet (w/ KAMADO+RAIL insert)",
   "slug": "sac30kbdc-kamado-rail",
   "sku": "SAC30KBDC_KAMADO_RAIL",
-  "price": 126000,
+  "price": 283375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC30KBDC_primary_c8be560c.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -125,8 +137,9 @@
   "name": "10.5\" Kamado Base Door Cabinet (w/ KAMADO+SHELF insert)",
   "slug": "sac30kbdc-kamado-shelf",
   "sku": "SAC30KBDC_KAMADO_SHELF",
-  "price": 121000,
+  "price": 267375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC30KBDC_primary_c8be560c.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -135,8 +148,9 @@
   "name": "10.5\" Kamado Base Door Cabinet (w/ SUN24PCB-GD insert)",
   "slug": "sac30kbdc-sun24pcb-gd",
   "sku": "SAC30KBDC_SUN24PCB-GD",
-  "price": 121000,
+  "price": 642125,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC30KBDC_primary_c8be560c.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -145,8 +159,9 @@
   "name": "11\" Kamado Base Door Cabinet (w/ SUN24PCB-PB insert)",
   "slug": "sac30kbdc-sun24pcb-pb",
   "sku": "SAC30KBDC_SUN24PCB-PB",
-  "price": 126000,
+  "price": 674625,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC30KBDC_primary_c8be560c.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -155,8 +170,9 @@
   "name": "12\" Pizza Oven Base Door Cabinet (w/ SUN24PCB insert)",
   "slug": "sac33pbdc-sun24pcb",
   "sku": "SAC33PBDC_SUN24PCB",
-  "price": 138000,
+  "price": 752125,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC33PBDC_primary_3c9f873a.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -167,6 +183,7 @@
   "sku": "SAC34APC",
   "price": 218500,
   "image": "/media/sites/site_affv5holph/manus-storage/products/YQI8ogThwzjhBHQi4OnJE-SAC34APC_91a2f714.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -177,6 +194,20 @@
   "sku": "SAC34CGDC",
   "price": 218900,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC34CGDC_primary_98e00287.jpg",
+  "gas": true,
+  "gasOpt": {
+   "id": "o60017",
+   "NG": {
+    "v": "v30034",
+    "markup": 0,
+    "label": "\ud83d\udd36 Natural Gas"
+   },
+   "LP": {
+    "v": "v30033",
+    "markup": 0,
+    "label": "\ud83d\udd35 Liquid Propane"
+   }
+  },
   "simple": false
  },
  {
@@ -187,6 +218,7 @@
   "sku": "SAC34CGDC_SUNCHSZ30",
   "price": 531300,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC34CGDC_primary_98e00287.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -197,6 +229,7 @@
   "sku": "SAC34DWC",
   "price": 206900,
   "image": "/media/sites/site_affv5holph/catalog-media/c20bdbaf28088a06185d.webp",
+  "gas": false,
   "simple": false
  },
  {
@@ -205,8 +238,9 @@
   "name": "12\" Double Door Cabinet (w/ SAPWD30PROx2 insert)",
   "slug": "sac34dwc-sapwd30prox2",
   "sku": "SAC34DWC_SAPWD30PROx2",
-  "price": 359600,
+  "price": 464500,
   "image": "/media/sites/site_affv5holph/catalog-media/c20bdbaf28088a06185d.webp",
+  "gas": false,
   "simple": true
  },
  {
@@ -215,8 +249,9 @@
   "name": "34\" Sunstone Gas Grill Base Cabinet - SAC34GLPCD",
   "slug": "34-sunstone-gas-grill-base-cabinet-sac34glpcd",
   "sku": "SAC34GLPCD",
-  "price": 277400,
+  "price": 277375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC34GLPCD_primary_a904d297.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -225,8 +260,9 @@
   "name": "12.5\" Grill Locker Pull-Out Cabinet (w/ RUBY3B insert)",
   "slug": "sac34glpcd-ruby3b",
   "sku": "SAC34GLPCD_RUBY3B",
-  "price": 386300,
+  "price": 519625,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC34GLPCD_primary_a904d297.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -237,6 +273,7 @@
   "sku": "SAC34SWC",
   "price": 236900,
   "image": "/media/sites/site_affv5holph/catalog-media/d5fc5bc4f0896e88e1be.webp",
+  "gas": false,
   "simple": false
  },
  {
@@ -245,8 +282,9 @@
   "name": "12\" Single Door Cabinet w/ Shelf (w/ SAPWD30PRO insert)",
   "slug": "sac34swc-sapwd30pro",
   "sku": "SAC34SWC_SAPWD30PRO",
-  "price": 230800,
+  "price": 365700,
   "image": "/media/sites/site_affv5holph/catalog-media/d5fc5bc4f0896e88e1be.webp",
+  "gas": false,
   "simple": true
  },
  {
@@ -255,8 +293,9 @@
   "name": "11\" Kamado Base Door Cabinet (w/ KAMADO+OPEN insert)",
   "slug": "sac3okbdc-kamado-open",
   "sku": "SAC3OKBDC_KAMADO_OPEN",
-  "price": 126000,
+  "price": 267375,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC30KBDC_primary_c8be560c.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -265,8 +304,22 @@
   "name": "40\" Sunstone Gas Grill Base Cabinet - SAC40GLPCD",
   "slug": "40-sunstone-gas-grill-base-cabinet-sac40glpcd",
   "sku": "SAC40GLPCD",
-  "price": 319900,
+  "price": 319875,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC40GLPCD_primary_901700d1.jpg",
+  "gas": true,
+  "gasOpt": {
+   "id": "o60001",
+   "NG": {
+    "v": "v30002",
+    "markup": 0,
+    "label": "\ud83d\udd36 Natural Gas"
+   },
+   "LP": {
+    "v": "v30001",
+    "markup": 0,
+    "label": "\ud83d\udd35 Liquid Propane"
+   }
+  },
   "simple": false
  },
  {
@@ -275,8 +328,9 @@
   "name": "14.5\" Grill Locker Pull-Out Cabinet (w/ RUBY4B insert)",
   "slug": "sac40glpcd-ruby4b",
   "sku": "SAC40GLPCD_RUBY4B",
-  "price": 453000,
+  "price": 605875,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC40GLPCD_primary_901700d1.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -285,8 +339,9 @@
   "name": "46\" Sunstone Charcoal Grill Base Cabinet - SAC46CGDC",
   "slug": "46-sunstone-charcoal-grill-base-cabinet-sac46cgdc",
   "sku": "SAC46CGDC",
-  "price": 353600,
+  "price": 353625,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC46CGDC_primary_4be1e68b.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -297,6 +352,7 @@
   "sku": "SAC46CGDC_SUNCHDZ42",
   "price": 808500,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC46CGDC_primary_4be1e68b.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -305,8 +361,22 @@
   "name": "46\" Sunstone Gas Grill Base Cabinet - Item No. SAC46GLPCD",
   "slug": "46-sunstone-gas-grill-base-cabinet-item-no-sac46glpcd",
   "sku": "SAC46GLPCD",
-  "price": 362300,
+  "price": 362250,
   "image": "/media/sites/site_affv5holph/manus-storage/SAC46GLPCD_primary_a7a0ab00.jpg",
+  "gas": true,
+  "gasOpt": {
+   "id": "o60003",
+   "NG": {
+    "v": "v30006",
+    "markup": 0,
+    "label": "\ud83d\udd36 Natural Gas"
+   },
+   "LP": {
+    "v": "v30005",
+    "markup": 0,
+    "label": "\ud83d\udd35 Liquid Propane"
+   }
+  },
   "simple": false
  },
  {
@@ -315,8 +385,9 @@
   "name": "14\" Slide-Out Louvered Shelf [R]",
   "slug": "sbc12sls-right",
   "sku": "SBC12SLS_RIGHT",
-  "price": 119000,
+  "price": 272375,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC12SLS_primary_ea2d233c.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -325,8 +396,9 @@
   "name": "12\" Spice Rack Drawer w/Two Removable Bins - SBC12SSRD",
   "slug": "12-spice-rack-drawer-w-two-removable-bins-sbc12ssrd",
   "sku": "SBC12SSRD",
-  "price": 174900,
+  "price": 174875,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC12SSRD_primary_ca5ca1ba.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -335,8 +407,9 @@
   "name": "18\" Left Swing Door Cabinet w/Top Drawer & Shelf - SBC18CSDL",
   "slug": "18-left-swing-door-cabinet-w-top-drawer-shelf-sbc18csdl",
   "sku": "SBC18CSDL",
-  "price": 197400,
+  "price": 197375,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18CSDL_primary_f8c7a4c0.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -345,8 +418,9 @@
   "name": "18\" Left Swing Door Cabinet w/Top Drawer & Shelf - SBC18CSDR",
   "slug": "18-left-swing-door-cabinet-w-top-drawer-shelf-sbc18csdr",
   "sku": "SBC18CSDR",
-  "price": 197400,
+  "price": 197375,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18CSDR_primary_dc6183cf.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -355,8 +429,9 @@
   "name": "18\"Combo Paper Towel Holder/Cutlery Drawer with Cutting Board & Insulated Ice Chest Dry Storage Drawer with Drain - SBC18DPIC",
   "slug": "18-combo-paper-towel-holder-cutlery-drawer-with-cutting-board-amp-insulated-ice-chest-dry-storage-drawer-with-drain-sbc18dpic",
   "sku": "SBC18DPIC",
-  "price": 236100,
+  "price": 236125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18DPIC_primary_4b2883c0.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -365,8 +440,9 @@
   "name": "18\" Full Height Left Swing Door Cabinet w/Shelf - SBC18FSDL",
   "slug": "18-full-height-left-swing-door-cabinet-w-shelf-sbc18fsdl",
   "sku": "SBC18FSDL",
-  "price": 139900,
+  "price": 139875,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDL_primary_658f7205.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -375,8 +451,9 @@
   "name": "6.5\" Flip-Shelf Door Cabinet \u2014 Style 17 [L]",
   "slug": "sbc18fsdl-ass17",
   "sku": "SBC18FSDL_ASS17",
-  "price": 55000,
+  "price": 168675,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDL_primary_658f7205.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -385,8 +462,9 @@
   "name": "6.5\" Flip-Shelf Door Cabinet (w/ BIC14 insert) [L]",
   "slug": "sbc18fsdl-bic14",
   "sku": "SBC18FSDL_BIC14",
-  "price": 99800,
+  "price": 184675,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDL_primary_658f7205.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -395,8 +473,9 @@
   "name": "6.5\" Flip-Shelf Door Cabinet (w/ SUN13VSB insert) [L]",
   "slug": "sbc18fsdl-sun13vsb",
   "sku": "SBC18FSDL_SUN13VSB",
-  "price": 104900,
+  "price": 189775,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDL_primary_658f7205.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -405,8 +484,9 @@
   "name": "18\" Full Height Right Swing Door Cabinet w/Shelf - SBC18FSDR",
   "slug": "18-full-height-right-swing-door-cabinet-w-shelf-sbc18fsdr",
   "sku": "SBC18FSDR",
-  "price": 139900,
+  "price": 139875,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDR_primary_d8ac57e4.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -415,8 +495,9 @@
   "name": "6.5\" Flip-Shelf Door Cabinet \u2014 Style 17 [R]",
   "slug": "sbc18fsdr-ass17",
   "sku": "SBC18FSDR_ASS17",
-  "price": 55000,
+  "price": 168675,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDR_primary_d8ac57e4.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -425,8 +506,9 @@
   "name": "6.5\" Flip-Shelf Door Cabinet (w/ BIC14 insert) [R]",
   "slug": "sbc18fsdr-bic14",
   "sku": "SBC18FSDR_BIC14",
-  "price": 99800,
+  "price": 184675,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDR_primary_d8ac57e4.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -435,8 +517,9 @@
   "name": "6.5\" Flip-Shelf Door Cabinet (w/ SUN13VSB insert) [R]",
   "slug": "sbc18fsdr-sun13vsb",
   "sku": "SBC18FSDR_SUN13VSB",
-  "price": 104900,
+  "price": 189775,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18FSDR_primary_d8ac57e4.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -445,8 +528,9 @@
   "name": "18\"Propane/Trash Drawer Combo Cabinet - SBC18SLPCD",
   "slug": "18-propane-trash-drawer-combo-cabinet-sbc18slpcd",
   "sku": "SBC18SLPCD",
-  "price": 176100,
+  "price": 176125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18SLPCD_primary_931f19f1.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -455,8 +539,9 @@
   "name": "18\" Triple Drawer Base Cabinet - SBC18STD",
   "slug": "18-triple-drawer-base-cabinet-sbc18std",
   "sku": "SBC18STD",
-  "price": 181100,
+  "price": 181125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18STD_primary_fe93536b.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -465,8 +550,9 @@
   "name": "18\" Trash Drawer Cabinet w/Two Top Loading Bins - SBC18STRD",
   "slug": "18-trash-drawer-cabinet-w-two-top-loading-bins-sbc18strd",
   "sku": "SBC18STRD",
-  "price": 158600,
+  "price": 158625,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC18STRD_primary_a44144d0.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -475,8 +561,9 @@
   "name": "24\" Double Door Base Cabinet w/Shelf & Reversible Top Drawer or False Panel - SBC24CDD",
   "slug": "24-double-door-base-cabinet-w-shelf-reversible-top-drawer-or-false-panel-sbc24cdd",
   "sku": "SBC24CDD",
-  "price": 177400,
+  "price": 177375,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC24CDD_primary_64ad251b.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -485,8 +572,9 @@
   "name": "8.5\" Combo Drawer/Door Cabinet (w/ BPS21 insert)",
   "slug": "sbc24cdd-bps21",
   "sku": "SBC24CDD_BPS21",
-  "price": 154300,
+  "price": 259625,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC24CDD_primary_64ad251b.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -495,8 +583,9 @@
   "name": "24\" Full Height Double Door Base Cabinet w/Two Shelves & Door Pockets - SBC24FDD",
   "slug": "24-full-height-double-door-base-cabinet-w-two-shelves-door-pockets-sbc24fdd",
   "sku": "SBC24FDD",
-  "price": 171100,
+  "price": 171125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC24FDD_primary_9b4bf740.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -505,8 +594,9 @@
   "name": "8.5\" Flip Drawer/Door Cabinet (w/ BPS21 insert)",
   "slug": "sbc24fdd-bps21",
   "sku": "SBC24FDD_BPS21",
-  "price": 154300,
+  "price": 253375,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC24FDD_primary_9b4bf740.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -515,8 +605,9 @@
   "name": "24\" Large Triple Drawer Base Cabinet - Item No. SBC24STD",
   "slug": "24-large-triple-drawer-base-cabinet-item-no-sbc24std",
   "sku": "SBC24STD",
-  "price": 223600,
+  "price": 223625,
   "image": "/media/sites/site_affv5holph/catalog-media/bd1dbf45a03773712a0e.webp",
+  "gas": false,
   "simple": false
  },
  {
@@ -525,8 +616,9 @@
   "name": "30\" Double Door Base Cabinet w/Shelf & Reversible Top Drawer or False Panel - SBC30CDD",
   "slug": "30-double-door-base-cabinet-w-shelf-reversible-top-drawer-or-false-panel-sbc30cdd",
   "sku": "SBC30CDD",
-  "price": 206100,
+  "price": 206125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30CDD_primary_5c27c9dd.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -535,8 +627,9 @@
   "name": "10.5\" Combo Drawer/Door Cabinet (w/ BPS21 insert)",
   "slug": "sbc30cdd-bps21",
   "sku": "SBC30CDD_BPS21",
-  "price": 171300,
+  "price": 288375,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30CDD_primary_5c27c9dd.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -545,8 +638,9 @@
   "name": "13\" Combo Drawer/Door Cabinet (w/ BSK34 insert)",
   "slug": "sbc30cdd-bsk34",
   "sku": "SBC30CDD_BSK34",
-  "price": 163800,
+  "price": 280875,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30CDD_primary_5c27c9dd.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -557,6 +651,7 @@
   "sku": "SBC30DSPC",
   "price": 236900,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30DSPC_primary_81c054db.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -565,8 +660,9 @@
   "name": "30\" Full Height Double Door Base Cabinet w/Two Shelves & Door Pockets - SBC30FDD",
   "slug": "30-full-height-double-door-base-cabinet-w-two-shelves-door-pockets-sbc30fdd",
   "sku": "SBC30FDD",
-  "price": 191100,
+  "price": 191125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30FDD_primary_5808d68b.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -575,8 +671,9 @@
   "name": "10.5\" Flip Drawer/Door Cabinet (w/ BPS21 insert)",
   "slug": "sbc30fdd-bps21",
   "sku": "SBC30FDD_BPS21",
-  "price": 171300,
+  "price": 273375,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30FDD_primary_5808d68b.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -585,8 +682,9 @@
   "name": "30\" Large Triple Drawer Base Cabinet - SBC30STD",
   "slug": "30-large-triple-drawer-base-cabinet-sbc30std",
   "sku": "SBC30STD",
-  "price": 271100,
+  "price": 271125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30STD_primary_caeea17f.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -597,6 +695,7 @@
   "sku": "SBC34FDD_BSK34",
   "price": 136000,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC30FDD_primary_5808d68b.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -605,8 +704,9 @@
   "name": "36\" Double Door Base Cabinet w/Shelf & Reversible Top Drawer or False Panel - SBC36CDD",
   "slug": "36-double-door-base-cabinet-w-shelf-reversible-top-drawer-or-false-panel-sbc36cdd",
   "sku": "SBC36CDD",
-  "price": 244900,
+  "price": 244875,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC36CDD_primary_1baf92af.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -615,8 +715,9 @@
   "name": "13\" Combo Drawer/Door Cabinet (w/ AIC insert)",
   "slug": "sbc36cdd-aic",
   "sku": "SBC36CDD_AIC",
-  "price": 206000,
+  "price": 340875,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC36CDD_primary_1baf92af.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -625,8 +726,9 @@
   "name": "13\" Combo Drawer/Door Cabinet (w/ BPS21 insert)",
   "slug": "sbc36cdd-bps21",
   "sku": "SBC36CDD_BPS21",
-  "price": 192300,
+  "price": 327125,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC36CDD_primary_1baf92af.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -635,8 +737,9 @@
   "name": "36\" Full Height Double Door Base Cabinet w/Two Shelves & Door Pockets - SBC36FDD",
   "slug": "36-full-height-double-door-base-cabinet-w-two-shelves-door-pockets-sbc36fdd",
   "sku": "SBC36FDD",
-  "price": 228600,
+  "price": 228625,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC36FDD_primary_114ef9c3.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -645,8 +748,9 @@
   "name": "8.5\" 45-Degree Corner Filler [L]",
   "slug": "sbc3c45-left",
   "sku": "SBC3C45_LEFT",
-  "price": 81000,
+  "price": 131125,
   "image": "/media/sites/site_affv5holph/catalog-media/c9e498ed004c90619dcb.webp",
+  "gas": false,
   "simple": true
  },
  {
@@ -655,8 +759,9 @@
   "name": "8.5\" 45-Degree Corner Filler [R]",
   "slug": "sbc3c45-right",
   "sku": "SBC3C45_RIGHT",
-  "price": 81000,
+  "price": 131125,
   "image": "/media/sites/site_affv5holph/catalog-media/c9e498ed004c90619dcb.webp",
+  "gas": false,
   "simple": true
  },
  {
@@ -665,8 +770,9 @@
   "name": "6\" Spacer Base Cabinet w/Front & Back Interior Electrical Box - SBC6SPEL",
   "slug": "6-spacer-base-cabinet-w-front-back-interior-electrical-box-sbc6spel",
   "sku": "SBC6SPEL",
-  "price": 63600,
+  "price": 63625,
   "image": "/media/sites/site_affv5holph/manus-storage/SBC6SPEL_primary_259cbf5b.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -677,6 +783,7 @@
   "sku": "SCC15SPE",
   "price": 35000,
   "image": "/media/sites/site_affv5holph/catalog-media/670cd746838d22ea1b10.webp",
+  "gas": false,
   "simple": false
  },
  {
@@ -687,6 +794,7 @@
   "sku": "SCC21SPE",
   "price": 61300,
   "image": "/media/sites/site_affv5holph/catalog-media/fff105ca2e5db0b0b778.webp",
+  "gas": false,
   "simple": false
  },
  {
@@ -695,8 +803,9 @@
   "name": "25\" Back Appliance Panels - SCC25SPE",
   "slug": "25-back-appliance-panels-scc25spe",
   "sku": "SCC25SPE",
-  "price": 68800,
+  "price": 68750,
   "image": "/media/sites/site_affv5holph/catalog-media/279262e838ef5f7cd40d.webp",
+  "gas": false,
   "simple": false
  },
  {
@@ -705,8 +814,9 @@
   "name": "11.5\" 90-Degree Corner Bar Panel \u2014 Style 17 [L]",
   "slug": "scc31bp90-ass17-left",
   "sku": "SCC31BP90_ASS17_LEFT",
-  "price": 109000,
+  "price": 151175,
   "image": "/media/sites/site_affv5holph/manus-storage/products/cRBQbzZKOt1FV2M5ZHWFA-SCC31BP90_3_d52e6eb8.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -715,8 +825,9 @@
   "name": "11.5\" 90-Degree Corner Bar Panel \u2014 Style 17 [R]",
   "slug": "scc31bp90-ass17-right",
   "sku": "SCC31BP90_ASS17_RIGHT",
-  "price": 109000,
+  "price": 151175,
   "image": "/media/sites/site_affv5holph/manus-storage/products/cRBQbzZKOt1FV2M5ZHWFA-SCC31BP90_3_d52e6eb8.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -725,8 +836,9 @@
   "name": "11.5\" 90-Degree Corner Bar Panel [L]",
   "slug": "scc31bp90-left",
   "sku": "SCC31BP90_LEFT",
-  "price": 109000,
+  "price": 122375,
   "image": "/media/sites/site_affv5holph/manus-storage/products/cRBQbzZKOt1FV2M5ZHWFA-SCC31BP90_3_d52e6eb8.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -735,8 +847,9 @@
   "name": "11.5\" 90-Degree Corner Bar Panel [R]",
   "slug": "scc31bp90-right",
   "sku": "SCC31BP90_RIGHT",
-  "price": 109000,
+  "price": 122375,
   "image": "/media/sites/site_affv5holph/manus-storage/products/cRBQbzZKOt1FV2M5ZHWFA-SCC31BP90_3_d52e6eb8.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -745,8 +858,9 @@
   "name": "11.5\" 90-Degree Corner Return Panel \u2014 Style 17 [L]",
   "slug": "scc3sp90-ass17-left",
   "sku": "SCC3SP90_ASS17_LEFT",
-  "price": 109000,
+  "price": 47425,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC3SP90_primary_ad9aaf17.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -755,8 +869,9 @@
   "name": "11.5\" 90-Degree Corner Return Panel \u2014 Style 17 [R]",
   "slug": "scc3sp90-ass17-right",
   "sku": "SCC3SP90_ASS17_RIGHT",
-  "price": 109000,
+  "price": 47425,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC3SP90_primary_ad9aaf17.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -765,8 +880,9 @@
   "name": "11\" 90-Degree Corner Return Panel [L]",
   "slug": "scc3sp90-left",
   "sku": "SCC3SP90_LEFT",
-  "price": 104000,
+  "price": 18625,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC3SP90_primary_ad9aaf17.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -775,8 +891,9 @@
   "name": "11\" 90-Degree Corner Return Panel [R]",
   "slug": "scc3sp90-right",
   "sku": "SCC3SP90_RIGHT",
-  "price": 104000,
+  "price": 18625,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC3SP90_primary_ad9aaf17.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -785,8 +902,9 @@
   "name": "11.5\" 90-Degree Corner Return Panel (w/ SUN13VSB insert) [L]",
   "slug": "scc3sp90-sun13vsb-left",
   "sku": "SCC3SP90_SUN13VSB_LEFT",
-  "price": 109000,
+  "price": 68525,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC3SP90_primary_ad9aaf17.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -795,8 +913,9 @@
   "name": "11.5\" 90-Degree Corner Return Panel (w/ SUN13VSB insert) [R]",
   "slug": "scc3sp90-sun13vsb-right",
   "sku": "SCC3SP90_SUN13VSB_RIGHT",
-  "price": 109000,
+  "price": 68525,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC3SP90_primary_ad9aaf17.jpg",
+  "gas": false,
   "simple": true
  },
  {
@@ -805,8 +924,9 @@
   "name": "3\"Spacer Panel for Cabinet Front - SCC3SPF",
   "slug": "3-spacer-panel-for-cabinet-front-scc3spf",
   "sku": "SCC3SPF",
-  "price": 12400,
+  "price": 12375,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC3SPF_primary_3ba3df9a.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -817,6 +937,7 @@
   "sku": "SCC4SPEL_LEFT",
   "price": 15000,
   "image": "/media/sites/site_affv5holph/catalog-media/3ac9c92d65b880ebfe8b.webp",
+  "gas": false,
   "simple": true
  },
  {
@@ -825,8 +946,9 @@
   "name": "6\"Spacer Panel for Cabinet Front - SCC6SPF",
   "slug": "6-spacer-panel-for-cabinet-front-scc6spf",
   "sku": "SCC6SPF",
-  "price": 14900,
+  "price": 14875,
   "image": "/media/sites/site_affv5holph/manus-storage/SCC6SPF_primary_2d4760e6.jpg",
+  "gas": false,
   "simple": false
  },
  {
@@ -837,6 +959,7 @@
   "sku": "SCCSPER_RIGHT",
   "price": 15000,
   "image": "/media/sites/site_affv5holph/catalog-media/3ac9c92d65b880ebfe8b.webp",
+  "gas": false,
   "simple": true
  }
 ]

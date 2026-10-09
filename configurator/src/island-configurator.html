@@ -536,7 +536,11 @@ const $ = sel => document.querySelector(sel);
 const CATALOG_BY_ID = new Map(CATALOG.map(c => [c.id, c]));
 function byId(catId){ return CATALOG_BY_ID.get(catId); }
 function priceOf(catId){ return state.prices[catId] ?? byId(catId).price; }
-function money(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+// MAP prices can have cents ($1,573.75); show them when there are any.
+function money(n){
+  const c = Math.round(n * 100) / 100;
+  return "$" + c.toLocaleString("en-US", Number.isInteger(c) ? {} : { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
 function inches(n){ return (Math.round(n * 10) / 10).toString() + '"'; }
 function feet(n){ const ft = Math.floor(n / 12), inch = Math.round((n - ft * 12) * 10) / 10; return ft + "' " + inch + '"'; }
 function esc(s){

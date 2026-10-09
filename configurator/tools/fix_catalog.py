@@ -57,6 +57,14 @@ def clean_store_name(name, sku, handed):
     return n
 
 
+# Insert codes in image names -> how they read on the 2026 MAP sheets.
+INSERT_LABEL = {
+    "BRBC14": "B-RBC14 bar center", "BIC14": "B-IC14 ice chest", "BPS21": "B-PS21 sink", "BSK34": "B-SK34 sink",
+    "AIC": "A-IC ice chest", "ASS17": "A-SS17 sink", "SAPWD30PROx2": "2 x SAP30WDPRO warming drawers",
+    "SAPWD30PRO": "SAP30WDPRO warming drawer", "SAPFR21PRO": "SAPFR21PRO refrigerator",
+}
+
+
 def fmt_w(w):
     return f"{w:g}"
 
@@ -69,6 +77,16 @@ for it in catalog:
     hit = store_hit(it)
     if hit and re.search(re.escape(it["id"]) + r"\s*$", hit["name"]):
         base_desc[it["id"]] = clean_store_name(hit["name"], it["id"], it["handed"])
+
+# Cabinet descriptions from the 2026 MAP sheet where the store has no plain product for the base cabinet.
+SHEET_DESC = {
+    "SAC30KBDC": "Kamado Hybrid Grill Base Cabinet",
+    "SAC33PBDC": "Power Burner Cabinet",
+    "SBC12SLS": "90 Degree Corner Cabinet w/Lazy Susan",
+}
+# MAP totals from the price audit (pricing/map-audit.json), used when a module isn't in the public store feed.
+audit_path = ROOT / "pricing" / "map-audit.json"
+map_total = {r["module"]: r["map_total"] for r in json.loads(audit_path.read_text())} if audit_path.exists() else {}
 
 out = []
 for it in catalog:
@@ -84,17 +102,22 @@ for it in catalog:
     else:
         it["slug"] = None
         it["inStore"] = False
+        if map_total.get(it["id"]):
+            it["price"] = map_total[it["id"]]
 
     base_id = it["id"].split("_")[0]
     if it["handed"] and it["id"].endswith(("_LEFT", "_RIGHT")):
         base_id = it["id"]  # corner pieces: handing is part of the SKU
-    desc = base_desc.get(it["id"]) or base_desc.get(base_id)
+    desc = base_desc.get(it["id"]) or base_desc.get(base_id) or SHEET_DESC.get(it["id"].split("_")[0].replace("SAC3OKBDC", "SAC30KBDC"))
     if desc:
         it["code"] = desc
     hand = f' [{it["handed"]}]' if it["handed"] else ""
-    style = " — Style 17" if it["styleVariant"] else ""
-    insert = f' + {it["variant"].replace("+", " / ")}' if it["variant"] else ""
-    it["name"] = f'{fmt_w(w)}" {it["code"]}{style}{insert}{hand}'
+    # "ASS17" is the A-SS17 17" sink insert (it was read as a door style before).
+    variant = it["variant"] or ("ASS17" if "_ASS17" in it["id"] else None)
+    if "_ASS17" in it["id"]:
+        it["variant"], it["styleVariant"] = "ASS17", False
+    insert = f' + {INSERT_LABEL.get(variant, variant.replace("+", " / "))}' if variant else ""
+    it["name"] = f'{fmt_w(w)}" {it["code"]}{insert}{hand}'
     out.append(it)
 
 (DATA / "catalog.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
